@@ -68,4 +68,9 @@ Route::prefix('agent')->group(function() {
 });
 
 */
-Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+//Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Voyager::routes();
+});

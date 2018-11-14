@@ -23,7 +23,6 @@ class CreateAgentsTable extends Migration
             $table->string('password');
             $table->string('agent_category');
             $table->string('agent_pic')->default('public/images/customer.jpg');
-            $table->integer('agent_id');
             $table->string('commission');
             $table->string('deposits')->nullable();
             $table->string('state')->nullable();
