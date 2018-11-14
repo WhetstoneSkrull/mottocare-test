@@ -29,6 +29,8 @@ Route::group([
     });
 });
 
+
+
 /*
 //admin
   //Route::group([
@@ -65,12 +67,15 @@ Route::post('service', 'ServiceController@store');
 Route::put('service', 'ServiceController@store');
 Route::delete('service/{id}', 'ServiceController@destroy');
 
+
 //automobile API
+
 Route::get('automobiles', 'AutomobileController@index');
 Route::get('automobile/{id}', 'AutomobileController@show');
 Route::post('automobile', 'AutomobileController@store');
 Route::put('automobile', 'AutomobileController@store');
 Route::delete('automobile/{id}', 'AutomobileController@destroy');
+//});
 
 //vehicle API
 Route::get('vehicles', 'VehicleController@index');

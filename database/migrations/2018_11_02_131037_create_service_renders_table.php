@@ -15,7 +15,7 @@ class CreateServiceRendersTable extends Migration
     {
         Schema::create('service_renders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('vendor_id');
+            $table->integer('user_id');
             $table->integer('service_category_id');
             $table->integer('service_id');
             $table->integer('engine_id');

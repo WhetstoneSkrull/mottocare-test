@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name','slug','account_pic','driver_license','DoB','address', 'email', 'password',
+        'first_name','last_name','slug','account_pic','role','driver_license','customer_id','DoB','address', 'email', 'password', 'token',
         'driver_first_name','driver_last_name',
     ];
 
@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
       return $this->hasMany('App\Booking');
     }
+    public function drivers(){
+      return $this->hasMany('App\Driver');
+    }
+
+
 }

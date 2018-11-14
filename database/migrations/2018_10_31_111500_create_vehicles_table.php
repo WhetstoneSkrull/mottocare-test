@@ -18,11 +18,12 @@ class CreateVehiclesTable extends Migration
             $table->integer('user_id');
         //    $table->string('motto_uses');
             $table->string('vehicle_category_id');
-            $table->string('vehicle_make');
-            $table->string('year');
-            $table->string('model');
-            $table->string('vehicle_reg_no');
-            $table->string('chasis_no');
+            $table->string('vehicle_make')->nullable();
+            $table->string('year')->nullable();
+            $table->string('pic')->nullable();
+            $table->string('model')->nullable();
+            $table->string('vehicle_reg_no')->nullable();
+            $table->string('chasis_no')->nullable();
             $table->timestamps();
         });
     }

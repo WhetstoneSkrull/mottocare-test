@@ -5,6 +5,11 @@
                     <h2 class="title m-b-md">
                         Mottocare
                     </h2>
+                    <p>
+                      <img src="http://www.drawingforall.net/wp-content/uploads/2015/10/8-how-to-draw-a-car-for-beginners.jpg"
+                       width="400px" height="300px" alt="">
+
+                    </p>
                     <h3>
                         We take care of your car!
                     </h3>

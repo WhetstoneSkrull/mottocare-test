@@ -23,23 +23,42 @@ class AuthController extends Controller
       $request->validate([
           'first_name' => 'required|string',
           'last_name' => 'required|string',
+        //  'customer_id' => 'required|string',
           'email' => 'required|string|email|unique:users',
           'password' => 'required|string|confirmed'
+      //    'role' => 'required|string'
       ]);
 
+      //Default profile pic
       $pic_path = ('customer.jpg');
+
+      //Generate Customer ID
+    //  $booking = new User('id'=>'1');
+      $first = ('MCC');
+      $last = ('000');
+      $bid = $request->id;
+      $addID = $first.$last.$bid;
+
+        //Concatenate Slug for each User
       $first = $request['first_name'];
       $last = $request['last_name'];
       $email = $request['email'];
       $add = $first.$last.$email;
+
+      //Generate Random string for each user
+      $length = 100;
+      $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
 
 
       $user = new User([
           'first_name' => $request->first_name,
           'last_name' => $request->last_name,
           'slug'=>$add,
+          'token'=>$randomString,
+          'customer_id'=>$addID,
           'account_pic' => $pic_path,
           'email' => $request->email,
+          'role' => $request->role,
           'password' => bcrypt($request->password)
       ]);
       $user->save();
@@ -91,7 +110,7 @@ class AuthController extends Controller
              )->toDateTimeString()
          ]);
      }
-   
+
 
   /**
    * Logout user (Revoke the token)

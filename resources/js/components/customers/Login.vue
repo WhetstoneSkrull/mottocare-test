@@ -1,7 +1,7 @@
-<template lang="html">
-  <div class="container">
-    login here
-    <div class="row">
+<template>
+
+    <div class="container">
+        <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Login</div>
@@ -52,13 +52,12 @@
                 </div>
             </div>
         </div>
-  </div>
+    </div>
 </template>
 
 <script>
-
-export default {
-  data(){
+    export default {
+data(){
     return{
 
         email:"",
@@ -69,17 +68,18 @@ methods:{
     logIn(){
         axios.post('/api/auth/login',{email:this.email,password:this.password})
         .then(response=>{
-
-            let token= response.data.token;
+            let token= response.data.access_token;
             if(token){
-               localStorage.setItem('token',token);
+               localStorage.setItem('access_token',token);
+               localStorage.setItem('user',JSON.stringify(response.data.user))
+
+               let myToast = this.$toasted.show("Welcome Back");
+               myToast.text("Welcome Back!").goAway(1500);
             }
+            this.$router.push('/customer/dashboard');
             console.log(token);
           })
         }
       }
-}
+    }
 </script>
-
-<style lang="css">
-</style>

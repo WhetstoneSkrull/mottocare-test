@@ -8,6 +8,14 @@ use App\Http\Resources\Automobile as AutomobileResource;
 
 class AutomobileController extends Controller
 {
+
+  public function __construct()
+    {
+    //  $this->middleware('auth:api');
+      //  $this->middleware('isAdmin');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +49,7 @@ class AutomobileController extends Controller
         ($request->auto_id) : new Automobile;
 
         $auto->id = $request->input('auto_id');
-        $auto->user_id = $request->input('user_id');
+        //$auto->user_id = $request->input('user_id');
         $auto->name = $request->input('name');
 
 

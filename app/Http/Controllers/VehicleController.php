@@ -46,8 +46,18 @@ class VehicleController extends Controller
         $vehicle->vehicle_make = $request->input('vehicle_make');
         $vehicle->year = $request->input('year');
         $vehicle->model = $request->input('model');
+        $vehicle->pic = $request->input('pic');
         $vehicle->vehicle_reg_no = $request->input('vehicle_reg_no');
         $vehicle->chasis_no = $request->input('chasis_no');
+
+        public function uploadFile(Request $request)
+       {
+           if($request->hasFile('pic')){
+               $name = time()."_".$request->file('image')->getClientOriginalName();
+               $request->file('image')->move(public_path('images'), $name);
+           }
+           return response()->json(asset("images/$name"),201);
+       }
 
         if($vehicle->save()){
           return new VehicleResource($vehicle);

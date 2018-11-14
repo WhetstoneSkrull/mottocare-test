@@ -41,14 +41,15 @@ class BookingController extends Controller
       $booking = $request->isMethod('put') ? Booking::findOrfail
         ($request->booking_id) : new Booking;
 
+        //Generate booking_id
         $first = ('MCB');
         $last = ('000');
-      //  $bid = $booking->id;
+       $bid = $booking->vehicle_id;
         $add = $first.$last.$bid;
 
         $booking->id = $request->input('booking_id');
         $booking->user_id = $request->input('user_id');
-        $booking->agent_id = $request->input('agent_id');
+      //  $booking->agent_id = $request->input('agent_id');
         $booking->vehicle_id = $request->input('vehicle_id');
         $booking->booking_no = $add;
         $booking->service_date = $request->input('service_date');

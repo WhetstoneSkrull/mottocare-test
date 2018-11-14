@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Service;
+use App\ServiceCategory;
 use App\Http\Resources\Service as ServiceResource;
 
 
@@ -38,12 +39,13 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+      $categories =ServiceCategory::all();
       $service = $request->isMethod('put') ? Service::findOrfail
         ($request->service_id) : new service;
 
         $service->id = $request->input('service_id');
         $service->name = $request->input('name');
-        $service->service_category_id = $request->input('service_category_id');
+        $service->service_category_id = $request->service_category_id;
 
         if($service->save()){
           return new ServiceResource($service);
