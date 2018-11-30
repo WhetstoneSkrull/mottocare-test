@@ -16,14 +16,12 @@ class ServiceRender extends JsonResource
      {
        return[
        'id' => $this->id,
+       'user_id' => $this->user_id,
+       'vendor_id' => $this->vendor_id,
        'service_category_id' => $this->service_category_id,
        'service_id' => $this->service_id,
-       'engine_id' => $this->engine_id,
-       'automobile_id' => $this->automobile_id,
-       'capacity_id' => $this->capacity_id,
-       'manpower' => $this->manpower,
+       'price' => $this->price,
        'description' => $this->description
-
      ];
      }
 }

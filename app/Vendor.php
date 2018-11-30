@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vendor extends Model
 {
-    public function servicerender()
-    return $this->hasMany('App\ServiceRender');
+    public function user(){
+    return $this->belongsTo('App\User');
+  }
+
+  public function bookings(){
+    	return $this->hasMany('App\Booking');
+    }
+
 }

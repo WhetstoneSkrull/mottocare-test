@@ -5,6 +5,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Register</div>
                     <div class="panel-body">
+
+
+
                         <form v-loading="'submitting...'"   @submit.prevent='registerUser'>
 
                             <div class="form-group">
@@ -73,6 +76,7 @@
 
 <script>
 export default {
+    props : ['nextUrl'],
     data(){
         return {
             register:{
@@ -80,7 +84,7 @@ export default {
                 last_name:"",
                 email:"",
                 password:"",
-                role:1,
+                user_role:1,
                 password_confirmation:""
             }
         }
@@ -91,7 +95,16 @@ export default {
             axios.post('/api/auth/signup',this.register)
             .then(response=>{
               localStorage.setItem('user',JSON.stringify(response.data.user))
-              localStorage.setItem('access_token',response.data.token)
+              localStorage.setItem('token',response.data.token)
+              if (localStorage.getItem('token') != null){
+                            this.$emit('loggedIn')
+                            if(this.$route.params.nextUrl != null){
+                                this.$router.push(this.$route.params.nextUrl)
+                            }
+                            else{
+                                this.$router.push('/')
+                            }
+                        }
                 console.log(response);
                 this.$router.push('/');
                 this.$toasted.global.signup().goAway(1500);

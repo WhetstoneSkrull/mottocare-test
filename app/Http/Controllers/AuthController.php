@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\User;
+use App\Http\Resources\User as UserResource;
 
 class AuthController extends Controller
 {
@@ -18,6 +19,19 @@ class AuthController extends Controller
    * @param  [string] password_confirmation
    * @return [string] message
    */
+public function allusers(){
+
+  $users = User::orderBy('created_at','desc')->paginate(15);
+    return UserResource::collection($users);
+}
+
+public function showuser($id){
+  $user = User::findOrfail($id);
+  return new  UserResource($user);
+}
+
+
+
   public function signup(Request $request)
   {
       $request->validate([
@@ -32,7 +46,7 @@ class AuthController extends Controller
       //Default profile pic
       $pic_path = ('customer.jpg');
 
-      //Generate Customer ID
+    //Generate Customer ID
     //  $booking = new User('id'=>'1');
       $first = ('MCC');
       $last = ('000');
@@ -58,7 +72,7 @@ class AuthController extends Controller
           'customer_id'=>$addID,
           'account_pic' => $pic_path,
           'email' => $request->email,
-          'role' => $request->role,
+          'user_role' => $request->role,
           'password' => bcrypt($request->password)
       ]);
       $user->save();

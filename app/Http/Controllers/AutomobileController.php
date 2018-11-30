@@ -23,7 +23,8 @@ class AutomobileController extends Controller
      */
     public function index()
     {
-      $autos = Automobile::orderBy('created_at','desc')->paginate(15);
+      //$autos = Automobile::orderBy('created_at','desc')->paginate(15);
+      $autos = Automobile::all();
         return AutomobileResource::collection($autos);
     }
 

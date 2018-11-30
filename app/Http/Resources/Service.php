@@ -16,9 +16,9 @@ class Service extends JsonResource
     {
       return[
       'id' => $this->id,
-      'name' => $this->name,
+      'service_name' => $this->service_name,
       'service_category_id' => $this->service_category_id
-
+        //'relationships' => new ServiceRelationshipResource($this),
     ];
     }
 }

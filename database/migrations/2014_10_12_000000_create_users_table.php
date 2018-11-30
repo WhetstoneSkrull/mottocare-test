@@ -20,7 +20,17 @@ class CreateUsersTable extends Migration
             $table->string('name')->nullable();
             $table->string('last_name');
             $table->string('customer_id');
+
+            /*determines the type of user
+            1=customers
+            2=agents
+            3=vendors
+            4=user manager
+            5=booking manager
+            6=super admin
+             */
             $table->integer('user_role')->default(1);
+
             $table->string('token')->nullable();
             $table->string('slug')->nullable();
             $table->string('password');

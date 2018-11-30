@@ -20,6 +20,7 @@ Route::group([
 ], function () {
     Route::post('login', 'AuthController@login');
     Route::post('signup', 'AuthController@signup');
+    Route::get('users/all', 'AuthController@allusers');
 
     Route::group([
       'middleware' => 'auth:api'
@@ -55,7 +56,7 @@ Route::post('register', 'UserController@register');
     Route::post('login', 'UserController@authenticate');
     Route::get('open', 'DataController@open');
 
-    Route::group(['middleware' => ['jwt.verify']], function() {
+      Route::group(['middleware' => ['jwt.verify']], function() {
         Route::get('user', 'UserController@getAuthenticatedUser');
         Route::get('closed', 'DataController@closed');
     });
@@ -69,7 +70,6 @@ Route::delete('service/{id}', 'ServiceController@destroy');
 
 
 //automobile API
-
 Route::get('automobiles', 'AutomobileController@index');
 Route::get('automobile/{id}', 'AutomobileController@show');
 Route::post('automobile', 'AutomobileController@store');
@@ -118,3 +118,11 @@ Route::get('role/{id}', 'RoleController@show');
 Route::post('role', 'RoleController@store');
 Route::put('role', 'RoleController@store');
 Route::delete('role/{id}', 'RoleController@destroy');
+
+
+//Vendor API
+Route::get('vendors', 'VendorController@index');
+Route::get('vendor/{id}', 'VendorController@show');
+Route::post('vendor', 'VendorController@store');
+Route::put('vendor', 'VendorController@store');
+Route::delete('vendor/{id}', 'VendorController@destroy');

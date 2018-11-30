@@ -4,12 +4,24 @@ import './bootstrap'
 import Toasted from 'vue-toasted';
 import VueProgressBar from 'vue-progressbar'
 import FormLoading from 'vue2-form-loading'
+import Vuetify from 'vuetify'
 
+
+
+/* axios defaults
+window.axios = axios
+window.token = localStorage.getItem('token');
+axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.headers.common['Authorization'] = "Bearer"+token;
+axios.defaults.headers.post['content-type'] = 'application/json'
+*/
 
     Vue.use(VueRouter)
     Vue.use(Toasted)
     Vue.use(VueProgressBar, options)
     Vue.use(FormLoading)
+    Vue.use(Vuetify)
+
 
 
     //Register GLobal Toasts
@@ -32,15 +44,30 @@ const options = {
   inverse: false
 }
 
+Vue.component('app-footer', require('./views/Footer.vue')); //component name should be in camel-case
+Vue.component('app-header', require('./views/Header.vue'));
+Vue.component('vendor-register', require('./components/vendors/VendorRegister.vue'));
+
 
 //static pages
     import App from './views/App'
     import Welcome from './views/Welcome'
+    import Footer from './views/Footer'
+    import VendorRegister from './components/vendors/VendorRegister'
+
+    import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
+    import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
+    import 'babel-polyfill'
+
 
     //customer pages
     import Register from './components/customers/Register'
     import Login from './components/customers/Login'
     import Dashboard from './components/customers/Dashboard'
+    import EditProfile from './components/customers/EditProfile'
+
+    //vendor pages
+    import VendorPage from './components/vendors/VendorPage'
 
     //Admin pages
     import Admin from './components/admins/Admin'
@@ -71,12 +98,21 @@ const options = {
             },
             //User Dashboard
             {
-                path: '/customer/dashboard',
+                path: '/dashboard',
                 name: 'dashboard',
                 component: Dashboard,
                 meta: {
-                requiresAuth: true,
-                is_user : true
+              //  requiresAuth: true
+              //  is_user : true
+              }
+            },
+            {
+                path: '/dashboard-edit',
+                name: 'EditProfile',
+                component: EditProfile,
+                meta: {
+              //  requiresAuth: true
+              //  is_user : true
               }
             },
             //Admin Pages
@@ -98,10 +134,21 @@ const options = {
                 name: 'adminLogin',
                 component: AdminLogin
             },
+            //vendor pages
+            {
+                path: '/vendor-register',
+                name: 'VendorRegister',
+                component: VendorRegister
+            },
+            {
+                path: '/vendor-dashboard/:id',
+                name: 'vendorPage',
+                component: VendorPage
+            }
         ],
     });
 
-/*
+
     router.beforeEach((to, from, next) => {
       if(to.matched.some(record => record.meta.requiresAuth)) {
         if (localStorage.getItem('access_token') == null) {
@@ -132,7 +179,7 @@ const options = {
       } else {
         next()
       }
-    })  */
+    })
 
     const app = new Vue({
         el: '#app',

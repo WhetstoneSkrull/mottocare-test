@@ -17,8 +17,11 @@ class ServiceController extends Controller
      */
     public function index()
     {
+    //  $categories = ServiceCategory::all();
       $services = Service::orderBy('created_at','desc')->paginate(15);
         return ServiceResource::collection($services);
+      //  return response()->json(Service::with(['category'])->get(), 200);
+
     }
 
     /**

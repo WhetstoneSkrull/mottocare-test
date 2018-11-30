@@ -1,58 +1,31 @@
 <template>
+    <v-app id="inspire">
+        <v-content>
+          <v-container fluid fill-height>
+            <v-layout align-center justify-center>
+              <v-flex xs12 sm8 md4>
+                <v-card class="elevation-12">
+                  <v-toolbar dark color="primary">
+                    <v-toolbar-title>Login Account</v-toolbar-title>
+                    <v-spacer></v-spacer>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Login</div>
-                    <div class="panel-body">
-                        <form @submit.prevent="logIn">
-
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" v-model="email" required autofocus>
-
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" class="col-md-4 control-label">Password</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" v-model="password" required>
-
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" > Remember Me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-8 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Login
-                                    </button>
-
-                                    <a class="btn btn-link" >
-                                        Forgot Your Password?
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                  </v-toolbar>
+                  <v-card-text>
+                    <v-form v-loading="'submitting...'">
+                      <v-text-field prepend-icon="person" name="email" label="email" type="text" v-model="email"></v-text-field>
+                      <v-text-field id="password" prepend-icon="lock" name="password" label="Password" type="password" v-model="password"></v-text-field>
+                    </v-form>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="primary" @click.prevent="logIn">Login</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-content>
+      </v-app>
 </template>
 
 <script>
@@ -70,13 +43,14 @@ methods:{
         .then(response=>{
             let token= response.data.access_token;
             if(token){
-               localStorage.setItem('access_token',token);
+               localStorage.setItem('token',token);
                localStorage.setItem('user',JSON.stringify(response.data.user))
+               this.$emit('loggedIn')
 
                let myToast = this.$toasted.show("Welcome Back");
                myToast.text("Welcome Back!").goAway(1500);
             }
-            this.$router.push('/customer/dashboard');
+            this.$router.push('/');
             console.log(token);
           })
         }

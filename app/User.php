@@ -17,7 +17,8 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name','slug','account_pic','role','driver_license','customer_id','DoB','address', 'email', 'password', 'token',
+      //'user_role',
+        'first_name','last_name','slug','account_pic','driver_license','customer_id','DoB','address', 'email', 'password', 'token',
         'driver_first_name','driver_last_name',
     ];
 
@@ -41,6 +42,8 @@ class User extends \TCG\Voyager\Models\User
     public function drivers(){
       return $this->hasMany('App\Driver');
     }
-
-
+public function vendor()
+  {
+    return $this->hasOne('App\Vendor');
+  }
 }

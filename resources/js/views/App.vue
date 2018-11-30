@@ -1,49 +1,61 @@
 <template>
-       <div>
-           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-               <div class="container">
-                   <router-link :to="{name: 'home'}" class="navbar-brand">Home</router-link>
-                   <router-link :to="{name: 'dashboard'}" class="navbar-brand" v-if="isLoggedIn">MY Dashboard</router-link>
-                   <router-link :to="{name: 'adminLogin'}" class="navbar-brand" v-if="isLoggedIn">Admin</router-link>
-                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                       <span class="navbar-toggler-icon"></span>
-                   </button>
+<div class="">
+            <app-header></app-header>
+            <transition mode="out-in">
+                <router-view ></router-view>
+            </transition>
 
-                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                       <!-- Left Side Of Navbar -->
-                       <ul class="navbar-nav mr-auto"></ul>
+                <main class="py-4">
+                <vue-progress-bar></vue-progress-bar>
+                <app-footer></app-footer>
+              </main>
 
-                       <ul class="navbar-nav ml-auto">
-                       <router-link :to="{ name: 'login' }" class="nav-link" v-if="!isLoggedIn">Login</router-link>
-                       <router-link :to="{ name: 'register' }" class="nav-link" v-if="!isLoggedIn">Register</router-link>
-                       <span v-if="isLoggedIn">
-                         <router-link :to="{ name: 'dashboard' }" class="nav-link" v-if="isLoggedIn"> Hi, {{email}}</router-link>
-                       </span>
-                       <li class="nav-link" v-if="isLoggedIn" @click="logout"> Logout</li>
-                   </ul>
-                   </div>
-               </div>
-           </nav>
-           <main class="py-4">
-               <router-view></router-view>
-               <!-- set progressbar -->
-        <vue-progress-bar></vue-progress-bar>
-           </main>
-       </div>
+            </div>
    </template>
 
    <script>
+   import WebFontLoader from 'webfontloader'
     export default {
       data(){
           return {
-            email        : null,
-            user_type   : 0,
+        //    email        : null,
+//            user_type   : 1,
             isLoggedIn  : localStorage.getItem('access_token') != null
           }
       },
+      methods : {
+        setDefaults(){
+          if(this.isLoggedIn){
+            let user        = JSON.parse(localStorage.getItem('user'))
+            this.email       = user.email
+      //      this.user_type  = user.is_admin
+          }
+        },
+        change(){
+            this.isLoggedIn = localStorage.getItem('access_token') != null
+            this.setDefaults()
+
+        },
+        logout(){
+            localStorage.removeItem('access_token')
+            localStorage.removeItem('user')
+            this.change()
+            this.$router.push('/')
+        },
+        setFontLoaded () {
+      this.$emit('font-loaded')
+    }
+
+  },
       mounted() {
+        WebFontLoader.load({
+      google: {
+        families: ['Roboto:100,300,400,500,700,900']
+      },
+      active: this.setFontLoaded
+    }),
         this.setDefaults();
-    //    this.$Progress.finish()
+
       },
 
       created () {
@@ -67,27 +79,6 @@
       //  finish the progress bar
       this.$Progress.finish()
     })
-  },
-
-      methods : {
-        setDefaults(){
-          if(this.isLoggedIn){
-            let user        = JSON.parse(localStorage.getItem('user'))
-            this.email       = user.email
-      //      this.user_type  = user.is_admin
-          }
-        },
-        change(){
-            this.isLoggedIn = localStorage.getItem('access_token') != null
-            this.setDefaults()
-
-        },
-        logout(){
-            localStorage.removeItem('access_token')
-            localStorage.removeItem('user')
-            this.change()
-            this.$router.push('/')
-        }
-      }
+  }
     }
 </script>
