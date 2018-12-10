@@ -10,11 +10,7 @@ class Booking extends Model
    return $this->belongsTo('App\User');
  }
 
- public function vendor(){
-     return $this->belongsTo('App\Vendor');
-
-   }
-   public function service(){
-     return $this->belongsTo('App\Service');
-   }
+   public function servicerenders(){
+        return $this->belongsTo(ServiceRender::class,'service_render_id');
+    }
 }

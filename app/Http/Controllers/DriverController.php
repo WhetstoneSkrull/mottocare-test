@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Booking;
-use App\Http\Resources\Booking as BookingResource;
+use App\Driver;
+use App\Http\Resources\Driver as DriverResource;
 
-
-class BookingController extends Controller
+class DriverController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-      $bookings = Booking::orderBy('created_at','desc')->paginate(25);
-        return BookingResource::collection($bookings);
+      $drivers = Driver::orderBy('created_at','desc')->paginate(15);
+        return DriverResource::collection($drivers);
     }
 
     /**
@@ -38,29 +37,23 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-      $booking = $request->isMethod('put') ? Booking::findOrfail
-        ($request->booking_id) : new Booking;
+      $driver = $request->isMethod('put') ? Driver::findOrfail
+        ($request->driver_id) : new Driver;
 
-        //Generate booking_id
-        $first = ('MCB');
-        $last = ('000');
-        $booleanApproved=("1");
-       $bid = $booking->vehicle_id;
-        $add = $first.$last.$bid;
+        $driver->id = $request->input('driver_id');
+        $driver->user_id = $request->input('user_id');
+        $driver->driver_first_name = $request->input('driver_first_name');
+        $driver->driver_last_name = $request->input('driver_last_name');
+        $driver->driver_dob = $request->input('driver_dob');
+        $driver->driving_license_no = $request->input('driving_license_no');
+        $driver->driving_license_expiry_date = $request->input('driving_license_expiry_date');
+        $driver->contact_no = $request->input('contact_no');
+        $driver->email = $request->input('email');
+        $driver->license_pic = $request->input('license_pic');
+        $driver->driver_pic = $request->input('driver_pic');
 
-        $booking->id = $request->input('booking_id');
-        $booking->user_id = $request->input('user_id');
-      //  $booking->agent_id = $request->input('agent_id');
-        $booking->vehicle_id = $request->input('vehicle_id');
-        $booking->booking_title = $request->input('booking_title');
-        $booking->approved = $booleanApproved;
-    //    $booking->booking_no = $add;
-        $booking->service_date = $request->input('service_date');
-        $booking->service_time = $request->input('service_time');
-        $booking->vendor_id = $request->input('vendor_id');
-
-        if($booking->save()){
-          return new BookingResource($booking);
+        if($driver->save()){
+          return new DriverResource($driver);
         }
     }
 
@@ -72,8 +65,8 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-      $booking = Booking::findOrfail($id);
-      return new  BookingResource($booking);
+      $driver = Driver::findOrfail($id);
+      return new  DriverResource($driver);
     }
 
     /**
@@ -107,9 +100,9 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-      $booking = Booking::findOrfail($id);
-    if($booking->delete()){
-      return new  BookingResource($booking);
+      $driver = Driver::findOrfail($id);
+    if($driver->delete()){
+      return new  DriverResource($driver);
 
         }
     }

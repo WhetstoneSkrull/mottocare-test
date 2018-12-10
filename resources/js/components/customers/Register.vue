@@ -94,9 +94,9 @@ export default {
         registerUser(){
             axios.post('/api/auth/signup',this.register)
             .then(response=>{
-              localStorage.setItem('user',JSON.stringify(response.data.user))
-              localStorage.setItem('token',response.data.token)
-              if (localStorage.getItem('token') != null){
+              localStorage.setItem('user',JSON.stringify(this.register))
+              localStorage.setItem('jwt',response.data.access_token)
+              if (localStorage.getItem('jwt') != null){
                             this.$emit('loggedIn')
                             if(this.$route.params.nextUrl != null){
                                 this.$router.push(this.$route.params.nextUrl)

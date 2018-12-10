@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\User;
+use App\Booking;
 use App\Http\Resources\User as UserResource;
 
 class AuthController extends Controller
@@ -30,6 +31,17 @@ public function showuser($id){
   return new  UserResource($user);
 }
 
+//returns all users and their bookings
+public function index(){
+      return response()->json(User::with(['bookings'])->get(), 200);
+  }
+
+  //returns a user and their bookings
+
+  public function showOrders(User $user)
+      {
+          return response()->json($user->bookings()->with(['service'])->get(),200);
+      }
 
 
   public function signup(Request $request)

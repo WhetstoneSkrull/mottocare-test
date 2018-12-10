@@ -15,20 +15,15 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->nullable();
-            //$table->integer('agent_id')->nullable();
-            $table->integer('vehicle_id')->nullable();
-            $table->string('booking_title')->nullable();
-            $table->string('service_date')->nullable();
-            $table->boolean('approved');
-            $table->integer('vendor_id')->unsigned();
-            $table->datetime('service_time')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('vehicle_id')->nullable();
+            $table->unsignedInteger('service_render_id');
+            $table->date('service_date')->nullable();
+            $table->time('service_time')->nullable();
+            $table->boolean('is_completed')->default(false);
             $table->timestamps();
         });
-        Schema::table('bookings',function ($table){
-        $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade');
 
-      });
     }
 
     /**
@@ -38,7 +33,6 @@ class CreateBookingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropForeign(['vendor_id']);
         Schema::dropIfExists('bookings');
     }
 }

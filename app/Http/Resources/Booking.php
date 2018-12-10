@@ -18,8 +18,9 @@ class Booking extends JsonResource
        'id' => $this->id,
        'user_id' => $this->user_id,
        'agent_id' => $this->agent_id,
+       'booking_title' => $this->booking_title,
        'vehicle_id' => $this->vehicle_id,
-       'booking_no' => $this->booking_no,
+      // 'booking_no' => $this->booking_no,
        'service_date' => $this->service_date,
        'service_time' => $this->service_time
      ];

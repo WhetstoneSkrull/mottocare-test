@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             6=super admin
              */
             $table->integer('user_role')->default(1);
-
+            $table->boolean('is_admin')->default(false);
             $table->string('token')->nullable();
             $table->string('slug')->nullable();
             $table->string('password');

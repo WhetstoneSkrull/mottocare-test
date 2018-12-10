@@ -19,43 +19,121 @@
            <p>{{vendor.vendor_title}}</p>
            <p class="card-description font-weight-light">No. 12, Wakeel Pharmacy road, Asokoro, Abuja</p>
 
-           <v-dialog v-model="dialog" persistent max-width="600px">
-                 <v-btn slot="activator" color="blue" dark>Book me</v-btn>
-                 <v-card>
-                   <v-card-title>
-                     <span class="headline">Create a Booking</span>
-                   </v-card-title>
-                   <v-card-text>
-                     <v-container grid-list-md>
-                       <v-layout wrap>
-                         <v-flex xs12>
-                           <v-text-field label="Service name" required hint="select the service you want to book for"></v-text-field>
-                         </v-flex>
 
-                         <v-flex xs12 sm6>
-                           <v-select
-                             :items="['Benz', 'Toyota', 'Honda']"
-                             label="Select your vehicle"
-                             required
-                           ></v-select>
-                         </v-flex>
+  <v-layout row justify-center>
+    <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+      <v-btn slot="activator" color="blue" dark>Book me</v-btn>
+      <v-card>
+        <v-container>
+        <v-toolbar dark color="blue">
+          <v-btn icon dark @click="dialog = false">
+            <v-icon>close</v-icon>
+          </v-btn>
+          <v-toolbar-title>Make a Booking</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-items>
+            <v-btn dark flat @click="dialog = false">close</v-btn>
+          </v-toolbar-items>
+        </v-toolbar>
+        <v-list three-line subheader>
+          <v-list-tile avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>Create a Booking</v-list-tile-title>
+              <v-list-tile-sub-title>fill up the form and submit!</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+        <v-divider></v-divider>
+        <v-flex xs12 sm8 md6>
+          <v-flex>
+          <v-text-field
+               v-model="booking.booking_title"
+               label="what are you booking for?"
 
-                         <div>
-                           <v-time-picker v-model="picker" :landscape="landscape"></v-time-picker>
-                         </div>
+               clearable
+             ></v-text-field>
+           </v-flex>
+       </v-flex>
 
+       <v-flex xs12 sm8 md6>
+         <v-flex>
+         <v-text-field
+              v-model="booking.service_time"
+              label="service time (HH:MM AM or PM)"
 
-                       </v-layout>
-                     </v-container>
-                     <small>*indicates required field</small>
-                   </v-card-text>
-                   <v-card-actions>
-                     <v-spacer></v-spacer>
-                     <v-btn color="blue darken-1" flat @click="dialog = false">Close</v-btn>
-                     <v-btn color="blue darken-1" flat @click="dialog = false">Save</v-btn>
-                   </v-card-actions>
-                 </v-card>
-               </v-dialog>
+              clearable
+            ></v-text-field>
+          </v-flex>
+      </v-flex>
+
+       <v-flex xs12 sm6 d-flex>
+               <v-select
+               v-model="booking.vehicle_id"
+                 :items="items"
+                 label="which vehicle are you booking for?"
+               ></v-select>
+             </v-flex>
+    <!--    <v-flex xs10 sm8 md6>
+      <v-dialog
+        ref="dialog"
+        v-model="modal2"
+        :return-value.sync="time"
+        persistent
+        lazy
+        full-width
+        width="290px"
+      >
+        <v-text-field
+          slot="activator"
+          v-model="time"
+          label="Picker in dialog"
+          prepend-icon="access_time"
+          readonly
+        ></v-text-field>
+        <v-time-picker
+          v-if="modal2"
+          v-model="time"
+          full-width
+        >
+          <v-spacer></v-spacer>
+          <v-btn flat color="primary" @click="modal2 = false">Cancel</v-btn>
+          <v-btn flat color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
+        </v-time-picker>
+      </v-dialog>
+    </v-flex> -->
+
+       <v-flex xs12 sm8 md6>
+             <v-dialog
+               ref="dialog"
+               v-model="modal"
+               :return-value.sync="booking.service_date"
+               persistent
+               lazy
+               full-width
+               width="290px"
+             >
+               <v-text-field
+                 slot="activator"
+                 v-model="booking.service_date"
+                 label="Picker in dialog"
+                 prepend-icon="event"
+                 readonly
+               ></v-text-field>
+               <v-date-picker v-model="date" scrollable>
+                 <v-spacer></v-spacer>
+                 <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
+                 <v-btn flat color="primary" @click="$refs.dialog.save(booking.service_date)">OK</v-btn>
+               </v-date-picker>
+             </v-dialog>
+           </v-flex>
+           <v-flex xs12 sm8 md6>
+           <v-btn color="info" @click="makeBooking"  v-loading="'submitting...'">Book</v-btn>
+         </v-flex>
+         </v-container>
+      </v-card>
+    </v-dialog>
+  </v-layout>
+
 
 
          </v-card-text>
@@ -171,11 +249,26 @@ hover="true"
     data () {
       return {
         vendor: [],
-        dialog: false,
+      //  dialog: false,
         id: this.$route.params.id,
-        picker: null,
-       landscape: false,
+      //  date: new Date().toISOString().substr(0, 10),
+        dialog: false,
+        //menu: false,
+      //  modal: false,
+        menu2: false,
+        time: null,
+      //  menu2: false,
+        modal2: false,
     //    vendor:{        },
+    booking:{
+      id:"",
+      user_id:"",
+      vehicle_id:"",
+      service_date:new Date().toISOString().substr(0, 10),
+      service_time:"",
+      vendor_id:"1"
+    },
+    items: ['1', '2', '3', '4'],
               items2: [
                 { icon: 'assignment', iconClass: 'blue white--text', title: 'Wheel alignment', subtitle: 'Jan 20, 2014' },
                 { icon: 'call_to_action', iconClass: 'amber white--text', title: 'Alternator change', subtitle: 'Jan 10, 2014' }
@@ -194,7 +287,18 @@ hover="true"
         },
 
     methods:{
-      //
+      makeBooking(){
+        axios.post('/api/booking',this.booking)
+        .then(response=>{
+            console.log(response);
+            //this.$router.push('/dashboard');
+            this.$toasted.global.booking().goAway(1500);
+
+        })
+        .catch(error=>{
+            console.log(error.response)
+        })
+      }
     },
   /*  created(){
       axios.get('/api/vendor/' + this.id + '.json')

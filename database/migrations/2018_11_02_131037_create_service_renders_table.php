@@ -16,17 +16,13 @@ class CreateServiceRendersTable extends Migration
         Schema::create('service_renders', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('vendor_id')->unsigned()->nullable();
-            $table->integer('service_category_id');
-            $table->integer('service_id');
+          //  $table->integer('vendor_id')->unsigned()->nullable();
+            $table->integer('service_category_id')->nullable();
+            $table->integer('service_id')->nullable();
             $table->integer('price');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
-
-        //  Schema::table('service_renders',function ($table){
-        //  $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade');
-    //  });
     }
 
     /**

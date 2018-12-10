@@ -16,7 +16,8 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        //
+      $vehicles = Vehicle::orderBy('created_at','desc')->paginate(15);
+        return VehicleResource::collection($vehicles);
     }
 
     /**
@@ -50,6 +51,7 @@ class VehicleController extends Controller
         $vehicle->vehicle_reg_no = $request->input('vehicle_reg_no');
         $vehicle->chasis_no = $request->input('chasis_no');
 
+/*
         public function uploadFile(Request $request)
        {
            if($request->hasFile('pic')){
@@ -58,6 +60,10 @@ class VehicleController extends Controller
            }
            return response()->json(asset("images/$name"),201);
        }
+
+        if($vehicle->save()){
+          return new VehicleResource($vehicle);
+        }  */
 
         if($vehicle->save()){
           return new VehicleResource($vehicle);

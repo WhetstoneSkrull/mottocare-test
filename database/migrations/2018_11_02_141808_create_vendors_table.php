@@ -22,7 +22,7 @@ class CreateVendorsTable extends Migration
            $table->string('vendor_title');
            $table->string('vendor_first_name');
            $table->string('vendor_last_name');
-           $table->string('vendor_logo')->default('public/images/vendor.jpg');
+           $table->string('vendor_logo')->nullable();
            $table->string('vendor_email');
            $table->integer('mobile_no');
         //   $table->string('email');

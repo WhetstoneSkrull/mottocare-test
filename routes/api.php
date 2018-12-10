@@ -22,6 +22,9 @@ Route::group([
     Route::post('signup', 'AuthController@signup');
     Route::get('users/all', 'AuthController@allusers');
 
+    Route::get('user/{user}/bookings','UserController@showbookings');
+
+
     Route::group([
       'middleware' => 'auth:api'
     ], function() {
@@ -67,7 +70,6 @@ Route::get('service/{id}', 'ServiceController@show');
 Route::post('service', 'ServiceController@store');
 Route::put('service', 'ServiceController@store');
 Route::delete('service/{id}', 'ServiceController@destroy');
-
 
 //automobile API
 Route::get('automobiles', 'AutomobileController@index');
@@ -119,10 +121,17 @@ Route::post('role', 'RoleController@store');
 Route::put('role', 'RoleController@store');
 Route::delete('role/{id}', 'RoleController@destroy');
 
-
 //Vendor API
 Route::get('vendors', 'VendorController@index');
 Route::get('vendor/{id}', 'VendorController@show');
 Route::post('vendor', 'VendorController@store');
 Route::put('vendor', 'VendorController@store');
 Route::delete('vendor/{id}', 'VendorController@destroy');
+
+
+//Driver API
+Route::get('drivers', 'DriverController@index');
+Route::get('driver/{id}', 'DriverController@show');
+Route::post('driver', 'DriverController@store');
+Route::put('driver', 'DriverController@store');
+Route::delete('driver/{id}', 'DriverController@destroy');

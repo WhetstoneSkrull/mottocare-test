@@ -5,6 +5,8 @@ import Toasted from 'vue-toasted';
 import VueProgressBar from 'vue-progressbar'
 import FormLoading from 'vue2-form-loading'
 import Vuetify from 'vuetify'
+//import VueDisqus from 'vue-disqus'
+
 
 
 
@@ -21,6 +23,8 @@ axios.defaults.headers.post['content-type'] = 'application/json'
     Vue.use(VueProgressBar, options)
     Vue.use(FormLoading)
     Vue.use(Vuetify)
+  //  Vue.use(VueDisqus)
+
 
 
 
@@ -28,6 +32,12 @@ axios.defaults.headers.post['content-type'] = 'application/json'
     Vue.toasted.register('signup', 'Welcome to Mottocare', {
     type : 'success',
     //icon : 'error_outline'
+});
+
+//success
+Vue.toasted.register('booking', 'Booking Successful', {
+type : 'success',
+//icon : 'error_outline'
 });
 
 const options = {
@@ -65,6 +75,10 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
     import Login from './components/customers/Login'
     import Dashboard from './components/customers/Dashboard'
     import EditProfile from './components/customers/EditProfile'
+    import MakeBooking from './components/customers/MakeBooking'
+    import Bookings from './components/customers/Bookings'
+    import Drivers from './components/customers/Drivers'
+    import Vehicles from './components/customers/Vehicles'
 
     //vendor pages
     import VendorPage from './components/vendors/VendorPage'
@@ -115,6 +129,45 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
               //  is_user : true
               }
             },
+            {
+                path: '/make-booking',
+                name: 'makeBooking',
+                component: MakeBooking,
+                meta: {
+              //  requiresAuth: true
+              //  is_user : true
+              }
+            },
+            {
+                path: '/bookings',
+                name: 'Bookings',
+                component: Bookings,
+                meta: {
+              //  requiresAuth: true
+              //  is_user : true
+              }
+            },
+            {
+                path: '/my-drivers',
+                name: 'Drivers',
+                component: Drivers,
+                meta: {
+              //  requiresAuth: true
+              //  is_user : true
+              }
+            },
+            {
+                path: '/my-vehicles',
+                name: 'Vehicles',
+                component: Vehicles,
+                meta: {
+              //  requiresAuth: true
+              //  is_user : true
+              }
+            },
+
+
+
             //Admin Pages
             {
                 path: '/admin/dashboard',

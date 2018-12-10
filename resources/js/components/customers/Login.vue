@@ -30,12 +30,13 @@
 
 <script>
     export default {
-data(){
-    return{
 
-        email:"",
-        password:""
-    }
+      data(){
+          return{
+              email:"",
+              password:""
+            //  is_admin:""
+          }
 },
 methods:{
     logIn(){
@@ -43,12 +44,19 @@ methods:{
         .then(response=>{
             let token= response.data.access_token;
             if(token){
-               localStorage.setItem('token',token);
-               localStorage.setItem('user',JSON.stringify(response.data.user))
-               this.$emit('loggedIn')
-
-               let myToast = this.$toasted.show("Welcome Back");
-               myToast.text("Welcome Back!").goAway(1500);
+               localStorage.setItem('jwt',token);
+            //   localStorage.setItem('user',JSON.stringify(response.data.user))
+               if (localStorage.getItem('jwt') != null){
+                             this.$emit('loggedIn')
+                             if(this.$route.params.nextUrl != null){
+                                 this.$router.push(this.$route.params.nextUrl)
+                             }
+                             else {
+                                     this.$router.push('dashboard')
+                                     let myToast = this.$toasted.show("Welcome Back");
+                                     myToast.text("Welcome Back!").goAway(1500);
+                             }
+                         }
             }
             this.$router.push('/');
             console.log(token);

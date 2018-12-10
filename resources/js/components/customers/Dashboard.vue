@@ -15,12 +15,13 @@
          </v-avatar>
          <v-card-text class="text-xs-center">
            <h6 class="category text-gray font-weight-thin mb-3">Garki, Abuja</h6>
-           <h4 class="card-title font-weight-light">Faisal Nassarawa</h4>
+           <h4 class="card-title font-weight-light">Faisal Nassarawa {{last_name}}</h4>
            <p class="card-description font-weight-light">Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...</p>
            <v-btn
              color="blue"
              round
              class="font-weight-light"
+             :to="{path: 'dashboard-edit'}"
            >Edit Profile</v-btn>
          </v-card-text>
        </material-card>
@@ -39,8 +40,8 @@
       </v-card-title>
 
       <v-card-actions>
-        <v-btn flat color="blue">Share</v-btn>
-        <v-btn flat color="blue">Explore</v-btn>
+        <v-btn flat color="blue" :to="{path: 'make-booking'}">Book Now</v-btn>
+        <v-btn flat color="blue" :to="{path: 'bookings'}">Explore</v-btn>
       </v-card-actions>
     </v-card>
   </v-flex>
@@ -58,8 +59,8 @@ hover="true"
 </v-card-title>
 
 <v-card-actions>
-<v-btn flat color="blue">Share</v-btn>
-<v-btn flat color="blue">Explore</v-btn>
+<!--<v-btn flat color="blue">Add</v-btn> -->
+<v-btn flat color="blue" :to="{path: 'my-vehicles'}">Explore</v-btn>
 </v-card-actions>
 </v-card>
 </v-flex>
@@ -77,8 +78,8 @@ hover="true"
 </v-card-title>
 
 <v-card-actions>
-<v-btn flat color="blue">Share</v-btn>
-<v-btn flat color="blue">Explore</v-btn>
+<!--<v-btn flat color="blue">Add</v-btn> -->
+<v-btn flat color="blue" :to="{path: 'my-drivers'}">Explore</v-btn>
 </v-card-actions>
 </v-card>
 
@@ -121,7 +122,7 @@ hover="true"
       <v-text-field
            v-model="message1"
            label="find vendors"
-            append-icon="search"
+            prepend-icon="search"
            clearable
          ></v-text-field>
        </v-flex>
@@ -202,6 +203,7 @@ hover="true"
      </v-card>
 
    </v-flex>
+
    </v-layout>
  </v-container>
 </template>
@@ -211,6 +213,8 @@ hover="true"
     data () {
       return {
         vendors: [],
+        user: null,
+
         vendor:{
                   vendor_first_name:"",
                   vendor_title:"",
@@ -256,7 +260,19 @@ hover="true"
         ]
       }
     },
+    beforeMount(){
+              this.user = JSON.parse(localStorage.getItem('user'))
+              axios.defaults.headers.common['Content-Type'] = 'application/json'
+              axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
 
+              axios.get(`api/users/${this.user.id}/orders`)
+              .then(response => {
+                  this.orders = response.data
+              })
+              .catch(error => {
+                  console.error(error);
+              })
+          },
     methods:{
       fetchVendors (page_url) {
       let vm = this
@@ -269,12 +285,12 @@ hover="true"
         })
         .catch(err => console.log(err))
     },
-  /*  vendorPage(){
+    vendorPage(){
 
       this.$router.push('vendor-dashboard/'+vendors.id);
       console.log(token);
-    } */
-    },
+    }
+  },
     created(){
       this.fetchVendors()
 

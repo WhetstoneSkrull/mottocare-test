@@ -26,6 +26,7 @@
         "es6-promise": "^4.2.5",
         "material-design-icons-iconfont": "^4.0.2",
         "vue-axios": "^2.1.4",
+        "vue-disqus": "^3.0.5",
         "vue-progressbar": "^0.7.5",
         "vue-router": "^3.0.1",
         "vue-toasted": "^1.1.25",

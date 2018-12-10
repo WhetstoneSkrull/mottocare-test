@@ -21,7 +21,7 @@ class CreateDriversTable extends Migration
             $table->string('driver_dob');
             $table->string('driving_license_no');
             $table->string('driving_license_expiry_date');
-            $table->string('contact_no');
+            $table->integer('contact_no');
             $table->string('email')->nullable();
             $table->string('license_pic')->nullable();
             $table->string('driver_pic')->nullable();

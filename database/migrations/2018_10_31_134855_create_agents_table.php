@@ -15,20 +15,19 @@ class CreateAgentsTable extends Migration
     {
         Schema::create('agents', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->string('agent_id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('password');
+            $table->integer('user_id')->unsigned();
+            $table->string('agent_first_name')->nullable();
+            $table->string('agent_last_name')->nullable();
+            $table->string('agent_email')->nullable();
             $table->string('agent_category');
-            $table->string('agent_pic')->default('public/images/customer.jpg');
+            $table->string('agent_pic');
             $table->string('commission');
             $table->string('deposits')->nullable();
             $table->string('state')->nullable();
             $table->string('lga')->nullable();
             $table->string('target')->nullable();
             $table->string('address')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
