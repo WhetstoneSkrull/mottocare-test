@@ -2,57 +2,76 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import './bootstrap'
 import Toasted from 'vue-toasted';
-import VueProgressBar from 'vue-progressbar'
+//import VueProgressBar from 'vue-progressbar'
 import FormLoading from 'vue2-form-loading'
 import Vuetify from 'vuetify'
 //import VueDisqus from 'vue-disqus'
 
 
-
-
-/* axios defaults
-window.axios = axios
-window.token = localStorage.getItem('token');
-axios.defaults.baseURL = 'http://localhost:8000';
-axios.defaults.headers.common['Authorization'] = "Bearer"+token;
-axios.defaults.headers.post['content-type'] = 'application/json'
-*/
-
     Vue.use(VueRouter)
     Vue.use(Toasted)
-    Vue.use(VueProgressBar, options)
+//    Vue.use(VueProgressBar, options)
     Vue.use(FormLoading)
     Vue.use(Vuetify)
   //  Vue.use(VueDisqus)
 
 
-
-
-    //Register GLobal Toasts
+    /*********************************
+     *      Register GLobal Toasts   *
+     *                               *
+     *********************************/
+     //Auth Toast
     Vue.toasted.register('signup', 'Welcome to Mottocare', {
-    type : 'success',
+    type : 'info',
     //icon : 'error_outline'
-});
+    });
 
-//success
-Vue.toasted.register('booking', 'Booking Successful', {
-type : 'success',
-//icon : 'error_outline'
-});
+    Vue.toasted.register('login', 'Logged In Successfully', {
+    type : 'info',
+    //icon : 'error_outline'
+    });
 
-const options = {
-  color: '#bffaf3',
-  failedColor: '#874b4b',
-  thickness: '5px',
-  transition: {
-    speed: '0.2s',
-    opacity: '0.6s',
-    termination: 300
-  },
-  autoRevert: true,
-  location: 'left',
-  inverse: false
-}
+    //Booking Toast
+    Vue.toasted.register('bookingAdded', 'Booking Successful', {
+    type : 'info',
+    icon : 'done'
+    });
+
+    //Vehicle Toast
+    Vue.toasted.register('vehicleAdded', 'Vehicle Added Successfully!', {
+    type : 'info',
+    icon : 'done'
+    });
+
+    Vue.toasted.register('vehicleDeleted', 'Vehicle Deleted Successfully!', {
+    type : 'error',
+    icon : 'done'
+    });
+
+    Vue.toasted.register('vehicleUpdated', 'Vehicle Updated Successfully!', {
+    type : 'success',
+    icon : 'done'
+    });
+
+    //Driver Toast
+    Vue.toasted.register('driverAdded', 'Driver Added Successfully!', {
+    type : 'info',
+    icon : 'done'
+    });
+
+    Vue.toasted.register('driverDeleted', 'Driver Deleted Successfully!', {
+    type : 'error',
+    icon : 'done'
+    });
+
+    Vue.toasted.register('driverUpdated', 'Driver Updated Successfully!', {
+    type : 'success',
+    icon : 'done'
+    });
+
+//*******End of Toasted Service *********//
+
+
 
 Vue.component('app-footer', require('./views/Footer.vue')); //component name should be in camel-case
 Vue.component('app-header', require('./views/Header.vue'));
@@ -116,7 +135,7 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 name: 'dashboard',
                 component: Dashboard,
                 meta: {
-              //  requiresAuth: true
+                requiresAuth: true
               //  is_user : true
               }
             },
@@ -167,14 +186,13 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
             },
 
 
-
             //Admin Pages
             {
-                path: '/admin/dashboard',
+                path: '/admin-dashboard',
                 name: 'admin',
                 component: Admin,
                 meta: {
-                requiresAuth: true
+              //  requiresAuth: true
               }
             },
             {
@@ -183,10 +201,11 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 component: UserManager
             },
             {
-                path: '/admin/login',
+                path: '/admin-login',
                 name: 'adminLogin',
                 component: AdminLogin
             },
+
             //vendor pages
             {
                 path: '/vendor-register',
@@ -204,7 +223,7 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
 
     router.beforeEach((to, from, next) => {
       if(to.matched.some(record => record.meta.requiresAuth)) {
-        if (localStorage.getItem('access_token') == null) {
+        if (localStorage.getItem('jwt') == null) {
           next({
             path: '/login',
             params: { nextUrl: to.fullPath }

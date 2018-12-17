@@ -25,11 +25,11 @@ public function allusers(){
   $users = User::orderBy('created_at','desc')->paginate(15);
     return UserResource::collection($users);
 }
-
+/*
 public function showuser($id){
   $user = User::findOrfail($id);
   return new  UserResource($user);
-}
+} */
 
 //returns all users and their bookings
 public function index(){
@@ -37,12 +37,28 @@ public function index(){
   }
 
   //returns a user and their bookings
-
-  public function showOrders(User $user)
+  public function showBookings(User $user)
       {
-          return response()->json($user->bookings()->with(['service'])->get(),200);
+          return response()->json($user->bookings()->with(['servicerenders'])->get(),200);
       }
 
+//returns a user and their vehicles
+public function showVehicles(User $user)
+    {
+        return response()->json($user->vehicles()->with(['user'])->get(),200);
+    }
+
+  //returns a user and their vehicles
+  public function showDrivers(User $user)
+      {
+          return response()->json($user->drivers()->with(['user'])->get(),200);
+      }
+
+      //returns the details of a user
+  public function showUser(User $user)
+        {
+            return response()->json($user,200);
+        }
 
   public function signup(Request $request)
   {
@@ -131,6 +147,7 @@ public function index(){
          return response()->json([
              'access_token' => $tokenResult->accessToken,
              'token_type' => 'Bearer',
+             'user' => Auth::user(),
              'expires_at' => Carbon::parse(
                  $tokenResult->token->expires_at
              )->toDateTimeString()

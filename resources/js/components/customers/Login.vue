@@ -34,8 +34,8 @@
       data(){
           return{
               email:"",
-              password:""
-            //  is_admin:""
+              password:"",
+              is_admin:""
           }
 },
 methods:{
@@ -45,7 +45,7 @@ methods:{
             let token= response.data.access_token;
             if(token){
                localStorage.setItem('jwt',token);
-            //   localStorage.setItem('user',JSON.stringify(response.data.user))
+              localStorage.setItem('user',JSON.stringify(response.data.user))
                if (localStorage.getItem('jwt') != null){
                              this.$emit('loggedIn')
                              if(this.$route.params.nextUrl != null){
@@ -53,8 +53,7 @@ methods:{
                              }
                              else {
                                      this.$router.push('dashboard')
-                                     let myToast = this.$toasted.show("Welcome Back");
-                                     myToast.text("Welcome Back!").goAway(1500);
+                                       this.$toasted.global.login().goAway(1500);
                              }
                          }
             }

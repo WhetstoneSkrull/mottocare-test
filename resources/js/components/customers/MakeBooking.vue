@@ -12,25 +12,6 @@
 </v-flex>
   <v-divider></v-divider>
 
-  <v-flex md6 offset-md3>
-          <v-select
-          v-model="booking.vehicle_id"
-            :items="items"
-            label="Select Vendor"
-          ></v-select>
-        </v-flex>
-
-  <v-flex md6 offset-md3>
-    <v-flex>
-    <v-text-field
-         v-model="booking.booking_title"
-         label="Service Name"
-         hint="what are you booking for? e.g wheel alignment"
-         clearable
-       ></v-text-field>
-     </v-flex>
- </v-flex>
-
  <v-flex md6 offset-md3>
    <v-flex>
    <v-text-field
@@ -114,6 +95,7 @@ export default {
   data() {
     return{
       menu2: false,
+      user : null,
       time: null,
     //  menu2: false,
       modal2: false,
@@ -121,9 +103,10 @@ export default {
         id:"",
         user_id:"",
         vehicle_id:"",
+        service_render_id:2,
         service_date:new Date().toISOString().substr(0, 10),
         service_time:"",
-        vendor_id:"1"
+        is_completed:false
         }
       }
     },
@@ -133,7 +116,7 @@ export default {
         .then(response=>{
             console.log(response);
             //this.$router.push('/dashboard');
-            this.$toasted.global.booking().goAway(1500);
+            this.$toasted.global.bookingAdded().goAway(1500);
 
         })
         .catch(error=>{

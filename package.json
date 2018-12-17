@@ -17,7 +17,8 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
-        "vue": "^2.5.17"
+        "vue": "^2.5.21",
+        "vue-template-compiler": "^2.5.21"
     },
     "dependencies": {
         "@babel/preset-env": "^7.1.6",
@@ -27,7 +28,7 @@
         "material-design-icons-iconfont": "^4.0.2",
         "vue-axios": "^2.1.4",
         "vue-disqus": "^3.0.5",
-        "vue-progressbar": "^0.7.5",
+        "vue-paystack": "^2.0.0",
         "vue-router": "^3.0.1",
         "vue-toasted": "^1.1.25",
         "vue2-form-loading": "^0.1.0",

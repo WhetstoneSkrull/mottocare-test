@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Booking;
+use Auth;
+//use Illuminate\Support\Facades\Auth;
+
+use App\User;
 use App\Http\Resources\Booking as BookingResource;
 
 
@@ -44,20 +48,18 @@ class BookingController extends Controller
         //Generate booking_id
         $first = ('MCB');
         $last = ('000');
-        $booleanApproved=("1");
        $bid = $booking->vehicle_id;
         $add = $first.$last.$bid;
 
         $booking->id = $request->input('booking_id');
-        $booking->user_id = $request->input('user_id');
-      //  $booking->agent_id = $request->input('agent_id');
+      //  $booking->user_id = Booking::where('user_id', Auth::user()->id);
+        $booking->service_render_id = $request->input('service_render_id');
         $booking->vehicle_id = $request->input('vehicle_id');
-        $booking->booking_title = $request->input('booking_title');
-        $booking->approved = $booleanApproved;
     //    $booking->booking_no = $add;
         $booking->service_date = $request->input('service_date');
         $booking->service_time = $request->input('service_time');
-        $booking->vendor_id = $request->input('vendor_id');
+      //  $booking->vendor_id = $request->input('vendor_id');
+//        $booking->vendor_id = $request->input('vendor_id');
 
         if($booking->save()){
           return new BookingResource($booking);

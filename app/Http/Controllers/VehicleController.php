@@ -9,6 +9,12 @@ use App\Http\Resources\Vehicle as VehicleResource;
 
 class VehicleController extends Controller
 {
+
+  public function __construct()
+    {
+    //  $this->middleware('auth:api');
+      //  $this->middleware('isAdmin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -43,7 +49,7 @@ class VehicleController extends Controller
 
         $vehicle->id = $request->input('vehicle_id');
         $vehicle->user_id = $request->input('user_id');
-        $vehicle->vehicle_category_id = $request->input('vehicle_category_id');
+      //  $vehicle->vehicle_category_id = $request->input('vehicle_category_id');
         $vehicle->vehicle_make = $request->input('vehicle_make');
         $vehicle->year = $request->input('year');
         $vehicle->model = $request->input('model');

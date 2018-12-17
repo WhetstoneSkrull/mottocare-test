@@ -210,6 +210,18 @@ hover="true"
 
 <script>
   export default {
+    name: 'Dashboard',
+  head: {
+    metaInfo: {
+      title: 'Dashboard',
+      titleTemplate: '%s | User Page'
+    },
+    meta: [
+       { name: 'description',
+       content: `Watches: Men's watches, brand name watches, discount watches, watches on sale,
+       mens watch brands and ladies watches. Daily Deals on Men's watches &amp; watches for women + the best service guarantee.` }
+    ]
+  },
     data () {
       return {
         vendors: [],

@@ -22,7 +22,11 @@ Route::group([
     Route::post('signup', 'AuthController@signup');
     Route::get('users/all', 'AuthController@allusers');
 
-    Route::get('user/{user}/bookings','UserController@showbookings');
+    Route::get('user/{user}/bookings','AuthController@showbookings');
+    Route::get('user/{user}/vehicles','AuthController@showVehicles');
+    Route::get('user/{user}/drivers','AuthController@showDrivers');
+    Route::get('user/{user}','AuthController@showUser');
+
 
 
     Route::group([

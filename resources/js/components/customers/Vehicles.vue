@@ -3,49 +3,46 @@
     <v-layout row wrap>
       <v-flex xs12 sm12>
         <v-form ref="form" v-model="valid" lazy-validation>
+
             <v-text-field
-              v-model="name"
-              :rules="nameRules"
-              :counter="10"
+              v-model="vehicle.vehicle_make"
               label="Vehicle Make"
+              :rules="nameRules"
               hint="e.g Honda, Toyota etc"
               required
             ></v-text-field>
 
             <v-text-field
-              v-model="name"
+              v-model="vehicle.model"
+              label="Model"
               :rules="nameRules"
-              :counter="10"
-              label="Year"
-              hint="manufactured date"
+              hint="e.g Toyota has models such as Camry, Carina etc"
               required
             ></v-text-field>
 
             <v-text-field
-              v-model="name"
+              v-model="vehicle.year"
+              label="Year"
               :rules="nameRules"
-              :counter="10"
+              hint="your vehicle manufactured date"
+              required
+            ></v-text-field>
+
+            <v-text-field
+              v-model="vehicle.vehicle_reg_no"
               label="Vehicle Registration number"
+              :rules="nameRules"
               hint="your vehicle number"
               required
             ></v-text-field>
 
-            <v-select
-              v-model="select"
-              :items="items"
-              :rules="[v => !!v || 'Item is required']"
-              label="Item"
-              required
-            ></v-select>
-
-
             <v-btn
               :disabled="!valid"
-              @click="submit"
+              @click="addVehicle"
             >
               submit
             </v-btn>
-            <v-btn @click="clear">clear</v-btn>
+            <v-btn @click="clearIt">clear</v-btn>
           </v-form>
 
         <v-divider></v-divider
@@ -54,92 +51,39 @@
       </v-flex>
 
       <v-flex xs12 sm12>
-        <h3>My cars</h3>
+        <h3>My cars {{vehicles.length}}</h3>
       </v-flex>
 
-      <v-flex xs12 sm3>
-        <v-card>
-          <v-img
-            class="blue--text"
-            height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-          >
-            <v-container fill-height fluid>
-              <v-layout fill-height>
-                <v-flex xs12 align-end flexbox>
-                  <span class="headline">Toyota</span>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-img>
-          <v-card-title>
+      <v-flex xs12 sm4  v-for="vehicle in vehicles"v-bind:key="vehicle.id">
+        <v-card color="blue-grey darken-2" class="white--text" hover="true">
+          <v-card-title primary-title>
+            <v-flex xs12 sm4>
+              <v-img
+                src="/images/stock.jpg"
+                height="125px"
+                contain
+              ></v-img>
+            </v-flex>
             <div>
-              <span class="blue--text">Toyota</span><br>
-              <span>Sedan</span><br>
-              <span>xcaaso</span>
+              <div class="headline">{{vehicle.vehicle_make}}</div>
+              <span>Model: {{vehicle.model}}</span>
+              <span>Year: {{vehicle.year}}</span>
+              <span>Vehicle Registration Number: {{vehicle.vehicle_reg_no}}</span>
             </div>
           </v-card-title>
           <v-card-actions>
-            <v-btn flat color="blue">edit</v-btn>
+            <v-btn flat dark>
+                <v-icon @click="editVehicle(vehicle)">edit</v-icon>
+            </v-btn>
+            <v-btn flat dark>
+                <v-icon @click="deleteVehicle(vehicle.id)">delete</v-icon>
+            </v-btn>
           </v-card-actions>
         </v-card>
+        <v-divider> </v-divider>
       </v-flex>
 
-      <v-flex xs12 sm3>
-        <v-card>
-          <v-img
-            class="blue--text"
-            height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-          >
-            <v-container fill-height fluid>
-              <v-layout fill-height>
-                <v-flex xs12 align-end flexbox>
-                  <span class="headline">Toyota</span>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-img>
-          <v-card-title>
-            <div>
-              <span class="blue--text">Toyota</span><br>
-              <span>Sedan</span><br>
-              <span>xcaaso</span>
-            </div>
-          </v-card-title>
-          <v-card-actions>
-            <v-btn flat color="blue">edit</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-flex>
 
-      <v-flex xs12 sm3>
-        <v-card>
-          <v-img
-            class="blue--text"
-            height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-          >
-            <v-container fill-height fluid>
-              <v-layout fill-height>
-                <v-flex xs12 align-end flexbox>
-                  <span class="headline">Toyota</span>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-img>
-          <v-card-title>
-            <div>
-              <span class="blue--text">Toyota</span><br>
-              <span>Sedan</span><br>
-              <span>xcaaso</span>
-            </div>
-          </v-card-title>
-          <v-card-actions>
-            <v-btn flat color="blue">edit</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-flex>
     </v-layout>
 
   </v-container>
@@ -147,42 +91,117 @@
 
 <script>
 export default {
-  data: () => ({
+  data (){
+    return {
       valid: true,
-      name: '',
+      user : null,
+      vehicles : [],
       nameRules: [
-        v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        v => !!v || 'This field is required'
       ],
-      email: '',
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid'
-      ],
-      select: null,
-      items: [
-        'SUV',
-        'Truck',
-        'Sedan'
-      ],
-      checkbox: false
-    }),
+      vehicle:{
+        id:"",
+        user_id:2,
+        vehicle_make:"",
+        year:"",
+        pic:"",
+        vehicle_reg_no:""
+      },
+        edit: false,
+        vehicle_id:'',
+      name: ''
+    }
+  },
+    beforeMount(){
+        this.user = JSON.parse(localStorage.getItem('user'))
+        axios.defaults.headers.common['Content-Type'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
+
+        axios.get(`api/auth/user/${this.user.id}/vehicles`)
+        .then(response => {
+            this.vehicles = response.data
+        })
+        .catch(error => {
+            console.error(error);
+        })
+    },
     methods:{
-      submit () {
-        if (this.$refs.form.validate()) {
-          // Native form submission is not yet supported
-          axios.post('/api/submit', {
-            name: this.name,
-            email: this.email,
-            select: this.select,
-            checkbox: this.checkbox
-          })
+      fetchVehicles() {
+
+      axios.get(`api/auth/user/${this.user.id}/vehicles`)
+      .then(response => {
+          this.vehicles = response.data
+      })
+      .catch(error => {
+          console.error(error);
+      })
+    },
+      addVehicle(){
+
+        if (this.edit === false) {
+        // Add Vehicle
+        axios.post('/api/vehicle',this.vehicle)
+
+        .then(response=>{
+            console.log(response);
+            //this.$router.push('/dashboard');
+            this.$toasted.global.vehicleAdded().goAway(1500);
+            this.clearIt();
+            this.fetchVehicles();
+
+        })
+        .catch(error=>{
+            console.log(error.response)
+        })
+      }else {
+        // Update
+        axios.put('/api/vehicle',this.vehicle)
+
+        .then(response=>{
+            console.log(response);
+            //this.$router.push('/dashboard');
+            this.$toasted.global.vehicleUpdated().goAway(1500);
+            this.clearIt();
+            this.fetchVehicles();
+
+        })
+        .catch(error=>{
+            console.log(error.response)
+        })
+
         }
       },
-      clear () {
+      editVehicle(vehicle) {
+      this.edit = true;
+      this.vehicle.id = vehicle.id;
+      this.vehicle.vehicle_id = vehicle.id;
+      this.vehicle.vehicle_make = vehicle.vehicle_make;
+      this.vehicle.year = vehicle.year;
+      this.vehicle.model = vehicle.model;
+      this.vehicle.vehicle_reg_no = vehicle.vehicle_reg_no;
+    },
+    deleteVehicle(id) {
+      if (confirm('Are You Sure?')) {
+        fetch(`api/vehicle/${id}`, {
+          method: 'delete'
+        })
+          .then(res => res.json())
+          .then(data => {
+          //  alert('Vehicle Deleted');
+          this.$toasted.global.vehicleDeleted().goAway(1500);
+            this.fetchVehicles();
+          })
+          .catch(err => console.log(err));
+      }
+    },
+
+      clearIt() {
         this.$refs.form.reset()
       }
-    }
+    },
+    created() {
+    this.fetchVehicles();
+  }
 }
 </script>
 
