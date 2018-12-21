@@ -16,12 +16,14 @@ class CreateAgentsTable extends Migration
         Schema::create('agents', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
+            $table->string('agent_id')->nullable();
             $table->string('agent_first_name')->nullable();
             $table->string('agent_last_name')->nullable();
             $table->string('agent_email')->nullable();
-            $table->string('agent_category');
-            $table->string('agent_pic');
-            $table->string('commission');
+            $table->string('agent_mobile')->nullable();
+            $table->string('agent_category')->nullable();
+            $table->string('agent_pic')->nullable();
+            $table->string('commission')->nullable();
             $table->string('deposits')->nullable();
             $table->string('state')->nullable();
             $table->string('lga')->nullable();

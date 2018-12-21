@@ -15,16 +15,15 @@
          </v-avatar>
          <v-card-text class="text-xs-center">
            <h6 class="category text-gray font-weight-thin mb-3">Garki, Abuja</h6>
-           <h4 class="card-title font-weight-light">Oando Auto-Shop</h4>
-           <p>{{vendor.vendor_title}}</p>
-
-           <p class="card-description font-weight-light">No. 12, Wakeel Pharmacy road, Asokoro, Abuja</p>
+           <h4 class="card-title font-weight-light"></h4>
            <p><v-btn color="green" dark>Active
               <v-icon dark right>verified_user</v-icon></v-btn> </p>
+           <p class="card-description font-weight-light">No. 12, Wakeel Pharmacy road, Asokoro, Abuja</p>
 
-<!--  <v-layout row justify-center>
+
+  <v-layout row justify-center>
     <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
-      <v-btn slot="activator" color="blue" dark>Book me</v-btn>
+      <v-btn slot="activator" color="blue" dark>Edit</v-btn>
       <v-card>
         <v-container>
         <v-toolbar dark color="blue">
@@ -75,7 +74,7 @@
                  label="which vehicle are you booking for?"
                ></v-select>
              </v-flex>
-        <v-flex xs10 sm8 md6>
+    <!--    <v-flex xs10 sm8 md6>
       <v-dialog
         ref="dialog"
         v-model="modal2"
@@ -102,7 +101,7 @@
           <v-btn flat color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
         </v-time-picker>
       </v-dialog>
-    </v-flex>
+    </v-flex> -->
 
        <v-flex xs12 sm8 md6>
              <v-dialog
@@ -134,7 +133,7 @@
          </v-container>
       </v-card>
     </v-dialog>
-  </v-layout> -->
+  </v-layout>
 
 
 
@@ -150,7 +149,7 @@
     >
       <v-card-title primary-title>
         <div>
-          <h3 class="headline mb-0">About us <v-icon large="true">book</v-icon></h3>
+          <h3 class="headline mb-0">My Bookings<v-icon large="true">book</v-icon></h3>
         </div>
       </v-card-title>
 
@@ -169,7 +168,7 @@ hover="true"
 >
 <v-card-title primary-title>
 <div>
- <h3 class="headline mb-0">Our Mechanic<v-icon large="true">local_car_wash</v-icon></h3>
+ <h3 class="headline mb-0">My Vehicles<v-icon large="true">local_car_wash</v-icon></h3>
 </div>
 </v-card-title>
 
@@ -188,7 +187,7 @@ hover="true"
 >
 <v-card-title primary-title>
 <div>
- <h3 class="headline mb-0">Service Vehicles<v-icon large="true">person_pin</v-icon></h3>
+ <h3 class="headline mb-0">My Wallet<v-icon large="true">person_pin</v-icon></h3>
 </div>
 </v-card-title>
 

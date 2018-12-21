@@ -1,6 +1,7 @@
 <template lang="html">
   <v-app>
-    <v-flex  md6 offset-md3>
+  <v-container>
+    <v-flex  xs12 md6>
   <v-list three-line subheader>
     <v-list-tile avatar>
       <v-list-tile-content>
@@ -9,106 +10,218 @@
       </v-list-tile-content>
     </v-list-tile>
   </v-list>
-</v-flex>
   <v-divider></v-divider>
-
- <v-flex md6 offset-md3>
-   <v-flex>
-   <v-text-field
-        v-model="booking.service_time"
-        hint="(HH:MM)"
-        label="service time"
-
-        clearable
-      ></v-text-field>
-    </v-flex>
 </v-flex>
 
- <v-flex md6 offset-md3>
-         <v-select
-         v-model="booking.vehicle_id"
-           :items="items"
-           label="which vehicle are you booking for?"
-         ></v-select>
-       </v-flex>
-<!--    <v-flex xs10 sm8 md6>
-<v-dialog
-  ref="dialog"
-  v-model="modal2"
-  :return-value.sync="time"
-  persistent
-  lazy
-  full-width
-  width="290px"
->
-  <v-text-field
-    slot="activator"
-    v-model="time"
-    label="Picker in dialog"
-    prepend-icon="access_time"
-    readonly
-  ></v-text-field>
-  <v-time-picker
-    v-if="modal2"
-    v-model="time"
-    full-width
-  >
-    <v-spacer></v-spacer>
-    <v-btn flat color="primary" @click="modal2 = false">Cancel</v-btn>
-    <v-btn flat color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
-  </v-time-picker>
-</v-dialog>
-</v-flex> -->
-
- <v-flex md6 offset-md3>
-       <v-dialog
-         ref="dialog"
-         v-model="modal"
-         :return-value.sync="booking.service_date"
-         persistent
-         lazy
-         full-width
-         width="290px"
+     <!--Services -->
+     <v-flex xs12 sm6>
+       <v-card>
+           <v-layout
+         column
+         justify-center
        >
-         <v-text-field
-           slot="activator"
-           v-model="booking.service_date"
-           label="Picker in dialog"
-           prepend-icon="event"
-           readonly
-         ></v-text-field>
-         <v-date-picker v-model="date" scrollable>
-           <v-spacer></v-spacer>
-           <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
-           <v-btn flat color="primary" @click="$refs.dialog.save(booking.service_date)">OK</v-btn>
-         </v-date-picker>
-       </v-dialog>
-     </v-flex>
-     <v-flex md6 offset-md3>
-     <v-btn color="info" @click="makeBooking">Book</v-btn>
+         <v-subheader class="font-weight-medium">Services </v-subheader>
+
+         <v-expansion-panel popout>
+           <v-expansion-panel-content
+             v-for="service in services"
+             :key="service.id"
+             hide-actions
+           >
+             <v-layout
+               slot="header"
+               align-center
+               row
+               spacer
+             >
+               <v-flex xs4 sm2 md1>
+                 <v-avatar
+                   slot="activator"
+                   size="36px"
+                 >
+                   <img
+                     src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
+                     alt="Avatar"
+                   >
+                   <v-icon
+                   ></v-icon>
+                 </v-avatar>
+               </v-flex>
+
+               <v-flex sm5 md3>
+                 <strong >{{service.service.service_name}}</strong>
+                 <span
+                   class="grey--text"
+                 >
+                   &nbsp;({{service.vendor.city}})
+                 </span>
+               </v-flex>
+
+
+             </v-layout>
+
+             <v-card>
+               <v-divider></v-divider>
+               <v-card-text>
+
+                 <!--book now-->
+                 <v-layout row justify-center>
+   <v-dialog v-model="dialog" persistent max-width="600px">
+     <v-btn slot="activator" color="primary" dark>Book</v-btn>
+     <v-card>
+       <v-card-title>
+         <span class="headline">Book this Service</span>
+       </v-card-title>
+
+       <v-card-text>
+         <v-container grid-list-md>
+           <v-layout wrap>
+             <v-flex xs12 md12>
+               <p><strong>{{service.service.service_name}}</strong> </p>
+             </v-flex>
+
+            <v-flex xs12 md12>
+              <v-flex>
+              <v-text-field
+                   v-model="booking.service_date"
+                   hint="(YYY-MM-DD)"
+                   label="service date"
+                   clearable
+                 ></v-text-field>
+               </v-flex>
+           </v-flex>
+
+           <v-flex xs12 md12>
+             <v-flex>
+             <v-text-field
+                  v-model="booking.service_time"
+                  hint="(HH:MM)"
+                  label="service time"
+                  clearable
+                ></v-text-field>
+              </v-flex>
+          </v-flex>
+
+            <div class="col-xs-12 col-md-12">
+             <div class="input-group">
+               <select class="custom-select" id="inputGroupSelect02" v-model="booking.vehicle_id">
+                 <option selected>Choose...</option>
+                   <option :value="vehicle.id" v-for="vehicle in vehicles">
+                     {{vehicle.vehicle_make}}  ({{vehicle.model}})
+                   </option>
+                 </select>
+             <div class="input-group-append">
+               <label class="input-group-text" for="inputGroupSelect02">Select Vehicle</label>
+             </div>
+           </div>
+         </div>
+
+                <v-flex xs12 md12>
+                <v-btn color="info" @click="makeBooking">Book</v-btn>
+              </v-flex>
+
+
+           </v-layout>
+         </v-container>
+       </v-card-text>
+       <v-card-actions>
+         <v-spacer></v-spacer>
+         <v-btn color="blue darken-1" flat @click="dialog = false">Close</v-btn>
+         <v-btn color="blue darken-1" flat @click="dialog = false">Save</v-btn>
+       </v-card-actions>
+     </v-card>
+   </v-dialog>
+ </v-layout>
+               <!--end of book now-->
+
+                 <p class="font-weight-bold">Service Details</p>
+<!--             <p> <v-icon>business</v-icon> <strong>service category</strong> <span class="font-weight-regular"> {{service.vendor.vendor_title}}</span></p> -->
+                 <p> <v-icon>money</v-icon> <strong>price</strong> <span class="font-weight-regular">&#8358;{{service.price}}</span></p>
+                 <p> <v-icon>local_library</v-icon> <strong>description</strong> <span class="font-weight-regular"> {{service.description}}</span></p>
+                 <p> <v-icon>date_range</v-icon> <strong>created on</strong> <span class="font-weight-regular"> {{service.create_at}}</span></p>
+
+                 <p class="font-weight-bold">Vendor Details</p>
+                 <p> <v-icon>business</v-icon> <strong>Business name</strong> <span class="font-weight-regular"> {{service.vendor.vendor_title}}</span></p>
+                 <p>  <v-icon>date_range</v-icon> <strong>Joined</strong> {{moment(service.created_at).startOf('hour').fromNow()}}</p>
+                 <!-- <p>  <v-icon>date_range</v-icon> <strong>Joined</strong> {{moment(service.create_at, "YYYYMMDD").fromNow()}}</p> -->
+                 <p> <v-icon>location_on</v-icon> <strong>City</strong>  {{service.vendor.address}}</p>
+                 <p> <v-icon>payment</v-icon> <strong>capacity </strong> {{service.vendor.capacity}}</p>
+                 <p> <v-icon>access_time</v-icon> <strong>opening time </strong> {{service.vendor.opening_time}}</p>
+                 <p> <v-icon>timelapse</v-icon> <strong>closing time </strong> {{service.vendor.closing_time}}</p>
+                 <p><strong> e-mail</strong>   <a  :href="'mailto:'+service.vendor.vendor_email"  >
+                   <v-chip color="indigo" text-color="white">
+                       <v-avatar>
+                         <v-icon>mail</v-icon>
+                       </v-avatar>
+                       {{service.vendor.vendor_email}}
+                     </v-chip>
+                 </a> </p>
+                 <p> <strong>contact</strong>
+                    <a :href="'tel:'+ service.vendor.mobile_no" >
+                      <v-chip color="indigo" text-color="white">
+                          <v-avatar>
+                            <v-icon>call</v-icon>
+                          </v-avatar>
+                        {{service.vendor.mobile_no}}
+                        </v-chip>
+
+                      </a> </p>
+               </v-card-text>
+
+              </v-card>
+           </v-expansion-panel-content>
+         </v-expansion-panel>
+       </v-layout>
+     </v-card>
    </v-flex>
+     <!--End of Services -->
+
+   </v-container>
  </v-app>
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   data() {
     return{
       menu2: false,
       user : null,
+      vehicles : [],
+      services : [],
       time: null,
+      dialog: false,
     //  menu2: false,
       modal2: false,
       booking:{
         id:"",
         user_id:"",
         vehicle_id:"",
-        service_render_id:2,
+        service_render_id:"",
         service_date:new Date().toISOString().substr(0, 10),
         service_time:"",
         is_completed:false
-        }
+      },
+      service:{
+        id: "",
+        price:"",
+        description:""
       }
+
+      }
+    },
+    beforeMount(){
+        this.user = JSON.parse(localStorage.getItem('user'))
+        axios.defaults.headers.common['Content-Type'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
+
+        axios.get(`api/auth/user/${this.user.id}/vehicles`)
+        .then(response => {
+            this.vehicles = response.data
+        })
+        .catch(error => {
+            console.error(error);
+        })
     },
     methods:{
       makeBooking(){
@@ -122,7 +235,33 @@ export default {
         .catch(error=>{
             console.log(error.response)
         })
+      },
+      moment: function () {
+      return moment();
+    },
+    /*  fetchVehicles() {
+
+      axios.get(`api/auth/user/${this.user.id}/vehicles`)
+      .then(response => {
+          this.vehicles = response.data
+      })
+      .catch(error => {
+          console.error(error);
+        })
+      }, */
+      fetchServices() {
+      axios.get(`api/service/render/1`)
+      .then(response => {
+          this.services = response.data
+      })
+      .catch(error => {
+          console.error(error);
+        })
       }
+    },
+    created() {
+//    this.fetchVehicles();
+    this.fetchServices();
     }
   }
 </script>

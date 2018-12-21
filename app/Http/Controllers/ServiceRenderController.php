@@ -43,13 +43,15 @@ class ServiceRenderController extends Controller
 
         $service->id = $request->input('service_render_id');
         $service->vendor_id = $request->input('vendor_id');
+        $service->user_id = $request->input('user_id');
         $service->service_id = $request->input('service_id');
         $service->service_category_id = $request->input('service_category_id');
-        $service->engine_id = $request->input('engine_id');
-        $service->automobile_id = $request->input('automobile_id');
-        $service->capacity = $request->input('capacity');
-        $service->manpower = $request->input('manpower');
+        //$service->engine_id = $request->input('engine_id');
+      //  $service->automobile_id = $request->input('automobile_id');
+        //$service->capacity = $request->input('capacity');
+        //$service->manpower = $request->input('manpower');
         $service->description = $request->input('description');
+        $service->price = $request->input('price');
 
         if($service->save()){
           return new ServiceResource($service);
@@ -62,11 +64,23 @@ class ServiceRenderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+     public function show(ServiceRender $service)
     {
+  //    return response()->json($service,200);
+        //return response()->json($service->vendor()->with(['servicerenders'])->get(),200);
+        return response()->json($service->with(['vendor','service','servicecategory'])->get(),200);
+
+    }
+
+  /*  public function show($id)
+    {
+
+        return response()->json($user->drivers()->with(['user'])->get(),200);
+
       $service = ServiceRender::findOrfail($id);
       return new  ServiceResource($service);
-    }
+    } */
 
     /**
      * Show the form for editing the specified resource.

@@ -42,8 +42,13 @@ class User extends \TCG\Voyager\Models\User
     public function drivers(){
       return $this->hasMany('App\Driver');
     }
-public function vendor()
-  {
-    return $this->hasOne('App\Vendor');
-  }
+    public function vendor()
+      {
+        return $this->hasOne('App\Vendor');
+      }
+
+      public function servicerenders()
+        {
+          return $this->hasMany('App\ServiceRender');
+        }
 }

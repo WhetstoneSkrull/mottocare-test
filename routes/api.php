@@ -25,6 +25,7 @@ Route::group([
     Route::get('user/{user}/bookings','AuthController@showbookings');
     Route::get('user/{user}/vehicles','AuthController@showVehicles');
     Route::get('user/{user}/drivers','AuthController@showDrivers');
+
     Route::get('user/{user}','AuthController@showUser');
 
 
@@ -99,7 +100,12 @@ Route::delete('booking/{id}', 'BookingController@destroy');
 
 //Services Rendered API
 Route::get('services/render', 'ServiceRenderController@index');
-Route::get('service/render/{id}', 'ServiceRenderController@show');
+
+//Route::get('user/{user}/services','AuthController@showService');
+
+Route::get('service/render/{service}', 'ServiceRenderController@show');
+
+//Route::get('service/render/{id}', 'ServiceRenderController@show');
 Route::post('service/render', 'ServiceRenderController@store');
 Route::put('service/render', 'ServiceRenderController@store');
 Route::delete('service/render/{id}', 'ServiceRenderController@destroy');
@@ -139,3 +145,7 @@ Route::get('driver/{id}', 'DriverController@show');
 Route::post('driver', 'DriverController@store');
 Route::put('driver', 'DriverController@store');
 Route::delete('driver/{id}', 'DriverController@destroy');
+
+//Agent API
+Route::get('agents', 'AgentController@index');
+Route::post('agent', 'AgentController@store');

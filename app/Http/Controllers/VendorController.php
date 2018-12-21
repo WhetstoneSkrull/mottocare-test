@@ -46,15 +46,12 @@ class VendorController extends Controller
     $vendor = $request->isMethod('put') ? Vendor::findOrfail
       ($request->vendor_id) : new Vendor;
 
-
       //Generate Vendor ID
       //  $booking = new User('id'=>'1');
         $first = ('Motto');
         $last = ('000');
         $bid = $request->id;
         $addID = $first.$last.$bid;
-
-
 
 
       $vendor->id = $request->input('vendor_id');
@@ -107,11 +104,13 @@ class VendorController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
+
   public function show($id)
   {
     $vendor = Vendor::findOrfail($id);
     return new  VendorResource($vendor);
   }
+
 
   /**
    * Show the form for editing the specified resource.

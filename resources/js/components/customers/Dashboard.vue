@@ -18,7 +18,7 @@
            <h4 class="card-title font-weight-light">Faisal Nassarawa {{last_name}}</h4>
            <p class="card-description font-weight-light">Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...</p>
            <v-btn
-             color="blue"
+             color="blue white--text"
              round
              class="font-weight-light"
              :to="{path: 'dashboard-edit'}"
@@ -86,25 +86,30 @@ hover="true"
 </v-flex>
 <!--End of Driver card-->
 
-<!--Recent Bookings-->
+<!--Recent Services-->
     <v-flex xs12 sm6>
       <v-card>
         <v-list two-line subheader>
-          <v-subheader inset>My Bookings</v-subheader>
+          <v-subheader inset>Top Services</v-subheader>
 
           <v-list-tile v-for="item in items2" :key="item.title" @click="">
             <v-list-tile-avatar>
               <v-icon :class="[item.iconClass]">{{ item.icon }}</v-icon>
             </v-list-tile-avatar>
             <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              <v-list-tile-title>{{ item.title }}
+                </v-list-tile-title>
               <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
+
             </v-list-tile-content>
             <v-list-tile-action>
 
-                <v-btn icon            >
-                <v-icon color="grey lighten-1">info</v-icon>
-              </v-btn>
+              <v-chip color="teal" text-color="white" content-class="right">
+                    <v-avatar>
+                      <v-icon>watch_later</v-icon>
+                    </v-avatar>
+                    pending
+                  </v-chip>
 
             </v-list-tile-action>
           </v-list-tile>
@@ -113,102 +118,103 @@ hover="true"
 
       </v-card>
     </v-flex>
-    <!--End of Recent Bookings-->
+    <!--End of Recent Services-->
 
+  <!--Services -->
+  <v-flex xs12 sm6>
+    <v-card>
+        <v-layout
+      column
+      justify-center
+    >
+      <v-subheader>Agents near me</v-subheader>
 
-    <v-flex xs12 sm8 md6>
+      <v-expansion-panel popout>
+        <v-expansion-panel-content
+          v-for="agent in agents"
+          :key="agent.id"
+          hide-actions
+        >
+          <v-layout
+            slot="header"
+            align-center
+            row
+            spacer
+          >
+            <v-flex xs4 sm2 md1>
+              <v-avatar
+                slot="activator"
+                size="36px"
+              >
+                <img
+                  src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
+                  alt="Avatar"
+                >
+                <v-icon
+                ></v-icon>
+              </v-avatar>
+            </v-flex>
 
-      <v-flex>
-      <v-text-field
-           v-model="message1"
-           label="find vendors"
-            prepend-icon="search"
-           clearable
-         ></v-text-field>
-       </v-flex>
+            <v-flex sm5 md3>
+              <strong >{{agent.agent_first_name}} {{agent.agent_last_name}}</strong>
+              <span
+                class="grey--text"
+              >
+                &nbsp;({{agent.state}})
+              </span>
+            <!--  <p><v-chip color="teal" text-color="white">
+                  <v-avatar>
+                    <v-icon>verified_user</v-icon>
+                  </v-avatar>
+                  {{agent.status}}
+                </v-chip>
+              </p> -->
+            </v-flex>
 
-     <v-card>
-       <v-list two-line>
-         <template v-for="(item, index) in items">
-           <v-subheader
-             v-if="item.header"
-             :key="item.header"
-             inset
-           >
-             {{ item.header }}
-           </v-subheader>
+          </v-layout>
 
-           <v-divider
-             v-else-if="item.divider"
-             :key="index"
-             inset
-           ></v-divider>
+          <v-card>
+            <v-divider></v-divider>
+            <v-card-text>
+              <!--<p>  <v-icon>date_range</v-icon> <strong>Joined</strong> {{moment(agent.created_at).startOf('hour').fromNow()}}</p> -->
+              <p>  <v-icon>date_range</v-icon> <strong>Joined</strong> {{moment(agent.create_at, "YYYYMMDD").fromNow()}}</p>
+              <p> <v-icon>location_on</v-icon> <strong>City</strong>  {{agent.lga}}</p>
+              <p> <v-icon>payment</v-icon> <strong>commission </strong>  2.5%</p>
+              <p><strong> e-mail</strong>   <a  :href="'mailto:'+agent.agent_email"  >
+                <v-chip color="indigo" text-color="white">
+                    <v-avatar>
+                      <v-icon>mail</v-icon>
+                    </v-avatar>
+                    {{agent.agent_email}}
+                  </v-chip>
+              </a> </p>
+              <p> <strong>contact</strong>
+                 <a href="tel:48484338484" >
+                   <v-chip color="indigo" text-color="white">
+                       <v-avatar>
+                         <v-icon>call</v-icon>
+                       </v-avatar>
+                       080897544
+                     </v-chip>
 
-           <v-list-tile
-             v-else
-             :key="item.title"
-             avatar
-             ripple
-             @click=""
-           >
-             <v-list-tile-avatar>
-               <img :src="item.avatar">
-             </v-list-tile-avatar>
-             <v-list-tile-content>
-               <v-list-tile-title v-html="item.title"></v-list-tile-title>
-               <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
-             </v-list-tile-content>
-           </v-list-tile>
+                   </a> </p>
+            </v-card-text>
 
-         </template>
-       </v-list>
-     </v-card>
+           </v-card>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-layout>
+  </v-card>
+</v-flex>
+  <!--End of Services -->
 
-
-
-     <v-card>
-       <v-list two-line>
-         <template>
-           <v-subheader>
-             Vendors <v-icon>location</v-icon>
-           </v-subheader>
-
-           <v-divider
-
-           ></v-divider>
-
-           <v-list-tile
-             v-for="vendor in vendors" v-bind:key="vendor.id"
-             avatar
-             ripple
-             @click=""
-             :to="{path: '/vendor-dashboard/'+vendor.id}"
-             >
-             <v-list-tile-avatar>
-               <v-icon>business</v-icon>
-             </v-list-tile-avatar>
-             <v-list-tile-content>
-               <v-list-tile-title>{{vendor.vendor_title}}</v-list-tile-title>
-               <v-list-tile-sub-title>
-                 <span class='text--primary'>{{vendor.state}}</span> &mdash; {{vendor.vendor_address}}
-               </v-list-tile-sub-title>
-               <v-divider></v-divider>
-
-             </v-list-tile-content>
-
-           </v-list-tile>
-
-         </template>
-       </v-list>
-     </v-card>
-
-   </v-flex>
 
    </v-layout>
  </v-container>
 </template>
 
 <script>
+import moment from 'moment'
   export default {
     name: 'Dashboard',
   head: {
@@ -224,52 +230,57 @@ hover="true"
   },
     data () {
       return {
-        vendors: [],
+        agents: [],
         user: null,
-
-        vendor:{
-                  vendor_first_name:"",
-                  vendor_title:"",
+        dialog: false,
+        agent:{
+                  agent_first_name:"",
+                  agent_last_name:"",
                   id:"",
-                  vendor_last_name:"",
-                  user_id:1,
-                  email:"",
-                  mobile_no:"",
-                  manager_first_name:"",
-                  manager_last_name:"",
-                  manager_email:"",
-                  mechanic_first_name:"",
-                  mechanic_last_name:"",
-                  mechanic_email:"",
-                  mechanic_nationality:"",
-                  address:"",
+                  agent_email:"",
+                  user_id:2,
+                //  mobile_no:"",
+                  agent_category:"",
+                  agent_commission:"",
                   state:"",
                   city:"",
-                  lga:"",
-                  capacity:"",
-                  opening_time:"",
-                  closing_time:"",
-                  off_day:""
-                //  membership:"",
-                //  lumpsum:"",
-                //  status_id:""
+                  created_at:"",
+                  status:"",
+                  lga:""
               },
-        items: [
-            {
-              header: 'Vendors'
-            },
-            { divider: true },
-            {
-              avatar: 'https://picsum.photos/250/300?image=660',
-              title: 'Oando Vendor Shop',
-              subtitle:
-                "<span class='text--primary'>Abuja</span> &mdash; off. Nnamdi street."
-            }
-          ],
+
         items2: [
           { icon: 'assignment', iconClass: 'blue white--text', title: 'Wheel alignment', subtitle: 'Jan 20, 2014' },
           { icon: 'call_to_action', iconClass: 'amber white--text', title: 'Alternator change', subtitle: 'Jan 10, 2014' }
-        ]
+        ],
+        messages: [
+        {
+          avatar: 'https://avatars0.githubusercontent.com/u/9064066?v=4&s=460',
+          name: 'John Stamos',
+          title: 'Garki',
+          total: 3,
+
+          excerpt: 'bronze'
+        },
+        {
+          color: 'red',
+          icon: 'people',
+          name: 'Social',
+          new: 1,
+          total: 3,
+          title: 'Twitter'
+        },
+        {
+          color: 'teal',
+          icon: 'local_offer',
+          name: 'Promos',
+          new: 2,
+          total: 4,
+          title: 'Shop your way',
+          exceprt: 'New deals available, Join Today'
+        }
+      ],
+      lorem: 'ril menandrinostro voluptaria sea eu. in consul constituam cum.'
       }
     },
     beforeMount(){
@@ -286,25 +297,29 @@ hover="true"
               })
           },
     methods:{
-      fetchVendors (page_url) {
+      fetchAgents (page_url) {
       let vm = this
-      page_url = page_url || 'http://localhost:8000/api/vendors/'
+      page_url = page_url || 'http://localhost:8000/api/agents/'
       fetch(page_url)
         .then(res => res.json())
         .then(res => {
-          this.vendors = res.data
+          this.agents = res.data
           vm.makePagination(res.meta, res.links)
         })
         .catch(err => console.log(err))
     },
-    vendorPage(){
-
-      this.$router.push('vendor-dashboard/'+vendors.id);
-      console.log(token);
-    }
+    moment: function () {
+    return moment();
+  }
   },
+  filters: {
+            moment: function (date) {
+                  return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+                  }
+          },
+
     created(){
-      this.fetchVendors()
+      this.fetchAgents()
 
     }
   }

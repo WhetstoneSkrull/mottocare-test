@@ -10,13 +10,28 @@
       <v-btn icon>
         <v-icon>search</v-icon>
       </v-btn>
-      <v-btn icon>
-        <v-icon>apps</v-icon>
-      </v-btn>
 
-      <v-btn icon>
+      <v-menu offset-y>
+                <v-btn flat slot="activator" color="white">
+                  <v-icon>apps</v-icon>
+                </v-btn>
+
+                <v-list>
+                  <v-list-tile  :to="{path: 'vendor-dashboard'}">
+                    <v-list-tile-title>Vendor Dashboard</v-list-tile-title>
+                  </v-list-tile>
+                </v-list>
+
+                <v-list>
+                  <v-list-tile :to="{path: 'agent-dashboard'}">
+                    <v-list-tile-title>Agent Dashboard</v-list-tile-title>
+                  </v-list-tile>
+                </v-list>
+              </v-menu>
+
+  <!--    <v-btn icon>
         <v-icon>more_vert</v-icon>
-      </v-btn>
+      </v-btn>  -->
     </v-toolbar>
     <v-navigation-drawer
         v-model="drawer"
@@ -81,12 +96,12 @@
         </v-list>
 
         <v-list class="pt-0" dense  >
-          <v-list-tile>
-            <v-list-tile-action>
+          <v-list-tile :to="{path: 'agent-register'}">
+            <v-list-tile-action >
               <v-icon>phonelink</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>Become a Agent</v-list-tile-title>
+              <v-list-tile-title>Become an Agent</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>

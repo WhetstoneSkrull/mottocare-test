@@ -54,7 +54,7 @@
         <h3>My cars {{vehicles.length}}</h3>
       </v-flex>
 
-      <v-flex xs12 sm4  v-for="vehicle in vehicles"v-bind:key="vehicle.id">
+      <v-flex xs12 sm4  v-for="vehicle in vehicles" v-bind:key="vehicle.id">
         <v-card color="blue-grey darken-2" class="white--text" hover="true">
           <v-card-title primary-title>
             <v-flex xs12 sm4>
@@ -135,7 +135,7 @@ export default {
       .catch(error => {
           console.error(error);
       })
-    },
+    }, 
       addVehicle(){
 
         if (this.edit === false) {

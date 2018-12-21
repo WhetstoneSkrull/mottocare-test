@@ -5,6 +5,8 @@ import Toasted from 'vue-toasted';
 //import VueProgressBar from 'vue-progressbar'
 import FormLoading from 'vue2-form-loading'
 import Vuetify from 'vuetify'
+import moment from 'moment'
+
 //import VueDisqus from 'vue-disqus'
 
 
@@ -15,6 +17,7 @@ import Vuetify from 'vuetify'
     Vue.use(Vuetify)
   //  Vue.use(VueDisqus)
 
+//Vue.config.devtools= false;
 
     /*********************************
      *      Register GLobal Toasts   *
@@ -82,7 +85,6 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
     import App from './views/App'
     import Welcome from './views/Welcome'
     import Footer from './views/Footer'
-    import VendorRegister from './components/vendors/VendorRegister'
 
     import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
     import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
@@ -101,6 +103,12 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
 
     //vendor pages
     import VendorPage from './components/vendors/VendorPage'
+    import VendorRegister from './components/vendors/VendorRegister'
+
+    //Agent Pages
+    import AgentRegister from './components/agents/AgentRegister'
+    import AgentPage from './components/agents/AgentPage'
+
 
     //Admin pages
     import Admin from './components/admins/Admin'
@@ -213,9 +221,21 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 component: VendorRegister
             },
             {
-                path: '/vendor-dashboard/:id',
+                path: '/vendor-dashboard',
                 name: 'vendorPage',
                 component: VendorPage
+            },
+
+            //agent pages
+            {
+                path: '/agent-register',
+                name: 'AgentRegister',
+                component: AgentRegister
+            },
+            {
+                path: '/agent-dashboard',
+                name: 'vendorPage',
+                component: AgentPage
             }
         ],
     });
