@@ -77,12 +77,13 @@
          <v-container grid-list-md>
            <v-layout wrap>
              <v-flex xs12 md12>
-               <p v-model="">
+               <p>
                  <strong>
                  {{service.service.service_name}}
                </strong>
                 </p>
              </v-flex>
+             
 
             <v-flex xs12 md12>
               <v-flex>

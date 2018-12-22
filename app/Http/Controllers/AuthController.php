@@ -54,6 +54,12 @@ public function showVehicles(User $user)
           return response()->json($user->drivers()->with(['user'])->get(),200);
       }
 
+      //returns a user and their services rendered
+      public function showServices(User $user)
+          {
+              return response()->json($user->servicerenders()->with(['user','service','servicecategory'])->get(),200);
+          }
+
       //returns the details of a user
   public function showUser(User $user)
         {

@@ -25,6 +25,7 @@ Route::group([
     Route::get('user/{user}/bookings','AuthController@showbookings');
     Route::get('user/{user}/vehicles','AuthController@showVehicles');
     Route::get('user/{user}/drivers','AuthController@showDrivers');
+    Route::get('user/{user}/services','AuthController@showServices');
 
     Route::get('user/{user}','AuthController@showUser');
 

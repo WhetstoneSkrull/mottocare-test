@@ -22,122 +22,6 @@
            <p><v-btn color="green" dark>Active
               <v-icon dark right>verified_user</v-icon></v-btn> </p>
 
-<!--  <v-layout row justify-center>
-    <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
-      <v-btn slot="activator" color="blue" dark>Book me</v-btn>
-      <v-card>
-        <v-container>
-        <v-toolbar dark color="blue">
-          <v-btn icon dark @click="dialog = false">
-            <v-icon>close</v-icon>
-          </v-btn>
-          <v-toolbar-title>Make a Booking</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-toolbar-items>
-            <v-btn dark flat @click="dialog = false">close</v-btn>
-          </v-toolbar-items>
-        </v-toolbar>
-        <v-list three-line subheader>
-          <v-list-tile avatar>
-            <v-list-tile-content>
-              <v-list-tile-title>Create a Booking</v-list-tile-title>
-              <v-list-tile-sub-title>fill up the form and submit!</v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-        <v-divider></v-divider>
-        <v-flex xs12 sm8 md6>
-          <v-flex>
-          <v-text-field
-               v-model="booking.booking_title"
-               label="what are you booking for?"
-
-               clearable
-             ></v-text-field>
-           </v-flex>
-       </v-flex>
-
-       <v-flex xs12 sm8 md6>
-         <v-flex>
-         <v-text-field
-              v-model="booking.service_time"
-              label="service time (HH:MM AM or PM)"
-
-              clearable
-            ></v-text-field>
-          </v-flex>
-      </v-flex>
-
-       <v-flex xs12 sm6 d-flex>
-               <v-select
-               v-model="booking.vehicle_id"
-                 :items="items"
-                 label="which vehicle are you booking for?"
-               ></v-select>
-             </v-flex>
-        <v-flex xs10 sm8 md6>
-      <v-dialog
-        ref="dialog"
-        v-model="modal2"
-        :return-value.sync="time"
-        persistent
-        lazy
-        full-width
-        width="290px"
-      >
-        <v-text-field
-          slot="activator"
-          v-model="time"
-          label="Picker in dialog"
-          prepend-icon="access_time"
-          readonly
-        ></v-text-field>
-        <v-time-picker
-          v-if="modal2"
-          v-model="time"
-          full-width
-        >
-          <v-spacer></v-spacer>
-          <v-btn flat color="primary" @click="modal2 = false">Cancel</v-btn>
-          <v-btn flat color="primary" @click="$refs.dialog.save(time)">OK</v-btn>
-        </v-time-picker>
-      </v-dialog>
-    </v-flex>
-
-       <v-flex xs12 sm8 md6>
-             <v-dialog
-               ref="dialog"
-               v-model="modal"
-               :return-value.sync="booking.service_date"
-               persistent
-               lazy
-               full-width
-               width="290px"
-             >
-               <v-text-field
-                 slot="activator"
-                 v-model="booking.service_date"
-                 label="Picker in dialog"
-                 prepend-icon="event"
-                 readonly
-               ></v-text-field>
-               <v-date-picker v-model="date" scrollable>
-                 <v-spacer></v-spacer>
-                 <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
-                 <v-btn flat color="primary" @click="$refs.dialog.save(booking.service_date)">OK</v-btn>
-               </v-date-picker>
-             </v-dialog>
-           </v-flex>
-           <v-flex xs12 sm8 md6>
-           <v-btn color="info" @click="makeBooking"  v-loading="'submitting...'">Book</v-btn>
-         </v-flex>
-         </v-container>
-      </v-card>
-    </v-dialog>
-  </v-layout> -->
-
-
-
          </v-card-text>
        </material-card>
      </v-flex>
@@ -150,13 +34,12 @@
     >
       <v-card-title primary-title>
         <div>
-          <h3 class="headline mb-0">About us <v-icon large="true">book</v-icon></h3>
+          <h3 class="headline mb-0">My Services<v-icon large="true">book</v-icon></h3>
         </div>
       </v-card-title>
 
       <v-card-actions>
-        <v-btn flat color="blue">Share</v-btn>
-        <v-btn flat color="blue">Explore</v-btn>
+        <v-btn flat color="blue":to="{path: 'services'}">Explore</v-btn>
       </v-card-actions>
     </v-card>
   </v-flex>

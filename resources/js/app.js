@@ -5,7 +5,7 @@ import Toasted from 'vue-toasted';
 //import VueProgressBar from 'vue-progressbar'
 import FormLoading from 'vue2-form-loading'
 import Vuetify from 'vuetify'
-import moment from 'moment'
+//import moment from 'moment'
 
 //import VueDisqus from 'vue-disqus'
 
@@ -104,6 +104,7 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
     //vendor pages
     import VendorPage from './components/vendors/VendorPage'
     import VendorRegister from './components/vendors/VendorRegister'
+    import Services from './components/vendors/Services'
 
     //Agent Pages
     import AgentRegister from './components/agents/AgentRegister'
@@ -224,6 +225,11 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 path: '/vendor-dashboard',
                 name: 'vendorPage',
                 component: VendorPage
+            },
+            {
+                path: '/services',
+                name: 'Services',
+                component: Services
             },
 
             //agent pages
