@@ -113654,7 +113654,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -113667,6 +113667,17 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -113934,43 +113945,81 @@ var render = function() {
                   }
                 },
                 [
-                  _c("v-text-field", {
-                    attrs: {
-                      label: "Vehicle Make",
-                      rules: _vm.nameRules,
-                      hint: "e.g Honda, Toyota etc",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.service.vehicle_make,
-                      callback: function($$v) {
-                        _vm.$set(_vm.service, "vehicle_make", $$v)
-                      },
-                      expression: "service.vehicle_make"
-                    }
-                  }),
+                  _c("div", { staticClass: "col-xs-12 col-md-12" }, [
+                    _c("div", { staticClass: "input-group" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.service.vehicle_id,
+                              expression: "service.vehicle_id"
+                            }
+                          ],
+                          staticClass: "custom-select",
+                          attrs: { id: "inputGroupSelect02" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.service,
+                                "vehicle_id",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { selected: "" } }, [
+                            _vm._v("Choose...")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.services, function(service) {
+                            return _c(
+                              "option",
+                              { domProps: { value: _vm.vehicle.id } },
+                              [
+                                _vm._v(
+                                  "\n              " +
+                                    _vm._s(service.service_name) +
+                                    "\n            "
+                                )
+                              ]
+                            )
+                          })
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "input-group-append" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "input-group-text",
+                            attrs: { for: "inputGroupSelect02" }
+                          },
+                          [_vm._v("Select Service")]
+                        )
+                      ])
+                    ])
+                  ]),
                   _vm._v(" "),
                   _c("v-text-field", {
                     attrs: {
-                      label: "Model",
+                      label: "Service Price",
                       rules: _vm.nameRules,
-                      hint: "e.g Toyota has models such as Camry, Carina etc",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.service.model,
-                      callback: function($$v) {
-                        _vm.$set(_vm.service, "model", $$v)
-                      },
-                      expression: "service.model"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      label: "Year",
-                      rules: _vm.nameRules,
-                      hint: "your vehicle manufactured date",
+                      hint: "your price in naira without comma",
                       required: ""
                     },
                     model: {
@@ -113984,9 +114033,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("v-text-field", {
                     attrs: {
-                      label: "Vehicle Registration number",
+                      label: "Service Description",
                       rules: _vm.nameRules,
-                      hint: "your vehicle number",
+                      hint: "your service description",
                       required: ""
                     },
                     model: {

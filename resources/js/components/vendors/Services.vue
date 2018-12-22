@@ -4,35 +4,46 @@
       <v-flex xs12 sm6>
         <v-form ref="form" v-model="valid" lazy-validation>
 
-            <v-text-field
-              v-model="service.vehicle_make"
-              label="Vehicle Make"
-              :rules="nameRules"
-              hint="e.g Honda, Toyota etc"
-              required
-            ></v-text-field>
+    <!--      <div class="col-xs-12 col-md-12">
+           <div class="input-group">
+             <select class="custom-select" id="inputGroupSelect02" v-model="booking.vehicle_id">
+               <option selected>Choose...</option>
+                 <option :value="vehicle.id" v-for="service in service_categories">
+                   {{vehicle.vehicle_make}}  ({{vehicle.model}})
+                 </option>
+               </select>
+           <div class="input-group-append">
+             <label class="input-group-text" for="inputGroupSelect02">Select Vehicle</label>
+           </div>
+         </div>
+       </div> -->
 
-            <v-text-field
-              v-model="service.model"
-              label="Model"
-              :rules="nameRules"
-              hint="e.g Toyota has models such as Camry, Carina etc"
-              required
-            ></v-text-field>
-
+       <div class="col-xs-12 col-md-12">
+        <div class="input-group">
+          <select class="custom-select" id="inputGroupSelect02" v-model="service.vehicle_id">
+            <option selected>Choose...</option>
+              <option :value="vehicle.id" v-for="service in services">
+                {{service.service_name}}
+              </option>
+            </select>
+        <div class="input-group-append">
+          <label class="input-group-text" for="inputGroupSelect02">Select Service</label>
+        </div>
+      </div>
+    </div>
             <v-text-field
               v-model="service.price"
-              label="Year"
+              label="Service Price"
               :rules="nameRules"
-              hint="your vehicle manufactured date"
+              hint="your price in naira without comma"
               required
             ></v-text-field>
 
             <v-text-field
               v-model="service.description"
-              label="Vehicle Registration number"
+              label="Service Description"
               :rules="nameRules"
-              hint="your vehicle number"
+              hint="your service description"
               required
             ></v-text-field>
 
