@@ -13,6 +13,12 @@ use App\Http\Resources\Booking as BookingResource;
 
 class BookingController extends Controller
 {
+  public function __construct()
+      {
+        $this->middleware('auth:api');
+        //  $this->middleware('isAdmin');
+      }
+
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +58,7 @@ class BookingController extends Controller
         $add = $first.$last.$bid;
 
         $booking->id = $request->input('booking_id');
-      //  $booking->user_id = Booking::where('user_id', Auth::user()->id);
+        $booking->user_id =  Auth::user()->id;
         $booking->service_render_id = $request->input('service_render_id');
         $booking->vehicle_id = $request->input('vehicle_id');
     //    $booking->booking_no = $add;
@@ -110,7 +116,7 @@ class BookingController extends Controller
     public function destroy($id)
     {
       $booking = Booking::findOrfail($id);
-    if($booking->delete()){
+      if($booking->delete()){
       return new  BookingResource($booking);
 
         }

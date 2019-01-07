@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Driver;
+use Auth;
 use App\Http\Resources\Driver as DriverResource;
 
 class DriverController extends Controller
 {
+  public function __construct()
+    {
+      $this->middleware('auth:api');
+      //  $this->middleware('isAdmin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +47,7 @@ class DriverController extends Controller
         ($request->driver_id) : new Driver;
 
         $driver->id = $request->input('driver_id');
-        $driver->user_id = $request->input('user_id');
+        $driver->user_id = Auth::user()->id;
         $driver->driver_first_name = $request->input('driver_first_name');
         $driver->driver_last_name = $request->input('driver_last_name');
         $driver->driver_dob = $request->input('driver_dob');

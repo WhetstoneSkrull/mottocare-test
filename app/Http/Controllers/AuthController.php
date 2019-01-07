@@ -36,11 +36,17 @@ public function index(){
       return response()->json(User::with(['bookings'])->get(), 200);
   }
 
-  //returns a user and their bookings
-  public function showBookings(User $user)
+  //returns a user and their bookings and services
+  public function showBookingsServices(User $user)
       {
           return response()->json($user->bookings()->with(['servicerenders'])->get(),200);
       }
+
+      //returns a user and their bookings
+      public function showBookings(User $user)
+          {
+              return response()->json($user->bookings()->get(),200);
+          }
 
 //returns a user and their vehicles
 public function showVehicles(User $user)
@@ -57,7 +63,7 @@ public function showVehicles(User $user)
       //returns a user and their services rendered
       public function showServices(User $user)
           {
-              return response()->json($user->servicerenders()->with(['user','service','servicecategory'])->get(),200);
+              return response()->json($user->servicerenders()->with(['service','servicecategory'])->get(),200);
           }
 
       //returns the details of a user

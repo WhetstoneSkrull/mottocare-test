@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Agent;
+use Auth;
 use App\Http\Resources\Agent as AgentResource;
 //use App\Http\Resources\Vendor as VendorResource;
 
@@ -10,6 +11,12 @@ use Illuminate\Http\Request;
 
 class AgentController extends Controller
 {
+  public function __construct()
+    {
+      //$this->middleware('auth:api');
+      //  $this->middleware('isAdmin');
+    }
+
 
   public function index()
   {
@@ -26,7 +33,7 @@ class AgentController extends Controller
       $agentCat ="bronze";
 
       $agent->id = $request->input('agent_id');
-      $agent->user_id = $request->input('user_id');
+      $agent->user_id = Auth::user()->id;
       $agent->agent_first_name = $request->input('agent_first_name');
       $agent->agent_last_name = $request->input('agent_last_name');
       $agent->agent_email = $request->input('agent_email');

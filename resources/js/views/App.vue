@@ -106,44 +106,7 @@
           </v-list-tile>
         </v-list>
 
-              <!--Account Group -->
-              <v-list>
-                    <v-list-group
-                    prepend-icon="account_circle"
-                      no-action
-                    >
-                      <v-list-tile slot="activator">
-                        <v-list-tile-title>My Account</v-list-tile-title>
-                      </v-list-tile>
-                      <!--Wallet category -->
-                      <v-list-tile :to="{path: ''}">
-                        <v-list-tile-title>My Vehicles</v-list-tile-title>
-                        <v-list-tile-action>
-                          <v-icon>credit_card</v-icon>
-                        </v-list-tile-action>
-                      </v-list-tile>
-                      <!--end of wallet category -->
 
-                      <!--statement category -->
-                      <v-list-tile :to="{path: 'dashboard/statements'}">
-                        <v-list-tile-title>My Driver</v-list-tile-title>
-                        <v-list-tile-action>
-                          <v-icon>account_balance_wallet</v-icon>
-                        </v-list-tile-action>
-                      </v-list-tile>
-                      <!--end of wallet category -->
-
-                      <!--statement category -->
-                      <v-list-tile :to="{path: 'dashboard-edit'}">
-                        <v-list-tile-title>edit profile</v-list-tile-title>
-                        <v-list-tile-action>
-                          <v-icon>edit</v-icon>
-                        </v-list-tile-action>
-                      </v-list-tile>
-                      <!--end of wallet category -->
-                    </v-list-group>
-                    <!--End of Group -->
-                  </v-list>
 
                 <v-list>
         <!--Payment Group -->
@@ -202,8 +165,8 @@
                               <v-list-tile-title>My Services</v-list-tile-title>
                             </v-list-tile>
                             <!--Wallet category -->
-                            <v-list-tile :to="{path: 'dashboard/manage'}">
-                              <v-list-tile-title>Service Listings</v-list-tile-title>
+                            <v-list-tile :to="{path: 'manage-bookings'}">
+                              <v-list-tile-title>Manage Bookings</v-list-tile-title>
                               <v-list-tile-action>
                                 <v-icon>view_list</v-icon>
                               </v-list-tile-action>
@@ -211,7 +174,7 @@
                             <!--end of wallet category -->
 
                             <!--statement category -->
-                            <v-list-tile :to="{path: 'dashboard/upload'}">
+                            <v-list-tile :to="{path: 'services'}">
                               <v-list-tile-title>Add Service</v-list-tile-title>
                               <v-list-tile-action>
                                 <v-icon>add_circle</v-icon>
@@ -331,7 +294,7 @@
 
   },
       created () {
-  //
+        this.setDefaults()
       }
     }
 </script>

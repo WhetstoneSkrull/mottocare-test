@@ -25,22 +25,22 @@
     <body>
 
     <style type="text/css">
-            a{
-          color:none;
-          font-style: none;
-          text-decoration:none;
-          }
-          a:hover{
-          color:none;
-          text-decoration:none;
-          }
-          a:active{
-          color:none;
-          }
-          a:visited{
-          color: none;
-          text-decoration:none;
-          }
+    a{
+  color:none;
+  font-style: none;
+  text-decoration:none;
+  }
+  a:hover{
+  color:none;
+  text-decoration:none;
+  }
+  a:active{
+  color:none;
+  }
+  a:visited{
+  color: none;
+  text-decoration:none;
+  }
       </style>
         <div id="app">
             <app></app>

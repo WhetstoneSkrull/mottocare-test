@@ -101,7 +101,7 @@ export default {
       ],
       vehicle:{
         id:"",
-        user_id:2,
+        user_id:"",
         vehicle_make:"",
         year:"",
         pic:"",
@@ -135,7 +135,7 @@ export default {
       .catch(error => {
           console.error(error);
       })
-    }, 
+    },
       addVehicle(){
 
         if (this.edit === false) {

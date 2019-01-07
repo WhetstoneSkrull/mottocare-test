@@ -1,6 +1,6 @@
 <template lang="html">
   <v-app>
-
+<h3>{{bookings.length}}</h3>
       <div class="table-responsive">
       <table class="table">
       <thead class="thead-info">

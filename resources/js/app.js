@@ -72,8 +72,28 @@ import Vuetify from 'vuetify'
     icon : 'done'
     });
 
-//*******End of Toasted Service *********//
+    //Service Toast
+    Vue.toasted.register('serviceAdded', 'Service Added Successfully!', {
+    type : 'info',
+    icon : 'done'
+    });
 
+    Vue.toasted.register('serviceDeleted', 'Service Deleted Successfully!', {
+    type : 'error',
+    icon : 'done'
+    });
+
+    Vue.toasted.register('serviceUpdated', 'Service Updated Successfully!', {
+    type : 'success',
+    icon : 'done'
+    });
+
+//*******End of Toasted Service *********//
+var numeral = require('numeral');
+
+Vue.filter("formatNumber", function (value) {
+    return numeral(value).format("0,0"); // displaying other groupings/separators is possible, look at the docs
+  });
 
 
 Vue.component('app-footer', require('./views/Footer.vue')); //component name should be in camel-case
@@ -107,6 +127,7 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
     import Services from './components/vendors/Services'
 
     //Agent Pages
+    import AllAgents from './components/agents/AllAgents'
     import AgentRegister from './components/agents/AgentRegister'
     import AgentPage from './components/agents/AgentPage'
 
@@ -242,6 +263,11 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 path: '/agent-dashboard',
                 name: 'vendorPage',
                 component: AgentPage
+            },
+            {
+                path: '/find-agents',
+                name: 'AllAgents',
+                component: AllAgents
             }
         ],
     });

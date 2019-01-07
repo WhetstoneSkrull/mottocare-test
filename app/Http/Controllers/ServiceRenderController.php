@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ServiceRender;
+use Auth;
 use App\Http\Resources\ServiceRender as ServiceResource;
 
 
 class ServiceRenderController extends Controller
 {
+  public function __construct()
+    {
+      $this->middleware('auth:api');
+      //  $this->middleware('isAdmin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,8 +48,8 @@ class ServiceRenderController extends Controller
         ($request->service_render_id) : new serviceRender;
 
         $service->id = $request->input('service_render_id');
-        $service->vendor_id = $request->input('vendor_id');
-        $service->user_id = $request->input('user_id');
+    //    $service->vendor_id = $request->input('vendor_id');
+        $service->user_id = Auth::user()->id;
         $service->service_id = $request->input('service_id');
         $service->service_category_id = $request->input('service_category_id');
         //$service->engine_id = $request->input('engine_id');

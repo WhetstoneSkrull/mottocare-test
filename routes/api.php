@@ -23,6 +23,7 @@ Route::group([
     Route::get('users/all', 'AuthController@allusers');
 
     Route::get('user/{user}/bookings','AuthController@showbookings');
+    Route::get('user/{user}/bookings/services','AuthController@showBookingsServices');
     Route::get('user/{user}/vehicles','AuthController@showVehicles');
     Route::get('user/{user}/drivers','AuthController@showDrivers');
     Route::get('user/{user}/services','AuthController@showServices');

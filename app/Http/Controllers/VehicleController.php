@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Vehicle;
+use Auth;
+
 use App\Http\Resources\Vehicle as VehicleResource;
 
 
@@ -12,7 +14,7 @@ class VehicleController extends Controller
 
   public function __construct()
     {
-    //  $this->middleware('auth:api');
+      $this->middleware('auth:api');
       //  $this->middleware('isAdmin');
     }
     /**
@@ -48,7 +50,7 @@ class VehicleController extends Controller
         ($request->vehicle_id) : new Vehicle;
 
         $vehicle->id = $request->input('vehicle_id');
-        $vehicle->user_id = $request->input('user_id');
+        $vehicle->user_id = Auth::user()->id;
       //  $vehicle->vehicle_category_id = $request->input('vehicle_category_id');
         $vehicle->vehicle_make = $request->input('vehicle_make');
         $vehicle->year = $request->input('year');

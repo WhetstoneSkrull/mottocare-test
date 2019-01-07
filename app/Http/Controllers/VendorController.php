@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Vendor;
+use Auth;
 use App\Http\Resources\Vendor as VendorResource;
 
 
@@ -11,7 +12,7 @@ class VendorController extends Controller
 {
   public function __construct()
     {
-    //  $this->middleware('auth:api');
+      $this->middleware('auth:api');
       //  $this->middleware('isAdmin');
     }
   /**
@@ -55,7 +56,7 @@ class VendorController extends Controller
 
 
       $vendor->id = $request->input('vendor_id');
-      $vendor->user_id = $request->input('user_id');
+      $vendor->user_id = Auth::user()->id;
       $vendor->vendor_id = $addID;
       $vendor->vendor_title =  $request->input('vendor_title');
       $vendor->vendor_first_name = $request->input('vendor_first_name');
