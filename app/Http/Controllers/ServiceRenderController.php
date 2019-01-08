@@ -52,10 +52,6 @@ class ServiceRenderController extends Controller
         $service->user_id = Auth::user()->id;
         $service->service_id = $request->input('service_id');
         $service->service_category_id = $request->input('service_category_id');
-        //$service->engine_id = $request->input('engine_id');
-      //  $service->automobile_id = $request->input('automobile_id');
-        //$service->capacity = $request->input('capacity');
-        //$service->manpower = $request->input('manpower');
         $service->description = $request->input('description');
         $service->price = $request->input('price');
 

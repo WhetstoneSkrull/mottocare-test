@@ -66,6 +66,13 @@ public function showVehicles(User $user)
               return response()->json($user->servicerenders()->with(['service','servicecategory'])->get(),200);
           }
 
+          //returns a user and their services rendered
+          public function showVendors(User $user)
+              {
+                  return response()->json($user->vendor()->with(['servicerenders','service','servicecategory'])->get(),200);
+              }
+
+
       //returns the details of a user
   public function showUser(User $user)
         {

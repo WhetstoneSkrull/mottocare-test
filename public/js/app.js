@@ -106440,7 +106440,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -106453,6 +106453,160 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -106740,531 +106894,628 @@ var render = function() {
         "v-container",
         [
           _c(
-            "v-flex",
-            { attrs: { xs12: "", md6: "" } },
+            "v-stepper",
+            {
+              model: {
+                value: _vm.e1,
+                callback: function($$v) {
+                  _vm.e1 = $$v
+                },
+                expression: "e1"
+              }
+            },
             [
               _c(
-                "v-list",
-                { attrs: { "three-line": "", subheader: "" } },
+                "v-stepper-header",
                 [
                   _c(
-                    "v-list-tile",
-                    { attrs: { avatar: "" } },
-                    [
-                      _c(
-                        "v-list-tile-content",
-                        [
-                          _c(
-                            "v-list-tile-title",
-                            { staticClass: "font-weight-medium" },
-                            [_vm._v("Create a Booking")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-tile-sub-title",
-                            { staticClass: "font-weight-light" },
-                            [_vm._v("fill up the form and submit!")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
+                    "v-stepper-step",
+                    { attrs: { complete: _vm.e1 > 1, step: "1" } },
+                    [_vm._v("Select Vehicle")]
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-step",
+                    { attrs: { complete: _vm.e1 > 2, step: "2" } },
+                    [_vm._v("Select Vendor")]
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-step",
+                    { attrs: { complete: _vm.e1 > 3, step: "3" } },
+                    [_vm._v("Preview")]
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-step",
+                    { attrs: { complete: _vm.e1 > 4, step: "4" } },
+                    [_vm._v("Payment")]
                   )
                 ],
                 1
               ),
               _vm._v(" "),
-              _c("v-divider")
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm6: "" } },
-            [
               _c(
-                "v-card",
+                "v-stepper-items",
                 [
                   _c(
-                    "v-layout",
-                    { attrs: { column: "", "justify-center": "" } },
+                    "v-stepper-content",
+                    { attrs: { step: "1" } },
                     [
-                      _c("v-subheader", { staticClass: "font-weight-medium" }, [
-                        _vm._v("Services ")
-                      ]),
-                      _vm._v(" "),
                       _c(
-                        "v-expansion-panel",
-                        { attrs: { popout: "" } },
-                        _vm._l(_vm.services, function(service) {
-                          return _c(
-                            "v-expansion-panel-content",
-                            { key: service.id, attrs: { "hide-actions": "" } },
-                            [
+                        "v-form",
+                        {
+                          ref: "form",
+                          attrs: { "lazy-validation": "" },
+                          model: {
+                            value: _vm.valid,
+                            callback: function($$v) {
+                              _vm.valid = $$v
+                            },
+                            expression: "valid"
+                          }
+                        },
+                        [
+                          _c("div", { staticClass: "col-xs-12 col-md-12" }, [
+                            _c("div", { staticClass: "input-group" }, [
                               _c(
-                                "v-layout",
+                                "select",
                                 {
-                                  attrs: {
-                                    slot: "header",
-                                    "align-center": "",
-                                    row: "",
-                                    spacer: ""
-                                  },
-                                  slot: "header"
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.booking.vehicle_id,
+                                      expression: "booking.vehicle_id"
+                                    }
+                                  ],
+                                  staticClass: "custom-select",
+                                  attrs: { id: "inputGroupSelect02" },
+                                  on: {
+                                    change: function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
+                                      _vm.$set(
+                                        _vm.booking,
+                                        "vehicle_id",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
+                                      )
+                                    }
+                                  }
                                 },
                                 [
-                                  _c(
-                                    "v-flex",
-                                    { attrs: { xs4: "", sm2: "", md1: "" } },
-                                    [
-                                      _c(
-                                        "v-avatar",
-                                        {
-                                          attrs: {
-                                            slot: "activator",
-                                            size: "36px"
-                                          },
-                                          slot: "activator"
-                                        },
-                                        [
-                                          _c("img", {
-                                            attrs: {
-                                              src:
-                                                "https://avatars0.githubusercontent.com/u/9064066?v=4&s=460",
-                                              alt: "Avatar"
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("v-icon")
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  ),
+                                  _c("option", { attrs: { selected: "" } }, [
+                                    _vm._v("Choose...")
+                                  ]),
                                   _vm._v(" "),
-                                  _c(
-                                    "v-flex",
-                                    { attrs: { sm5: "", md3: "" } },
-                                    [
-                                      _c("strong", [
+                                  _vm._l(_vm.vehicles, function(vehicle) {
+                                    return _c(
+                                      "option",
+                                      { domProps: { value: vehicle.id } },
+                                      [
                                         _vm._v(
-                                          _vm._s(service.service.service_name)
+                                          "\n                     " +
+                                            _vm._s(vehicle.vehicle_make) +
+                                            "  (" +
+                                            _vm._s(vehicle.model) +
+                                            ")\n                   "
                                         )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c(
-                                        "span",
-                                        { staticClass: "grey--text" },
-                                        [
-                                          _vm._v(
-                                            "\n                    (" +
-                                              _vm._s(service.vendor.city) +
-                                              ")\n                 "
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
+                                      ]
+                                    )
+                                  })
                                 ],
-                                1
+                                2
                               ),
                               _vm._v(" "),
+                              _c("div", { staticClass: "input-group-append" }, [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "input-group-text",
+                                    attrs: { for: "inputGroupSelect02" }
+                                  },
+                                  [_vm._v("Select Vehicle")]
+                                )
+                              ])
+                            ])
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue" },
+                          on: {
+                            click: function($event) {
+                              _vm.e1 = 2
+                            }
+                          }
+                        },
+                        [_vm._v("\n            Continue\n          ")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "2" } },
+                    [
+                      _c(
+                        "v-form",
+                        {
+                          ref: "form",
+                          attrs: { "lazy-validation": "" },
+                          model: {
+                            value: _vm.valid,
+                            callback: function($$v) {
+                              _vm.valid = $$v
+                            },
+                            expression: "valid"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", sm6: "" } },
+                            [
                               _c(
                                 "v-card",
                                 [
-                                  _c("v-divider"),
-                                  _vm._v(" "),
                                   _c(
-                                    "v-card-text",
+                                    "v-layout",
+                                    {
+                                      attrs: {
+                                        column: "",
+                                        "justify-center": ""
+                                      }
+                                    },
                                     [
                                       _c(
-                                        "v-layout",
-                                        {
-                                          attrs: {
-                                            row: "",
-                                            "justify-center": ""
-                                          }
-                                        },
-                                        [
-                                          _c(
-                                            "v-dialog",
+                                        "v-subheader",
+                                        { staticClass: "font-weight-medium" },
+                                        [_vm._v("Select Vendor ")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-expansion-panel",
+                                        { attrs: { popout: "" } },
+                                        _vm._l(_vm.services, function(service) {
+                                          return _c(
+                                            "v-expansion-panel-content",
                                             {
-                                              attrs: {
-                                                persistent: "",
-                                                "max-width": "600px"
-                                              },
-                                              model: {
-                                                value: _vm.dialog,
-                                                callback: function($$v) {
-                                                  _vm.dialog = $$v
-                                                },
-                                                expression: "dialog"
-                                              }
+                                              key: service.id,
+                                              attrs: { "hide-actions": "" }
                                             },
                                             [
                                               _c(
-                                                "v-btn",
+                                                "v-layout",
                                                 {
                                                   attrs: {
-                                                    slot: "activator",
-                                                    color: "primary",
-                                                    dark: ""
+                                                    slot: "header",
+                                                    "align-center": "",
+                                                    row: "",
+                                                    spacer: ""
                                                   },
-                                                  slot: "activator"
+                                                  slot: "header"
                                                 },
-                                                [_vm._v("Book")]
+                                                [
+                                                  _c(
+                                                    "v-flex",
+                                                    {
+                                                      attrs: {
+                                                        xs4: "",
+                                                        sm2: "",
+                                                        md1: ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-avatar",
+                                                        {
+                                                          attrs: {
+                                                            slot: "activator",
+                                                            size: "36px"
+                                                          },
+                                                          slot: "activator"
+                                                        },
+                                                        [
+                                                          _c("img", {
+                                                            attrs: {
+                                                              src:
+                                                                "https://avatars0.githubusercontent.com/u/9064066?v=4&s=460",
+                                                              alt: "Avatar"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("v-icon")
+                                                        ],
+                                                        1
+                                                      )
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-flex",
+                                                    {
+                                                      attrs: {
+                                                        sm5: "",
+                                                        md3: ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("strong", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            service.service
+                                                              .service_name
+                                                          )
+                                                        )
+                                                      ])
+                                                    ]
+                                                  )
+                                                ],
+                                                1
                                               ),
                                               _vm._v(" "),
                                               _c(
                                                 "v-card",
                                                 [
-                                                  _c("v-card-title", [
-                                                    _c(
-                                                      "span",
-                                                      {
-                                                        staticClass: "headline"
-                                                      },
-                                                      [
-                                                        _vm._v(
-                                                          "Book this Service"
-                                                        )
-                                                      ]
-                                                    )
-                                                  ]),
+                                                  _c("v-divider"),
                                                   _vm._v(" "),
                                                   _c(
                                                     "v-card-text",
                                                     [
                                                       _c(
-                                                        "v-container",
+                                                        "v-layout",
                                                         {
                                                           attrs: {
-                                                            "grid-list-md": ""
+                                                            row: "",
+                                                            "justify-center": ""
                                                           }
                                                         },
                                                         [
                                                           _c(
-                                                            "v-layout",
+                                                            "v-dialog",
                                                             {
                                                               attrs: {
-                                                                wrap: ""
+                                                                persistent: "",
+                                                                "max-width":
+                                                                  "600px"
+                                                              },
+                                                              model: {
+                                                                value:
+                                                                  _vm.dialog,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.dialog = $$v
+                                                                },
+                                                                expression:
+                                                                  "dialog"
                                                               }
                                                             },
                                                             [
                                                               _c(
-                                                                "v-flex",
+                                                                "v-btn",
                                                                 {
                                                                   attrs: {
-                                                                    xs12: "",
-                                                                    md12: ""
-                                                                  }
+                                                                    slot:
+                                                                      "activator",
+                                                                    color:
+                                                                      "primary",
+                                                                    dark: ""
+                                                                  },
+                                                                  slot:
+                                                                    "activator"
                                                                 },
-                                                                [
-                                                                  _c("p", [
-                                                                    _c(
-                                                                      "strong",
-                                                                      [
-                                                                        _vm._v(
-                                                                          "\n                 " +
-                                                                            _vm._s(
-                                                                              service
-                                                                                .service
-                                                                                .service_name
-                                                                            ) +
-                                                                            "\n               "
-                                                                        )
-                                                                      ]
-                                                                    )
-                                                                  ])
-                                                                ]
+                                                                [_vm._v("Book")]
                                                               ),
                                                               _vm._v(" "),
                                                               _c(
-                                                                "v-flex",
-                                                                {
-                                                                  attrs: {
-                                                                    xs12: "",
-                                                                    md12: ""
-                                                                  }
-                                                                },
+                                                                "v-card",
                                                                 [
                                                                   _c(
-                                                                    "v-flex",
+                                                                    "v-card-title",
                                                                     [
                                                                       _c(
-                                                                        "v-text-field",
+                                                                        "span",
                                                                         {
-                                                                          attrs: {
-                                                                            hint:
-                                                                              "(YYY-MM-DD)",
-                                                                            label:
-                                                                              "service date",
-                                                                            clearable:
-                                                                              ""
-                                                                          },
-                                                                          model: {
-                                                                            value:
-                                                                              _vm
-                                                                                .booking
-                                                                                .service_date,
-                                                                            callback: function(
-                                                                              $$v
-                                                                            ) {
-                                                                              _vm.$set(
-                                                                                _vm.booking,
-                                                                                "service_date",
-                                                                                $$v
-                                                                              )
-                                                                            },
-                                                                            expression:
-                                                                              "booking.service_date"
-                                                                          }
-                                                                        }
-                                                                      )
-                                                                    ],
-                                                                    1
-                                                                  )
-                                                                ],
-                                                                1
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "v-flex",
-                                                                {
-                                                                  attrs: {
-                                                                    xs12: "",
-                                                                    md12: ""
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "v-flex",
-                                                                    [
-                                                                      _c(
-                                                                        "v-text-field",
-                                                                        {
-                                                                          attrs: {
-                                                                            hint:
-                                                                              "(HH:MM)",
-                                                                            label:
-                                                                              "service time",
-                                                                            clearable:
-                                                                              ""
-                                                                          },
-                                                                          model: {
-                                                                            value:
-                                                                              _vm
-                                                                                .booking
-                                                                                .service_time,
-                                                                            callback: function(
-                                                                              $$v
-                                                                            ) {
-                                                                              _vm.$set(
-                                                                                _vm.booking,
-                                                                                "service_time",
-                                                                                $$v
-                                                                              )
-                                                                            },
-                                                                            expression:
-                                                                              "booking.service_time"
-                                                                          }
-                                                                        }
-                                                                      )
-                                                                    ],
-                                                                    1
-                                                                  )
-                                                                ],
-                                                                1
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "col-xs-12 col-md-12"
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "div",
-                                                                    {
-                                                                      staticClass:
-                                                                        "input-group"
-                                                                    },
-                                                                    [
-                                                                      _c(
-                                                                        "select",
-                                                                        {
-                                                                          directives: [
-                                                                            {
-                                                                              name:
-                                                                                "model",
-                                                                              rawName:
-                                                                                "v-model",
-                                                                              value:
-                                                                                _vm
-                                                                                  .booking
-                                                                                  .vehicle_id,
-                                                                              expression:
-                                                                                "booking.vehicle_id"
-                                                                            }
-                                                                          ],
                                                                           staticClass:
-                                                                            "custom-select",
+                                                                            "headline"
+                                                                        },
+                                                                        [
+                                                                          _vm._v(
+                                                                            "Book this Service"
+                                                                          )
+                                                                        ]
+                                                                      )
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "v-card-text",
+                                                                    [
+                                                                      _c(
+                                                                        "v-container",
+                                                                        {
                                                                           attrs: {
-                                                                            id:
-                                                                              "inputGroupSelect02"
-                                                                          },
-                                                                          on: {
-                                                                            change: function(
-                                                                              $event
-                                                                            ) {
-                                                                              var $$selectedVal = Array.prototype.filter
-                                                                                .call(
-                                                                                  $event
-                                                                                    .target
-                                                                                    .options,
-                                                                                  function(
-                                                                                    o
-                                                                                  ) {
-                                                                                    return o.selected
-                                                                                  }
-                                                                                )
-                                                                                .map(
-                                                                                  function(
-                                                                                    o
-                                                                                  ) {
-                                                                                    var val =
-                                                                                      "_value" in
-                                                                                      o
-                                                                                        ? o._value
-                                                                                        : o.value
-                                                                                    return val
-                                                                                  }
-                                                                                )
-                                                                              _vm.$set(
-                                                                                _vm.booking,
-                                                                                "vehicle_id",
-                                                                                $event
-                                                                                  .target
-                                                                                  .multiple
-                                                                                  ? $$selectedVal
-                                                                                  : $$selectedVal[0]
-                                                                              )
-                                                                            }
+                                                                            "grid-list-md":
+                                                                              ""
                                                                           }
                                                                         },
                                                                         [
                                                                           _c(
-                                                                            "option",
+                                                                            "v-layout",
                                                                             {
                                                                               attrs: {
-                                                                                selected:
+                                                                                wrap:
                                                                                   ""
                                                                               }
                                                                             },
                                                                             [
-                                                                              _vm._v(
-                                                                                "Choose..."
-                                                                              )
-                                                                            ]
-                                                                          ),
-                                                                          _vm._v(
-                                                                            " "
-                                                                          ),
-                                                                          _vm._l(
-                                                                            _vm.vehicles,
-                                                                            function(
-                                                                              vehicle
-                                                                            ) {
-                                                                              return _c(
-                                                                                "option",
+                                                                              _c(
+                                                                                "v-flex",
                                                                                 {
-                                                                                  domProps: {
-                                                                                    value:
-                                                                                      vehicle.id
+                                                                                  attrs: {
+                                                                                    xs12:
+                                                                                      "",
+                                                                                    md12:
+                                                                                      ""
                                                                                   }
                                                                                 },
                                                                                 [
-                                                                                  _vm._v(
-                                                                                    "\n                     " +
-                                                                                      _vm._s(
-                                                                                        vehicle.vehicle_make
-                                                                                      ) +
-                                                                                      "  (" +
-                                                                                      _vm._s(
-                                                                                        vehicle.model
-                                                                                      ) +
-                                                                                      ")\n                   "
+                                                                                  _c(
+                                                                                    "p",
+                                                                                    [
+                                                                                      _c(
+                                                                                        "strong",
+                                                                                        [
+                                                                                          _vm._v(
+                                                                                            "\n                        " +
+                                                                                              _vm._s(
+                                                                                                service
+                                                                                                  .service
+                                                                                                  .service_name
+                                                                                              ) +
+                                                                                              "\n                      "
+                                                                                          )
+                                                                                        ]
+                                                                                      )
+                                                                                    ]
                                                                                   )
                                                                                 ]
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "v-flex",
+                                                                                {
+                                                                                  attrs: {
+                                                                                    xs12:
+                                                                                      "",
+                                                                                    md12:
+                                                                                      ""
+                                                                                  }
+                                                                                },
+                                                                                [
+                                                                                  _c(
+                                                                                    "v-flex",
+                                                                                    [
+                                                                                      _c(
+                                                                                        "v-text-field",
+                                                                                        {
+                                                                                          attrs: {
+                                                                                            hint:
+                                                                                              "(YYY-MM-DD)",
+                                                                                            label:
+                                                                                              "service date",
+                                                                                            clearable:
+                                                                                              ""
+                                                                                          },
+                                                                                          model: {
+                                                                                            value:
+                                                                                              _vm
+                                                                                                .booking
+                                                                                                .service_date,
+                                                                                            callback: function(
+                                                                                              $$v
+                                                                                            ) {
+                                                                                              _vm.$set(
+                                                                                                _vm.booking,
+                                                                                                "service_date",
+                                                                                                $$v
+                                                                                              )
+                                                                                            },
+                                                                                            expression:
+                                                                                              "booking.service_date"
+                                                                                          }
+                                                                                        }
+                                                                                      )
+                                                                                    ],
+                                                                                    1
+                                                                                  )
+                                                                                ],
+                                                                                1
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "v-flex",
+                                                                                {
+                                                                                  attrs: {
+                                                                                    xs12:
+                                                                                      "",
+                                                                                    md12:
+                                                                                      ""
+                                                                                  }
+                                                                                },
+                                                                                [
+                                                                                  _c(
+                                                                                    "v-flex",
+                                                                                    [
+                                                                                      _c(
+                                                                                        "v-text-field",
+                                                                                        {
+                                                                                          attrs: {
+                                                                                            hint:
+                                                                                              "(HH:MM)",
+                                                                                            label:
+                                                                                              "service time",
+                                                                                            clearable:
+                                                                                              ""
+                                                                                          },
+                                                                                          model: {
+                                                                                            value:
+                                                                                              _vm
+                                                                                                .booking
+                                                                                                .service_time,
+                                                                                            callback: function(
+                                                                                              $$v
+                                                                                            ) {
+                                                                                              _vm.$set(
+                                                                                                _vm.booking,
+                                                                                                "service_time",
+                                                                                                $$v
+                                                                                              )
+                                                                                            },
+                                                                                            expression:
+                                                                                              "booking.service_time"
+                                                                                          }
+                                                                                        }
+                                                                                      )
+                                                                                    ],
+                                                                                    1
+                                                                                  )
+                                                                                ],
+                                                                                1
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "v-flex",
+                                                                                {
+                                                                                  attrs: {
+                                                                                    xs12:
+                                                                                      "",
+                                                                                    md12:
+                                                                                      ""
+                                                                                  }
+                                                                                },
+                                                                                [
+                                                                                  _c(
+                                                                                    "v-btn",
+                                                                                    {
+                                                                                      attrs: {
+                                                                                        color:
+                                                                                          "info"
+                                                                                      },
+                                                                                      on: {
+                                                                                        click:
+                                                                                          _vm.makeBooking
+                                                                                      }
+                                                                                    },
+                                                                                    [
+                                                                                      _vm._v(
+                                                                                        "Book"
+                                                                                      )
+                                                                                    ]
+                                                                                  )
+                                                                                ],
+                                                                                1
                                                                               )
-                                                                            }
+                                                                            ],
+                                                                            1
                                                                           )
                                                                         ],
-                                                                        2
+                                                                        1
+                                                                      )
+                                                                    ],
+                                                                    1
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "v-card-actions",
+                                                                    [
+                                                                      _c(
+                                                                        "v-spacer"
                                                                       ),
                                                                       _vm._v(
                                                                         " "
                                                                       ),
                                                                       _c(
-                                                                        "div",
+                                                                        "v-btn",
                                                                         {
-                                                                          staticClass:
-                                                                            "input-group-append"
+                                                                          attrs: {
+                                                                            color:
+                                                                              "blue darken-1",
+                                                                            flat:
+                                                                              ""
+                                                                          },
+                                                                          on: {
+                                                                            click: function(
+                                                                              $event
+                                                                            ) {
+                                                                              _vm.dialog = false
+                                                                            }
+                                                                          }
                                                                         },
                                                                         [
-                                                                          _c(
-                                                                            "label",
-                                                                            {
-                                                                              staticClass:
-                                                                                "input-group-text",
-                                                                              attrs: {
-                                                                                for:
-                                                                                  "inputGroupSelect02"
-                                                                              }
-                                                                            },
-                                                                            [
-                                                                              _vm._v(
-                                                                                "Select Vehicle"
-                                                                              )
-                                                                            ]
+                                                                          _vm._v(
+                                                                            "Close"
+                                                                          )
+                                                                        ]
+                                                                      ),
+                                                                      _vm._v(
+                                                                        " "
+                                                                      ),
+                                                                      _c(
+                                                                        "v-btn",
+                                                                        {
+                                                                          attrs: {
+                                                                            color:
+                                                                              "blue darken-1",
+                                                                            flat:
+                                                                              ""
+                                                                          },
+                                                                          on: {
+                                                                            click: function(
+                                                                              $event
+                                                                            ) {
+                                                                              _vm.dialog = false
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        [
+                                                                          _vm._v(
+                                                                            "Save"
                                                                           )
                                                                         ]
                                                                       )
-                                                                    ]
-                                                                  )
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "v-flex",
-                                                                {
-                                                                  attrs: {
-                                                                    xs12: "",
-                                                                    md12: ""
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "v-btn",
-                                                                    {
-                                                                      attrs: {
-                                                                        color:
-                                                                          "info"
-                                                                      },
-                                                                      on: {
-                                                                        click:
-                                                                          _vm.makeBooking
-                                                                      }
-                                                                    },
-                                                                    [
-                                                                      _vm._v(
-                                                                        "Book"
-                                                                      )
-                                                                    ]
+                                                                    ],
+                                                                    1
                                                                   )
                                                                 ],
                                                                 1
@@ -107274,53 +107525,396 @@ var render = function() {
                                                           )
                                                         ],
                                                         1
-                                                      )
-                                                    ],
-                                                    1
-                                                  ),
-                                                  _vm._v(" "),
-                                                  _c(
-                                                    "v-card-actions",
-                                                    [
-                                                      _c("v-spacer"),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "v-btn",
-                                                        {
-                                                          attrs: {
-                                                            color:
-                                                              "blue darken-1",
-                                                            flat: ""
-                                                          },
-                                                          on: {
-                                                            click: function(
-                                                              $event
-                                                            ) {
-                                                              _vm.dialog = false
-                                                            }
-                                                          }
-                                                        },
-                                                        [_vm._v("Close")]
                                                       ),
                                                       _vm._v(" "),
                                                       _c(
-                                                        "v-btn",
+                                                        "p",
                                                         {
-                                                          attrs: {
-                                                            color:
-                                                              "blue darken-1",
-                                                            flat: ""
-                                                          },
-                                                          on: {
-                                                            click: function(
-                                                              $event
-                                                            ) {
-                                                              _vm.dialog = false
-                                                            }
-                                                          }
+                                                          staticClass:
+                                                            "font-weight-bold"
                                                         },
-                                                        [_vm._v("Save")]
-                                                      )
+                                                        [
+                                                          _vm._v(
+                                                            "Service Details"
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        [
+                                                          _c("v-icon", [
+                                                            _vm._v("money")
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v("price")
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "span",
+                                                            {
+                                                              staticClass:
+                                                                "font-weight-regular"
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                "₦" +
+                                                                  _vm._s(
+                                                                    service.price
+                                                                  )
+                                                              )
+                                                            ]
+                                                          )
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        [
+                                                          _c("v-icon", [
+                                                            _vm._v(
+                                                              "local_library"
+                                                            )
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v(
+                                                              "description"
+                                                            )
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "span",
+                                                            {
+                                                              staticClass:
+                                                                "font-weight-regular"
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                " " +
+                                                                  _vm._s(
+                                                                    service.description
+                                                                  )
+                                                              )
+                                                            ]
+                                                          )
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        [
+                                                          _c("v-icon", [
+                                                            _vm._v("date_range")
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v("created on")
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "span",
+                                                            {
+                                                              staticClass:
+                                                                "font-weight-regular"
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                " " +
+                                                                  _vm._s(
+                                                                    service.create_at
+                                                                  )
+                                                              )
+                                                            ]
+                                                          )
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        {
+                                                          staticClass:
+                                                            "font-weight-bold"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "Vendor Details"
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        [
+                                                          _c("v-icon", [
+                                                            _vm._v("business")
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v(
+                                                              "Business name"
+                                                            )
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "span",
+                                                            {
+                                                              staticClass:
+                                                                "font-weight-regular"
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                " " +
+                                                                  _vm._s(
+                                                                    service
+                                                                      .vendor
+                                                                      .vendor_title
+                                                                  )
+                                                              )
+                                                            ]
+                                                          )
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        [
+                                                          _c("v-icon", [
+                                                            _vm._v("date_range")
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v("Joined")
+                                                          ]),
+                                                          _vm._v(
+                                                            " " +
+                                                              _vm._s(
+                                                                _vm
+                                                                  .moment(
+                                                                    service.created_at
+                                                                  )
+                                                                  .startOf(
+                                                                    "hour"
+                                                                  )
+                                                                  .fromNow()
+                                                              )
+                                                          )
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        [
+                                                          _c("v-icon", [
+                                                            _vm._v(
+                                                              "location_on"
+                                                            )
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v("City")
+                                                          ]),
+                                                          _vm._v(
+                                                            "  " +
+                                                              _vm._s(
+                                                                service.vendor
+                                                                  .address
+                                                              )
+                                                          )
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        [
+                                                          _c("v-icon", [
+                                                            _vm._v("payment")
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v("capacity ")
+                                                          ]),
+                                                          _vm._v(
+                                                            " " +
+                                                              _vm._s(
+                                                                service.vendor
+                                                                  .capacity
+                                                              )
+                                                          )
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        [
+                                                          _c("v-icon", [
+                                                            _vm._v(
+                                                              "access_time"
+                                                            )
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v(
+                                                              "opening time "
+                                                            )
+                                                          ]),
+                                                          _vm._v(
+                                                            " " +
+                                                              _vm._s(
+                                                                service.vendor
+                                                                  .opening_time
+                                                              )
+                                                          )
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "p",
+                                                        [
+                                                          _c("v-icon", [
+                                                            _vm._v("timelapse")
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("strong", [
+                                                            _vm._v(
+                                                              "closing time "
+                                                            )
+                                                          ]),
+                                                          _vm._v(
+                                                            " " +
+                                                              _vm._s(
+                                                                service.vendor
+                                                                  .closing_time
+                                                              )
+                                                          )
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c("p", [
+                                                        _c("strong", [
+                                                          _vm._v(" e-mail")
+                                                        ]),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            attrs: {
+                                                              href:
+                                                                "mailto:" +
+                                                                service.vendor
+                                                                  .vendor_email
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "v-chip",
+                                                              {
+                                                                attrs: {
+                                                                  color:
+                                                                    "indigo",
+                                                                  "text-color":
+                                                                    "white"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "v-avatar",
+                                                                  [
+                                                                    _c(
+                                                                      "v-icon",
+                                                                      [
+                                                                        _vm._v(
+                                                                          "mail"
+                                                                        )
+                                                                      ]
+                                                                    )
+                                                                  ],
+                                                                  1
+                                                                ),
+                                                                _vm._v(
+                                                                  "\n                              " +
+                                                                    _vm._s(
+                                                                      service
+                                                                        .vendor
+                                                                        .vendor_email
+                                                                    ) +
+                                                                    "\n                            "
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("p", [
+                                                        _c("strong", [
+                                                          _vm._v("contact")
+                                                        ]),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            attrs: {
+                                                              href:
+                                                                "tel:" +
+                                                                service.vendor
+                                                                  .mobile_no
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "v-chip",
+                                                              {
+                                                                attrs: {
+                                                                  color:
+                                                                    "indigo",
+                                                                  "text-color":
+                                                                    "white"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "v-avatar",
+                                                                  [
+                                                                    _c(
+                                                                      "v-icon",
+                                                                      [
+                                                                        _vm._v(
+                                                                          "call"
+                                                                        )
+                                                                      ]
+                                                                    )
+                                                                  ],
+                                                                  1
+                                                                ),
+                                                                _vm._v(
+                                                                  "\n                               " +
+                                                                    _vm._s(
+                                                                      service
+                                                                        .vendor
+                                                                        .mobile_no
+                                                                    ) +
+                                                                    "\n                               "
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      ])
                                                     ],
                                                     1
                                                   )
@@ -107330,293 +107924,9 @@ var render = function() {
                                             ],
                                             1
                                           )
-                                        ],
+                                        }),
                                         1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        { staticClass: "font-weight-bold" },
-                                        [_vm._v("Service Details")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        [
-                                          _c("v-icon", [_vm._v("money")]),
-                                          _vm._v(" "),
-                                          _c("strong", [_vm._v("price")]),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass: "font-weight-regular"
-                                            },
-                                            [
-                                              _vm._v(
-                                                "₦" + _vm._s(service.price)
-                                              )
-                                            ]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        [
-                                          _c("v-icon", [
-                                            _vm._v("local_library")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("strong", [_vm._v("description")]),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass: "font-weight-regular"
-                                            },
-                                            [
-                                              _vm._v(
-                                                " " +
-                                                  _vm._s(service.description)
-                                              )
-                                            ]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        [
-                                          _c("v-icon", [_vm._v("date_range")]),
-                                          _vm._v(" "),
-                                          _c("strong", [_vm._v("created on")]),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass: "font-weight-regular"
-                                            },
-                                            [
-                                              _vm._v(
-                                                " " + _vm._s(service.create_at)
-                                              )
-                                            ]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        { staticClass: "font-weight-bold" },
-                                        [_vm._v("Vendor Details")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        [
-                                          _c("v-icon", [_vm._v("business")]),
-                                          _vm._v(" "),
-                                          _c("strong", [
-                                            _vm._v("Business name")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass: "font-weight-regular"
-                                            },
-                                            [
-                                              _vm._v(
-                                                " " +
-                                                  _vm._s(
-                                                    service.vendor.vendor_title
-                                                  )
-                                              )
-                                            ]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        [
-                                          _c("v-icon", [_vm._v("date_range")]),
-                                          _vm._v(" "),
-                                          _c("strong", [_vm._v("Joined")]),
-                                          _vm._v(
-                                            " " +
-                                              _vm._s(
-                                                _vm
-                                                  .moment(service.created_at)
-                                                  .startOf("hour")
-                                                  .fromNow()
-                                              )
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        [
-                                          _c("v-icon", [_vm._v("location_on")]),
-                                          _vm._v(" "),
-                                          _c("strong", [_vm._v("City")]),
-                                          _vm._v(
-                                            "  " +
-                                              _vm._s(service.vendor.address)
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        [
-                                          _c("v-icon", [_vm._v("payment")]),
-                                          _vm._v(" "),
-                                          _c("strong", [_vm._v("capacity ")]),
-                                          _vm._v(
-                                            " " +
-                                              _vm._s(service.vendor.capacity)
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        [
-                                          _c("v-icon", [_vm._v("access_time")]),
-                                          _vm._v(" "),
-                                          _c("strong", [
-                                            _vm._v("opening time ")
-                                          ]),
-                                          _vm._v(
-                                            " " +
-                                              _vm._s(
-                                                service.vendor.opening_time
-                                              )
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        [
-                                          _c("v-icon", [_vm._v("timelapse")]),
-                                          _vm._v(" "),
-                                          _c("strong", [
-                                            _vm._v("closing time ")
-                                          ]),
-                                          _vm._v(
-                                            " " +
-                                              _vm._s(
-                                                service.vendor.closing_time
-                                              )
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c("p", [
-                                        _c("strong", [_vm._v(" e-mail")]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "a",
-                                          {
-                                            attrs: {
-                                              href:
-                                                "mailto:" +
-                                                service.vendor.vendor_email
-                                            }
-                                          },
-                                          [
-                                            _c(
-                                              "v-chip",
-                                              {
-                                                attrs: {
-                                                  color: "indigo",
-                                                  "text-color": "white"
-                                                }
-                                              },
-                                              [
-                                                _c(
-                                                  "v-avatar",
-                                                  [
-                                                    _c("v-icon", [
-                                                      _vm._v("mail")
-                                                    ])
-                                                  ],
-                                                  1
-                                                ),
-                                                _vm._v(
-                                                  "\n                       " +
-                                                    _vm._s(
-                                                      service.vendor
-                                                        .vendor_email
-                                                    ) +
-                                                    "\n                     "
-                                                )
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        )
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("p", [
-                                        _c("strong", [_vm._v("contact")]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "a",
-                                          {
-                                            attrs: {
-                                              href:
-                                                "tel:" +
-                                                service.vendor.mobile_no
-                                            }
-                                          },
-                                          [
-                                            _c(
-                                              "v-chip",
-                                              {
-                                                attrs: {
-                                                  color: "indigo",
-                                                  "text-color": "white"
-                                                }
-                                              },
-                                              [
-                                                _c(
-                                                  "v-avatar",
-                                                  [
-                                                    _c("v-icon", [
-                                                      _vm._v("call")
-                                                    ])
-                                                  ],
-                                                  1
-                                                ),
-                                                _vm._v(
-                                                  "\n                        " +
-                                                    _vm._s(
-                                                      service.vendor.mobile_no
-                                                    ) +
-                                                    "\n                        "
-                                                )
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        )
-                                      ])
+                                      )
                                     ],
                                     1
                                   )
@@ -107626,8 +107936,369 @@ var render = function() {
                             ],
                             1
                           )
-                        }),
+                        ],
                         1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue" },
+                          on: {
+                            click: function($event) {
+                              _vm.e1 = 3
+                            }
+                          }
+                        },
+                        [_vm._v("\n            Continue\n          ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { flat: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.e1 = 1
+                            }
+                          }
+                        },
+                        [_vm._v("Back")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "3" } },
+                    [
+                      _c(
+                        "v-form",
+                        {
+                          ref: "form",
+                          attrs: { "lazy-validation": "" },
+                          model: {
+                            value: _vm.valid,
+                            callback: function($$v) {
+                              _vm.valid = $$v
+                            },
+                            expression: "valid"
+                          }
+                        },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              rules: _vm.nameRules,
+                              counter: 10,
+                              label: "Mechanic First Name",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.booking.mechanic_first_name,
+                              callback: function($$v) {
+                                _vm.$set(
+                                  _vm.booking,
+                                  "mechanic_first_name",
+                                  $$v
+                                )
+                              },
+                              expression: "booking.mechanic_first_name"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              rules: _vm.nameRules,
+                              counter: 10,
+                              label: "Mechanic Last Name",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.booking.mechanic_last_name,
+                              callback: function($$v) {
+                                _vm.$set(_vm.booking, "mechanic_last_name", $$v)
+                              },
+                              expression: "booking.mechanic_last_name"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue" },
+                          on: {
+                            click: function($event) {
+                              _vm.e1 = 4
+                            }
+                          }
+                        },
+                        [_vm._v("\n            Continue\n          ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { flat: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.e1 = 2
+                            }
+                          }
+                        },
+                        [_vm._v("Back")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "4" } },
+                    [
+                      _c(
+                        "v-form",
+                        {
+                          ref: "form",
+                          attrs: { "lazy-validation": "" },
+                          model: {
+                            value: _vm.valid,
+                            callback: function($$v) {
+                              _vm.valid = $$v
+                            },
+                            expression: "valid"
+                          }
+                        },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              rules: _vm.nameRules,
+                              counter: 10,
+                              label: "Off days",
+                              required: ""
+                            },
+                            model: {
+                              value: _vm.booking.off_day,
+                              callback: function($$v) {
+                                _vm.$set(_vm.booking, "off_day", $$v)
+                              },
+                              expression: "booking.off_day"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue" },
+                          on: {
+                            click: function($event) {
+                              _vm.e1 = 5
+                            }
+                          }
+                        },
+                        [_vm._v("\n            Continue\n          ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { flat: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.e1 = 3
+                            }
+                          }
+                        },
+                        [_vm._v("Back")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "5" } },
+                    [
+                      _c(
+                        "v-layout",
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", sm6: "", "offset-sm3": "" } },
+                            [
+                              _c(
+                                "v-card",
+                                [
+                                  _c(
+                                    "v-card-title",
+                                    { attrs: { "primary-title": "" } },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "h3",
+                                          { staticClass: "headline mb-0" },
+                                          [_vm._v("Manager Details")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", {
+                                          staticClass: "text-center"
+                                        })
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-actions",
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.e1 = 1
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("Edit")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-divider"),
+                              _vm._v(" "),
+                              _c(
+                                "v-card",
+                                [
+                                  _c(
+                                    "v-card-title",
+                                    { attrs: { "primary-title": "" } },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "h3",
+                                          { staticClass: "headline mb-0" },
+                                          [_vm._v("Mechanic Details")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", {
+                                          staticClass: "text-center"
+                                        })
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-actions",
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.e1 = 2
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("Edit")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" }
+                                        },
+                                        [_vm._v("Explore")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-divider"),
+                              _vm._v(" "),
+                              _c(
+                                "v-card",
+                                [
+                                  _c(
+                                    "v-card-title",
+                                    { attrs: { "primary-title": "" } },
+                                    [
+                                      _c("div", [
+                                        _c(
+                                          "h3",
+                                          { staticClass: "headline mb-0" },
+                                          [_vm._v("Mechanic Details")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("div", {
+                                          staticClass: "text-center"
+                                        })
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-actions",
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { flat: "", color: "orange" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.e1 = 3
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("Edit")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "blue" },
+                          on: { click: _vm.makeBooking }
+                        },
+                        [_vm._v("\n            Book\n          ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { flat: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.e1 = 5
+                            }
+                          }
+                        },
+                        [_vm._v("Back")]
                       )
                     ],
                     1
