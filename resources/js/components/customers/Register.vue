@@ -102,11 +102,11 @@ export default {
                                 this.$router.push(this.$route.params.nextUrl)
                             }
                             else{
-                                this.$router.push('/')
+                                this.$router.push('/login')
                             }
                         }
                 console.log(response);
-                this.$router.push('/');
+                this.$router.push('/login');
                 this.$toasted.global.signup().goAway(1500);
 
             })

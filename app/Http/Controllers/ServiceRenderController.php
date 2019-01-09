@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ServiceRender;
+use App\User;
 use Auth;
 use App\Http\Resources\ServiceRender as ServiceResource;
 
@@ -12,7 +13,7 @@ class ServiceRenderController extends Controller
 {
   public function __construct()
     {
-      $this->middleware('auth:api');
+        $this->middleware('auth:api');
       //  $this->middleware('isAdmin');
     }
     /**
@@ -20,6 +21,13 @@ class ServiceRenderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     //returns a user and their services rendered
+     public function showServices(ServiceRender $user)
+         {
+             return response()->json($user->with(['service','servicecategory','vendor'])->get(),200);
+         }
+
     public function index()
     {
       $services = ServiceRender::orderBy('created_at','desc')->paginate(15);

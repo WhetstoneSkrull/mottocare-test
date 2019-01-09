@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\User;
 use App\Booking;
+use App\Vendor;
 use App\Http\Resources\User as UserResource;
 
 class AuthController extends Controller
@@ -37,9 +38,18 @@ public function index(){
   }
 
   //returns a user and their bookings and services
+  public function allUserData(User $user)
+      {
+          return response()->json($user->with(['servicerenders','vendor','drivers','bookings'])->get(),200);
+        //  return response()->json($user->with(['servicerenders','vendor','drivers','bookings'])->get(),200);
+      }
+
+
+  //returns a user and their bookings and services
   public function showBookingsServices(User $user)
       {
-          return response()->json($user->bookings()->with(['servicerenders'])->get(),200);
+          return response()->json($user->servicerenders()->with(['bookings'])->get(),200);
+          //return response()->json($user->bookings()->with(['servicerenders'])->get(),200);
       }
 
       //returns a user and their bookings
@@ -48,11 +58,11 @@ public function index(){
               return response()->json($user->bookings()->get(),200);
           }
 
-//returns a user and their vehicles
-public function showVehicles(User $user)
-    {
-        return response()->json($user->vehicles()->with(['user'])->get(),200);
-    }
+      //returns a user and their vehicles
+      public function showVehicles(User $user)
+          {
+              return response()->json($user->vehicles()->with(['user'])->get(),200);
+          }
 
   //returns a user and their vehicles
   public function showDrivers(User $user)
@@ -60,17 +70,25 @@ public function showVehicles(User $user)
           return response()->json($user->drivers()->with(['user'])->get(),200);
       }
 
+
       //returns a user and their services rendered
-      public function showServices(User $user)
+      public function showVendorServices(User $user)
           {
               return response()->json($user->servicerenders()->with(['service','servicecategory'])->get(),200);
           }
 
-          //returns a user and their services rendered
-          public function showVendors(User $user)
-              {
-                  return response()->json($user->vendor()->with(['servicerenders','service','servicecategory'])->get(),200);
+          //returns a user's vendor details
+          public function showVendor(User $user){
+                return response()->json($user->vendor()->get(),200);
+
+            }
+
+            //returns a user's vendor details
+            public function showVendorBookings(Vendor $user){
+                  return response()->json($user->bookings()->with(['servicerenders','user'])->get(),200);
+
               }
+
 
 
       //returns the details of a user

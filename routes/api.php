@@ -22,12 +22,14 @@ Route::group([
     Route::post('signup', 'AuthController@signup');
     Route::get('users/all', 'AuthController@allusers');
 
+    Route::get('user/{user}/all-user-data','AuthController@allUserData');
     Route::get('user/{user}/bookings','AuthController@showbookings');
     Route::get('user/{user}/bookings/services','AuthController@showBookingsServices');
     Route::get('user/{user}/vehicles','AuthController@showVehicles');
     Route::get('user/{user}/drivers','AuthController@showDrivers');
-    Route::get('user/{user}/services','AuthController@showServices');
-    Route::get('user/{user}/vendors','AuthController@showVendors');
+    Route::get('user/{user}/services','AuthController@showVendorServices');
+    Route::get('user/{user}/vendor','AuthController@showVendor');
+    Route::get('user/{user}/vendor/bookings','AuthController@showVendorBookings');
 
     Route::get('user/{user}','AuthController@showUser');
 
@@ -104,7 +106,7 @@ Route::delete('booking/{id}', 'BookingController@destroy');
 //Services Rendered API
 Route::get('services/render', 'ServiceRenderController@index');
 
-//Route::get('user/{user}/services','AuthController@showService');
+Route::get('all/services','ServiceRenderController@showServices');
 
 Route::get('service/render/{service}', 'ServiceRenderController@show');
 
@@ -135,6 +137,7 @@ Route::put('role', 'RoleController@store');
 Route::delete('role/{id}', 'RoleController@destroy');
 
 //Vendor API
+Route::get('all/vendors', 'VendorController@showVendors');
 Route::get('vendors', 'VendorController@index');
 Route::get('vendor/{id}', 'VendorController@show');
 Route::post('vendor', 'VendorController@store');

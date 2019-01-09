@@ -1,7 +1,7 @@
 <template lang="html">
   <v-container  grid-list-md text-xs-center>
     <v-layout row wrap>
-      <v-flex xs12 sm12>
+      <v-flex xs12 sm6>
         <v-form ref="form" v-model="valid" lazy-validation>
           <h3>Add Service</h3>
 
@@ -48,13 +48,15 @@
       </v-flex>
       </v-flex>
 
-
-      <v-flex xs12 sm6>
-        <h3>{{renders.length}}</h3>
-      </v-flex>
-
       <!--Services -->
-      <v-flex xs12 sm12>
+      <v-flex xs12 sm6>
+
+        <v-flex xs12 sm6>
+          <h4 v-show="renders.length === 1" >{{renders.length}} service created</h4>
+          <h4 v-show="renders.length > 1">{{renders.length}} services</h4>
+          <h4 v-show="renders.length < 1">you have no services</h4>
+        </v-flex>
+
         <v-card>
             <v-layout
           column

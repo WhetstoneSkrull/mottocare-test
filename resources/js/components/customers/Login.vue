@@ -57,7 +57,7 @@ methods:{
                              }
                          }
             }
-            this.$router.push('/');
+            this.$router.push('/dashboard');
             console.log(token);
           })
         }

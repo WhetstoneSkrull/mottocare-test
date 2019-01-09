@@ -36,15 +36,21 @@
              </div>
              </div>
 
+             <p>i am a service</p>
+             <div class="" v-for="service in services" v-bind="service.id">
+               <p>{{service.price}}</p>
+             </div>
+
+             <v-btn
+               color="primary"
+               @click="e1 = 2"
+             >
+               Continue
+             </v-btn>
 
              </v-form>
 
-           <v-btn
-             color="blue"
-             @click="e1 = 2"
-           >
-             Continue
-           </v-btn>
+
          </v-stepper-content>
 
          <v-stepper-content step="2">
@@ -87,13 +93,12 @@
 
                        <v-flex sm5 md3>
                          <strong >{{service.service.service_name}}</strong>
-                        <!-- <span
+                         <span
                            class="grey--text"
                          >
                            &nbsp;({{service.vendor.city}})
-                         </span>  -->
+                         </span>
                        </v-flex>
-
 
                      </v-layout>
 
@@ -121,7 +126,6 @@
                         </p>
                      </v-flex>
 
-
                     <v-flex xs12 md12>
                       <v-flex>
                       <v-text-field
@@ -132,6 +136,17 @@
                          ></v-text-field>
                        </v-flex>
                    </v-flex>
+
+                   <v-flex xs12 md12>
+                     <v-flex>
+                     <v-text-field
+                          v-model="booking.service_render_id"
+                          hint="(YYY-MM-DD)"
+                          label="service ID"
+                          value="service.id"
+                        ></v-text-field>
+                      </v-flex>
+                  </v-flex>
 
                    <v-flex xs12 md12>
                      <v-flex>
@@ -345,6 +360,7 @@ export default {
   data() {
     return{
       menu2: false,
+      e1: 0,
       user : null,
       vehicles : [],
       services : [],
@@ -383,6 +399,7 @@ export default {
         })
     },
     methods:{
+
       makeBooking(){
         axios.post('/api/booking',this.booking)
         .then(response=>{
@@ -407,9 +424,13 @@ export default {
       .catch(error => {
           console.error(error);
         })
-      }, */
+      },*/
       fetchServices() {
-      axios.get(`api/service/render/1`)
+        this.user = JSON.parse(localStorage.getItem('user'))
+        axios.defaults.headers.common['Content-Type'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
+
+      axios.get(`api/all/services`)
       .then(response => {
           this.services = response.data
       })
@@ -417,6 +438,7 @@ export default {
           console.error(error);
         })
       }
+
     },
     created() {
 //    this.fetchVehicles();

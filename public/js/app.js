@@ -104316,11 +104316,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     if (_this.$route.params.nextUrl != null) {
                         _this.$router.push(_this.$route.params.nextUrl);
                     } else {
-                        _this.$router.push('/');
+                        _this.$router.push('/login');
                     }
                 }
                 console.log(response);
-                _this.$router.push('/');
+                _this.$router.push('/login');
                 _this.$toasted.global.signup().goAway(1500);
             }).catch(function (error) {
                 console.log(error.response);
@@ -104754,7 +104754,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         }
                     }
                 }
-                _this.$router.push('/');
+                _this.$router.push('/dashboard');
                 console.log(token);
             });
         }
@@ -106440,7 +106440,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -106794,89 +106794,109 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      menu2: false,
-      user: null,
-      vehicles: [],
-      services: [],
-      time: null,
-      dialog: false,
-      //  menu2: false,
-      modal2: false,
-      booking: {
-        id: "",
-        user_id: "",
-        vehicle_id: "",
-        service_render_id: "",
-        service_date: new Date().toISOString().substr(0, 10),
-        service_time: "",
-        is_completed: false
-      },
-      service: {
-        id: "",
-        price: "",
-        description: ""
-      }
+    data: function data() {
+        return {
+            menu2: false,
+            e1: 0,
+            user: null,
+            vehicles: [],
+            services: [],
+            time: null,
+            dialog: false,
+            //  menu2: false,
+            modal2: false,
+            booking: {
+                id: "",
+                user_id: "",
+                vehicle_id: "",
+                service_render_id: "",
+                service_date: new Date().toISOString().substr(0, 10),
+                service_time: "",
+                is_completed: false
+            },
+            service: {
+                id: "",
+                price: "",
+                description: ""
+            }
 
-    };
-  },
-  beforeMount: function beforeMount() {
-    var _this = this;
+        };
+    },
+    beforeMount: function beforeMount() {
+        var _this = this;
 
-    this.user = JSON.parse(localStorage.getItem('user'));
-    axios.defaults.headers.common['Content-Type'] = 'application/json';
-    axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt');
+        this.user = JSON.parse(localStorage.getItem('user'));
+        axios.defaults.headers.common['Content-Type'] = 'application/json';
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt');
 
-    axios.get("api/auth/user/" + this.user.id + "/vehicles").then(function (response) {
-      _this.vehicles = response.data;
-    }).catch(function (error) {
-      console.error(error);
-    });
-  },
-
-  methods: {
-    makeBooking: function makeBooking() {
-      var _this2 = this;
-
-      axios.post('/api/booking', this.booking).then(function (response) {
-        console.log(response);
-        //this.$router.push('/dashboard');
-        _this2.$toasted.global.bookingAdded().goAway(1500);
-      }).catch(function (error) {
-        console.log(error.response);
-      });
+        axios.get("api/auth/user/" + this.user.id + "/vehicles").then(function (response) {
+            _this.vehicles = response.data;
+        }).catch(function (error) {
+            console.error(error);
+        });
     },
 
-    moment: function moment() {
-      return __WEBPACK_IMPORTED_MODULE_0_moment___default()();
-    },
-    /*  fetchVehicles() {
-        axios.get(`api/auth/user/${this.user.id}/vehicles`)
-      .then(response => {
-          this.vehicles = response.data
-      })
-      .catch(error => {
-          console.error(error);
-        })
-      }, */
-    fetchServices: function fetchServices() {
-      var _this3 = this;
+    methods: {
+        makeBooking: function makeBooking() {
+            var _this2 = this;
 
-      axios.get("api/service/render/1").then(function (response) {
-        _this3.services = response.data;
-      }).catch(function (error) {
-        console.error(error);
-      });
+            axios.post('/api/booking', this.booking).then(function (response) {
+                console.log(response);
+                //this.$router.push('/dashboard');
+                _this2.$toasted.global.bookingAdded().goAway(1500);
+            }).catch(function (error) {
+                console.log(error.response);
+            });
+        },
+
+        moment: function moment() {
+            return __WEBPACK_IMPORTED_MODULE_0_moment___default()();
+        },
+        /*  fetchVehicles() {
+            axios.get(`api/auth/user/${this.user.id}/vehicles`)
+          .then(response => {
+              this.vehicles = response.data
+          })
+          .catch(error => {
+              console.error(error);
+            })
+          },*/
+        fetchServices: function fetchServices() {
+            var _this3 = this;
+
+            this.user = JSON.parse(localStorage.getItem('user'));
+            axios.defaults.headers.common['Content-Type'] = 'application/json';
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt');
+
+            axios.get("api/all/services").then(function (response) {
+                _this3.services = response.data;
+            }).catch(function (error) {
+                console.error(error);
+            });
+        }
+    },
+    created: function created() {
+        //    this.fetchVehicles();
+        this.fetchServices();
     }
-  },
-  created: function created() {
-    //    this.fetchVehicles();
-    this.fetchServices();
-  }
 });
 
 /***/ }),
@@ -107035,21 +107055,32 @@ var render = function() {
                                 )
                               ])
                             ])
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "blue" },
-                          on: {
-                            click: function($event) {
-                              _vm.e1 = 2
-                            }
-                          }
-                        },
-                        [_vm._v("\n            Continue\n          ")]
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v("i am a service")]),
+                          _vm._v(" "),
+                          _vm._l(_vm.services, function(service) {
+                            return _c(
+                              "div",
+                              _vm._b({}, "div", service.id, false),
+                              [_c("p", [_vm._v(_vm._s(service.price))])]
+                            )
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  _vm.e1 = 2
+                                }
+                              }
+                            },
+                            [_vm._v("\n              Continue\n            ")]
+                          )
+                        ],
+                        2
                       )
                     ],
                     1
@@ -107170,7 +107201,25 @@ var render = function() {
                                                               .service_name
                                                           )
                                                         )
-                                                      ])
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticClass:
+                                                            "grey--text"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "\n                           (" +
+                                                              _vm._s(
+                                                                service.vendor
+                                                                  .city
+                                                              ) +
+                                                              ")\n                        "
+                                                          )
+                                                        ]
+                                                      )
                                                     ]
                                                   )
                                                 ],
@@ -107349,6 +107398,59 @@ var render = function() {
                                                                                             },
                                                                                             expression:
                                                                                               "booking.service_date"
+                                                                                          }
+                                                                                        }
+                                                                                      )
+                                                                                    ],
+                                                                                    1
+                                                                                  )
+                                                                                ],
+                                                                                1
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "v-flex",
+                                                                                {
+                                                                                  attrs: {
+                                                                                    xs12:
+                                                                                      "",
+                                                                                    md12:
+                                                                                      ""
+                                                                                  }
+                                                                                },
+                                                                                [
+                                                                                  _c(
+                                                                                    "v-flex",
+                                                                                    [
+                                                                                      _c(
+                                                                                        "v-text-field",
+                                                                                        {
+                                                                                          attrs: {
+                                                                                            hint:
+                                                                                              "(YYY-MM-DD)",
+                                                                                            label:
+                                                                                              "service ID",
+                                                                                            value:
+                                                                                              "service.id"
+                                                                                          },
+                                                                                          model: {
+                                                                                            value:
+                                                                                              _vm
+                                                                                                .booking
+                                                                                                .service_render_id,
+                                                                                            callback: function(
+                                                                                              $$v
+                                                                                            ) {
+                                                                                              _vm.$set(
+                                                                                                _vm.booking,
+                                                                                                "service_render_id",
+                                                                                                $$v
+                                                                                              )
+                                                                                            },
+                                                                                            expression:
+                                                                                              "booking.service_render_id"
                                                                                           }
                                                                                         }
                                                                                       )
@@ -109800,7 +109902,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -109942,13 +110044,70 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       vendor: [],
+      services: [],
+      bookings: [],
       //  dialog: false,
-      id: this.$route.params.id,
+      //    id: this.$route.params.id,
       //  date: new Date().toISOString().substr(0, 10),
       dialog: false,
       //menu: false,
@@ -109957,15 +110116,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       time: null,
       //  menu2: false,
       modal2: false,
-      //    vendor:{        },
-      booking: {
-        id: "",
-        user_id: "",
-        vehicle_id: "",
-        service_date: new Date().toISOString().substr(0, 10),
-        service_time: "",
-        vendor_id: "1"
-      },
+      //  pending: x.status ="pending",
+
       items: ['1', '2', '3', '4'],
       items2: [{ icon: 'assignment', iconClass: 'blue white--text', title: 'Wheel alignment', subtitle: 'Jan 20, 2014' }, { icon: 'call_to_action', iconClass: 'amber white--text', title: 'Alternator change', subtitle: 'Jan 10, 2014' }]
     };
@@ -109973,7 +110125,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   beforeMount: function beforeMount() {
     var _this = this;
 
-    axios.get('/api/vendor/' + this.id).then(function (response) {
+    this.user = JSON.parse(localStorage.getItem('user'));
+    axios.defaults.headers.common['Content-Type'] = 'application/json';
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt');
+
+    axios.get('api/auth/user/' + this.user.id + '/vendor').then(function (response) {
       _this.vendor = response.data;
     }).catch(function (error) {
       console.error(error);
@@ -109982,27 +110138,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
   methods: {
-    makeBooking: function makeBooking() {
+    fetchServices: function fetchServices() {
       var _this2 = this;
 
-      axios.post('/api/booking', this.booking).then(function (response) {
-        console.log(response);
-        //this.$router.push('/dashboard');
-        _this2.$toasted.global.booking().goAway(1500);
+      this.user = JSON.parse(localStorage.getItem('user'));
+      axios.defaults.headers.common['Content-Type'] = 'application/json';
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt');
+      axios.get('api/auth/user/' + this.user.id + '/bookings/services').then(function (response) {
+        _this2.services = response.data;
       }).catch(function (error) {
-        console.log(error.response);
+        console.error(error);
+      });
+    },
+    fetchBookings: function fetchBookings() {
+      var _this3 = this;
+
+      this.user = JSON.parse(localStorage.getItem('user'));
+      axios.defaults.headers.common['Content-Type'] = 'application/json';
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt');
+      axios.get('api/auth/user/' + this.user.id + '/vendor/bookings').then(function (response) {
+        _this3.bookings = response.data;
+      }).catch(function (error) {
+        console.error(error);
       });
     }
+  },
+  created: function created() {
+    this.fetchServices();
+    this.fetchBookings();
   }
-  /*  created(){
-      axios.get('/api/vendor/' + this.id + '.json')
-      .then(response => {
-                this.vendor = response.json
-            })
-            .catch(error => {
-                console.error(error);
-            })
-    } */
 });
 
 /***/ }),
@@ -110016,304 +110180,75 @@ var render = function() {
   return _c(
     "v-container",
     { attrs: { "grid-list-md": "", "text-xs-center": "" } },
-    [
-      _c(
-        "v-layout",
-        { attrs: { row: "", wrap: "" } },
+    _vm._l(_vm.vendor, function(x) {
+      return _c(
+        "div",
+        _vm._b({}, "div", x.id, false),
         [
           _c(
-            "v-flex",
-            { attrs: { sm12: "" } },
-            [
-              _c(
-                "material-card",
-                { staticClass: "v-card-profile" },
-                [
-                  _c(
-                    "v-avatar",
-                    {
-                      staticClass: "mx-auto d-block",
-                      attrs: { slot: "offset", size: "130" },
-                      slot: "offset"
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src:
-                            "https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("v-card-text", { staticClass: "text-xs-center" }, [
-                    _c(
-                      "h6",
-                      {
-                        staticClass: "category text-gray font-weight-thin mb-3"
-                      },
-                      [_vm._v("Garki, Abuja")]
-                    ),
-                    _vm._v(" "),
-                    _c("h4", { staticClass: "card-title font-weight-light" }, [
-                      _vm._v("Oando Auto-Shop")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(_vm.vendor.vendor_title))]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "card-description font-weight-light" },
-                      [_vm._v("No. 12, Wakeel Pharmacy road, Asokoro, Abuja")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      [
-                        _c(
-                          "v-btn",
-                          { attrs: { color: "green", dark: "" } },
-                          [
-                            _vm._v("Active\n              "),
-                            _c("v-icon", { attrs: { dark: "", right: "" } }, [
-                              _vm._v("verified_user")
-                            ])
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm4: "" } },
-            [
-              _c(
-                "v-card",
-                { attrs: { hover: "true" } },
-                [
-                  _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                    _c("div", [
-                      _c(
-                        "h3",
-                        { staticClass: "headline mb-0" },
-                        [
-                          _vm._v("My Services"),
-                          _c("v-icon", { attrs: { large: "true" } }, [
-                            _vm._v("book")
-                          ])
-                        ],
-                        1
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            flat: "",
-                            color: "blue",
-                            to: { path: "services" }
-                          }
-                        },
-                        [_vm._v("Explore")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm4: "" } },
-            [
-              _c(
-                "v-card",
-                { attrs: { hover: "true" } },
-                [
-                  _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                    _c("div", [
-                      _c(
-                        "h3",
-                        { staticClass: "headline mb-0" },
-                        [
-                          _vm._v("Our Mechanic"),
-                          _c("v-icon", { attrs: { large: "true" } }, [
-                            _vm._v("local_car_wash")
-                          ])
-                        ],
-                        1
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-btn", { attrs: { flat: "", color: "blue" } }, [
-                        _vm._v("Share")
-                      ]),
-                      _vm._v(" "),
-                      _c("v-btn", { attrs: { flat: "", color: "blue" } }, [
-                        _vm._v("Explore")
-                      ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm4: "" } },
-            [
-              _c(
-                "v-card",
-                { attrs: { hover: "true" } },
-                [
-                  _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                    _c("div", [
-                      _c(
-                        "h3",
-                        { staticClass: "headline mb-0" },
-                        [
-                          _vm._v("Service Vehicles"),
-                          _c("v-icon", { attrs: { large: "true" } }, [
-                            _vm._v("person_pin")
-                          ])
-                        ],
-                        1
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-btn", { attrs: { flat: "", color: "blue" } }, [
-                        _vm._v("Share")
-                      ]),
-                      _vm._v(" "),
-                      _c("v-btn", { attrs: { flat: "", color: "blue" } }, [
-                        _vm._v("Explore")
-                      ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm8: "", md12: "" } },
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
             [
               _c(
                 "v-flex",
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      label: "find service in vendor",
-                      "append-icon": "search",
-                      clearable: ""
-                    },
-                    model: {
-                      value: _vm.message1,
-                      callback: function($$v) {
-                        _vm.message1 = $$v
-                      },
-                      expression: "message1"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm12: "" } },
-            [
-              _c(
-                "v-card",
+                { attrs: { sm12: "" } },
                 [
                   _c(
-                    "v-list",
-                    { attrs: { "two-line": "", subheader: "" } },
+                    "material-card",
+                    { staticClass: "v-card-profile" },
                     [
-                      _c("v-subheader", { attrs: { inset: "" } }, [
-                        _vm._v("My Services")
-                      ]),
+                      _c(
+                        "v-avatar",
+                        {
+                          staticClass: "mx-auto d-block",
+                          attrs: { slot: "offset", size: "130" },
+                          slot: "offset"
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"
+                            }
+                          })
+                        ]
+                      ),
                       _vm._v(" "),
-                      _vm._l(_vm.items2, function(item) {
-                        return _c(
-                          "v-list-tile",
+                      _c("v-card-text", { staticClass: "text-xs-center" }, [
+                        _c(
+                          "h6",
                           {
-                            key: item.title,
-                            on: { click: function($event) {} }
+                            staticClass:
+                              "category text-gray font-weight-thin mb-3"
                           },
-                          [
-                            _c(
-                              "v-list-tile-avatar",
-                              [
-                                _c("v-icon", { class: [item.iconClass] }, [
-                                  _vm._v(_vm._s(item.icon))
-                                ])
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-list-tile-content",
-                              [
-                                _c("v-list-tile-title", [
-                                  _vm._v(_vm._s(item.title))
-                                ]),
-                                _vm._v(" "),
-                                _c("v-list-tile-sub-title", [
-                                  _vm._v(_vm._s(item.subtitle))
-                                ])
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-list-tile-action",
+                          [_vm._v(_vm._s(x.lga) + ", " + _vm._s(x.city))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "h4",
+                          { staticClass: "card-title font-weight-light" },
+                          [_vm._v(_vm._s(x.vendor_title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          { staticClass: "card-description font-weight-light" },
+                          [_vm._v(_vm._s(x.address))]
+                        ),
+                        _vm._v(" "),
+                        x.status === "active"
+                          ? _c(
+                              "p",
                               [
                                 _c(
                                   "v-btn",
-                                  { attrs: { icon: "" } },
+                                  { attrs: { color: "green", dark: "" } },
                                   [
+                                    _vm._v("Active\n              "),
                                     _c(
                                       "v-icon",
-                                      { attrs: { color: "grey lighten-1" } },
-                                      [_vm._v("info")]
+                                      { attrs: { dark: "", right: "" } },
+                                      [_vm._v("verified_user")]
                                     )
                                   ],
                                   1
@@ -110321,15 +110256,420 @@ var render = function() {
                               ],
                               1
                             )
-                          ],
-                          1
-                        )
-                      })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        x.status === "pending"
+                          ? _c(
+                              "p",
+                              [
+                                _c(
+                                  "v-btn",
+                                  { attrs: { color: "yellow", dark: "" } },
+                                  [
+                                    _vm._v("pending\n                 "),
+                                    _c(
+                                      "v-icon",
+                                      { attrs: { dark: "", right: "" } },
+                                      [_vm._v("new")]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        x.status === "suspended"
+                          ? _c(
+                              "p",
+                              [
+                                _c(
+                                  "v-btn",
+                                  { attrs: { color: "yellow", dark: "" } },
+                                  [
+                                    _vm._v("suspended\n                    "),
+                                    _c(
+                                      "v-icon",
+                                      { attrs: { dark: "", right: "" } },
+                                      [_vm._v("block")]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          : _vm._e()
+                      ])
                     ],
-                    2
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", sm4: "" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { hover: "true" } },
+                    [
+                      _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                        _c("div", [
+                          _c(
+                            "h3",
+                            { staticClass: "headline mb-0" },
+                            [
+                              _vm._v("My Services"),
+                              _c("v-icon", { attrs: { large: "true" } }, [
+                                _vm._v("book")
+                              ])
+                            ],
+                            1
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                flat: "",
+                                color: "blue",
+                                to: { path: "services" }
+                              }
+                            },
+                            [_vm._v("Explore")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", sm4: "" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { hover: "true" } },
+                    [
+                      _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                        _c("div", [
+                          _c(
+                            "h3",
+                            { staticClass: "headline mb-0" },
+                            [
+                              _vm._v("My Bookings"),
+                              _c("v-icon", { attrs: { large: "true" } }, [
+                                _vm._v("person_pin")
+                              ])
+                            ],
+                            1
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c("v-btn", { attrs: { flat: "", color: "blue" } }, [
+                            _vm._v("Share")
+                          ]),
+                          _vm._v(" "),
+                          _c("v-btn", { attrs: { flat: "", color: "blue" } }, [
+                            _vm._v("Explore")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", sm4: "" } },
+                [
+                  _c(
+                    "v-card",
+                    { attrs: { hover: "true" } },
+                    [
+                      _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                        _c("div", [
+                          _c(
+                            "h3",
+                            { staticClass: "headline mb-0" },
+                            [
+                              _vm._v("My Wallet"),
+                              _c("v-icon", { attrs: { large: "true" } }, [
+                                _vm._v("local_car_wash")
+                              ])
+                            ],
+                            1
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c("v-btn", { attrs: { flat: "", color: "blue" } }, [
+                            _vm._v("Share")
+                          ]),
+                          _vm._v(" "),
+                          _c("v-btn", { attrs: { flat: "", color: "blue" } }, [
+                            _vm._v("Explore")
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "", sm12: "" } },
+                [
+                  _c(
+                    "v-card",
+                    [
+                      _c(
+                        "v-list",
+                        { attrs: { "two-line": "", subheader: "" } },
+                        [
+                          _c("v-subheader", { attrs: { inset: "" } }, [
+                            _vm._v("Pending Bookings")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.bookings, function(booking) {
+                            return _c(
+                              "v-list-tile",
+                              {
+                                key: booking.id,
+                                on: { click: function($event) {} }
+                              },
+                              [
+                                _c(
+                                  "v-list-tile-avatar",
+                                  [_c("v-icon", [_vm._v("assignment")])],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile-content",
+                                  [
+                                    _c("v-list-tile-title"),
+                                    _vm._v(" "),
+                                    _c("v-list-tile-sub-title", [
+                                      _vm._v(_vm._s(booking.service_date))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("v-list-tile-sub-title", [
+                                      _vm._v(_vm._s(booking.service_time))
+                                    ])
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile-action",
+                                  [
+                                    _c(
+                                      "v-btn",
+                                      { attrs: { icon: "" } },
+                                      [
+                                        _c(
+                                          "v-icon",
+                                          {
+                                            attrs: { color: "grey lighten-1" }
+                                          },
+                                          [_vm._v("info")]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          })
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _c("v-divider")
+                    ],
+                    1
                   ),
                   _vm._v(" "),
-                  _c("v-divider")
+                  _c(
+                    "v-card",
+                    [
+                      _c(
+                        "v-list",
+                        { attrs: { "two-line": "", subheader: "" } },
+                        [
+                          _c("v-subheader", { attrs: { inset: "" } }, [
+                            _vm._v("Top Services")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.services, function(service) {
+                            return _c(
+                              "v-list-tile",
+                              {
+                                key: service.id,
+                                on: { click: function($event) {} }
+                              },
+                              [
+                                _c(
+                                  "v-list-tile-avatar",
+                                  [_c("v-icon", [_vm._v("assignment")])],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile-content",
+                                  [
+                                    _c("v-list-tile-title", [
+                                      _vm._v(_vm._s(service.price))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("v-list-tile-sub-title", [
+                                      _vm._v(_vm._s(service.description))
+                                    ])
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile-action",
+                                  [
+                                    _c(
+                                      "v-btn",
+                                      { attrs: { icon: "" } },
+                                      [
+                                        _c(
+                                          "v-icon",
+                                          {
+                                            attrs: { color: "grey lighten-1" }
+                                          },
+                                          [_vm._v("info")]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          })
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _c("v-divider")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card",
+                    [
+                      _c(
+                        "v-list",
+                        { attrs: { "two-line": "", subheader: "" } },
+                        [
+                          _c("v-subheader", { attrs: { inset: "" } }, [
+                            _vm._v("Pending Bookings")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.items2, function(item) {
+                            return _c(
+                              "v-list-tile",
+                              {
+                                key: item.title,
+                                on: { click: function($event) {} }
+                              },
+                              [
+                                _c(
+                                  "v-list-tile-avatar",
+                                  [
+                                    _c("v-icon", { class: [item.iconClass] }, [
+                                      _vm._v(_vm._s(item.icon))
+                                    ])
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile-content",
+                                  [
+                                    _c("v-list-tile-title", [
+                                      _vm._v(_vm._s(item.title))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("v-list-tile-sub-title", [
+                                      _vm._v(_vm._s(item.subtitle))
+                                    ])
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile-action",
+                                  [
+                                    _c(
+                                      "v-btn",
+                                      { attrs: { icon: "" } },
+                                      [
+                                        _c(
+                                          "v-icon",
+                                          {
+                                            attrs: { color: "grey lighten-1" }
+                                          },
+                                          [_vm._v("info")]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          })
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _c("v-divider")
+                    ],
+                    1
+                  )
                 ],
                 1
               )
@@ -110339,8 +110679,8 @@ var render = function() {
         ],
         1
       )
-    ],
-    1
+    }),
+    0
   )
 }
 var staticRenderFns = []
@@ -110439,7 +110779,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -110452,6 +110792,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+//
+//
 //
 //
 //
@@ -110723,7 +111065,7 @@ var render = function() {
         [
           _c(
             "v-flex",
-            { attrs: { xs12: "", sm12: "" } },
+            { attrs: { xs12: "", sm6: "" } },
             [
               _c(
                 "v-form",
@@ -110862,14 +111204,57 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("v-flex", { attrs: { xs12: "", sm6: "" } }, [
-            _c("h3", [_vm._v(_vm._s(_vm.renders.length))])
-          ]),
-          _vm._v(" "),
           _c(
             "v-flex",
-            { attrs: { xs12: "", sm12: "" } },
+            { attrs: { xs12: "", sm6: "" } },
             [
+              _c("v-flex", { attrs: { xs12: "", sm6: "" } }, [
+                _c(
+                  "h4",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.renders.length === 1,
+                        expression: "renders.length === 1"
+                      }
+                    ]
+                  },
+                  [_vm._v(_vm._s(_vm.renders.length) + " service created")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h4",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.renders.length > 1,
+                        expression: "renders.length > 1"
+                      }
+                    ]
+                  },
+                  [_vm._v(_vm._s(_vm.renders.length) + " services")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h4",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.renders.length < 1,
+                        expression: "renders.length < 1"
+                      }
+                    ]
+                  },
+                  [_vm._v("you have no services")]
+                )
+              ]),
+              _vm._v(" "),
               _c(
                 "v-card",
                 [

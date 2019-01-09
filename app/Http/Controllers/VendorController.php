@@ -20,6 +20,13 @@ class VendorController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
+
+   public function showVendors(Vendor $user)
+       {
+           return response()->json($user->with(['servicerenders'])->get(),200);
+          // return response()->json($user->servicerenders()->with(['service','servicecategory'])->get(),200);
+       }
+
   public function index()
   {
     $vendors = Vendor::orderBy('created_at','desc')->paginate(15);

@@ -13,4 +13,8 @@ class Booking extends Model
    public function servicerenders(){
         return $this->belongsTo(ServiceRender::class,'service_render_id');
     }
+
+    public function vendor(){
+         return $this->belongsTo(Vendor::class,'vendor_id');
+     }
 }
