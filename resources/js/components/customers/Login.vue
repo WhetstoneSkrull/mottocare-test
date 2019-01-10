@@ -20,7 +20,10 @@
                     <v-spacer></v-spacer>
                     <v-btn color="primary" @click.prevent="logIn">Login</v-btn>
                   </v-card-actions>
+
                 </v-card>
+                <p ></p>
+                  <v-btn color="primary" flat :to="{path: 'reset-password'}" blue>Forgot password?</v-btn>
               </v-flex>
             </v-layout>
           </v-container>
@@ -53,7 +56,7 @@ methods:{
                              }
                              else {
                                      this.$router.push('dashboard')
-                                       this.$toasted.global.login().goAway(1500);
+                                       this.$toasted.global.login().goAway(2000);
                              }
                          }
             }

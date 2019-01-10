@@ -1,5 +1,14 @@
 <template lang="html">
   <v-container grid-list-md text-xs-center>
+    <div class="">
+
+    <v-chip color="indigo" text-color="white" >
+         <v-avatar>
+         </v-avatar>
+         you have {{pending.length}} uncompleted bookings
+       </v-chip>
+     </div>
+
     <div class="" v-for="x in vendor" v-bind="x.id">
 
    <v-layout row wrap>
@@ -26,11 +35,10 @@
               <v-icon dark right>verified_user</v-icon></v-btn> </p>
 
               <p v-if="x.status === 'pending'"><v-btn color="yellow" dark>pending
-                 <v-icon dark right>new</v-icon></v-btn> </p>
+                 <v-icon dark right>report</v-icon></v-btn> </p>
 
                  <p v-if="x.status === 'suspended'"><v-btn color="yellow" dark>suspended
                     <v-icon dark right>block</v-icon></v-btn> </p>
-
 
          </v-card-text>
        </material-card>
@@ -101,9 +109,9 @@ hover="true"
     <v-flex xs12 sm12>
       <v-card>
         <v-list two-line subheader>
-          <v-subheader inset>Pending Bookings</v-subheader>
+          <v-subheader inset> {{pending.length}} Pending Bookings</v-subheader>
 
-          <v-list-tile v-for="booking in bookings" :key="booking.id" @click="">
+          <v-list-tile v-for="booking in pending" :key="booking.id" @click="">
 
             <v-list-tile-avatar>
               <v-icon>assignment</v-icon>
@@ -122,6 +130,7 @@ hover="true"
                   </v-btn>
               </v-list-tile-action>
           </v-list-tile>
+
         </v-list>
         <v-divider></v-divider>
       </v-card>
@@ -251,6 +260,13 @@ hover="true"
         })
       }
     },
+    computed: {
+     pending: function() {
+       return this.bookings.filter(function(u) {
+         return u.is_completed
+     })
+   } // contains only Alex and James
+ },
    created(){
     this.fetchServices();
     this.fetchBookings();

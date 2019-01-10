@@ -6,10 +6,15 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class User extends \TCG\Voyager\Models\User
 {
-    use Notifiable, HasApiTokens;
+    use Notifiable, HasApiTokens, SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +24,7 @@ class User extends \TCG\Voyager\Models\User
     protected $fillable = [
       //'user_role',
         'first_name','last_name','slug','account_pic','driver_license','customer_id','DoB','address', 'email', 'password', 'token',
-        'driver_first_name','driver_last_name','lga','city','state'
+        'driver_first_name','driver_last_name','lga','city','state','active', 'activation_token'
     ];
 
     /**
@@ -28,7 +33,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'activation_token'
     ];
 
     public function vehicles()

@@ -24,12 +24,22 @@ import Vuetify from 'vuetify'
      *                               *
      *********************************/
      //Auth Toast
-    Vue.toasted.register('signup', 'Welcome to Mottocare', {
+    Vue.toasted.register('signup', 'Sign up successful. An activation link has been sent to your mail! ', {
     type : 'info',
     //icon : 'error_outline'
     });
 
     Vue.toasted.register('login', 'Logged In Successfully', {
+    type : 'info',
+    //icon : 'error_outline'
+    });
+
+    Vue.toasted.register('reset', 'A Password Reset link has been sent to your mail!', {
+    type : 'info',
+    //icon : 'error_outline'
+    });
+
+    Vue.toasted.register('createPassword', 'New Password has been created, Now Sign in with your new password', {
     type : 'info',
     //icon : 'error_outline'
     });
@@ -114,6 +124,8 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
     //customer pages
     import Register from './components/customers/Register'
     import Login from './components/customers/Login'
+    import ResetPassword from './components/customers/ResetPassword'
+    import CreatePassword from './components/customers/CreatePassword'
     import Dashboard from './components/customers/Dashboard'
     import EditProfile from './components/customers/EditProfile'
     import MakeBooking from './components/customers/MakeBooking'
@@ -158,6 +170,16 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 path: '/signup',
                 name: 'register',
                 component: Register
+            },
+            {
+                path: '/reset-password',
+                name: 'ResetPassword',
+                component: ResetPassword
+            },
+            {
+                path: '/user-create-new-password',
+                name: 'CreatePassword',
+                component: CreatePassword
             },
             //User Dashboard
             {

@@ -20,8 +20,7 @@
         <td>{{booking.vehicle_id}}</td>
         <td>{{booking.service_date}}</td>
         <td>{{booking.service_time}}</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <td> <v-btn color="primary">mark as completed</v-btn> </td>
         <td>
           <button type="button" class="fa fa-pencil fa-2x" @click=""> </button>
           <button type="button" class="fa fa-trash fa-2x" @click=""> </button>
