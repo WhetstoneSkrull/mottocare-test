@@ -64,6 +64,13 @@
                                     <button type="submit" class="btn btn-primary">
                                         Register
                                     </button>
+                                    <p>
+                                      <a href="/login/google">
+                                      <v-btn color="error">
+                                        <span class="fa fa-google">  Sign with Google</span>
+                                      </v-btn>  </a>
+
+                                    </p>
                                 </div>
                             </div>
                         </form>
@@ -73,6 +80,7 @@
         </div>
     </div>
 </template>
+
 
 <script>
 export default {

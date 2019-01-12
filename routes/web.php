@@ -73,5 +73,7 @@ Route::group(['prefix' => 'backend'], function () {
     Voyager::routes();
 });
 
+Route::get('/login/google', 'SocialController@GoogleRedirectToProvider');
+Route::get('/login/google/callback ', 'SocialController@GoogleHandleProviderCallback');
 
 Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');

@@ -161,6 +161,14 @@ Route::post('driver', 'DriverController@store');
 Route::put('driver', 'DriverController@store');
 Route::delete('driver/{id}', 'DriverController@destroy');
 
+
+//Slot API
+Route::get('slots', 'SlotController@index');
+Route::get('slot/{id}', 'SlotController@show');
+Route::post('slot', 'SlotController@store');
+Route::put('slot', 'SlotController@store');
+Route::delete('slot/{id}', 'SlotController@destroy');
+
 //Agent API
 Route::get('agents', 'AgentController@index');
 Route::post('agent', 'AgentController@store');

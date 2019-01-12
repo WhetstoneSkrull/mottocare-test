@@ -399,7 +399,6 @@ export default {
         })
     },
     methods:{
-
       makeBooking(){
         axios.post('/api/booking',this.booking)
         .then(response=>{

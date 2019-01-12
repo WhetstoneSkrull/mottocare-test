@@ -40,4 +40,10 @@ return [
         ],
     ],
 
+    'google' => [
+    'client_id' => env("GOOGLE_CLIENT_ID",'518650705091-euk3enlarmr17erk1vktvi8864jptu2f.apps.googleusercontent.com'),         // Your GitHub Client ID
+    'client_secret' => env("GOOGLE_CLIENT_SECRET",'lIZrR2EG8dlrGZn5WE15Kex2'), // Your GitHub Client Secret
+    'redirect' => 'http://localhost:8000/login/google/callback',
+],
+
 ];

@@ -124,6 +124,7 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
     //customer pages
     import Register from './components/customers/Register'
     import Login from './components/customers/Login'
+    import Select from './components/customers/Select'
     import ResetPassword from './components/customers/ResetPassword'
     import CreatePassword from './components/customers/CreatePassword'
     import Dashboard from './components/customers/Dashboard'
@@ -160,6 +161,11 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 path: '/',
                 name: 'home',
                 component: Welcome
+            },
+            {
+                path: '/select',
+                name: 'select',
+                component: Select
             },
             {
                 path: '/login',
