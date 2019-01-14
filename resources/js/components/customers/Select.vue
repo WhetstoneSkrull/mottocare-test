@@ -5,7 +5,6 @@
       <!--customer card-->
       <v-flex xs12 sm4>
      <v-card
-     hover="true"
      flat="true"
      >
        <v-card-title primary-title>
@@ -15,8 +14,7 @@
        </v-card-title>
 
        <v-card-actions>
-         <v-btn flat color="blue" :to="{path: 'make-booking'}">Book Now</v-btn>
-         <v-btn flat color="blue" :to="{path: 'bookings'}">Explore</v-btn>
+         <v-btn flat color="blue" :to="{path: 'bookings'}">Go to Customer</v-btn>
        </v-card-actions>
      </v-card>
     </v-flex>
@@ -29,13 +27,12 @@
    >
      <v-card-title primary-title>
        <div>
-         <h3 class="headline mb-0">Become a Vendor<v-icon large="true">book</v-icon></h3>
+         <h3 class="headline mb-0">Become a Vendor</h3>
        </div>
      </v-card-title>
 
      <v-card-actions>
-       <v-btn flat color="blue" :to="{path: 'make-booking'}">Book Now</v-btn>
-       <v-btn flat color="blue" :to="{path: 'bookings'}">Explore</v-btn>
+       <v-btn flat color="blue" :to="{path: 'vendor-register'}">Sign up Now</v-btn>
      </v-card-actions>
    </v-card>
   </v-flex>
@@ -53,12 +50,14 @@
    </v-card-title>
 
    <v-card-actions>
-     <v-btn flat color="blue" :to="{path: 'make-booking'}">Book Now</v-btn>
-     <v-btn flat color="blue" :to="{path: 'bookings'}">Explore</v-btn>
+     <v-btn flat color="blue" :to="{path: 'make-booking'}"> </v-btn>
+     <v-btn flat color="blue" :to="{path: 'bookings'}"></v-btn>
    </v-card-actions>
  </v-card>
 </v-flex>
 <!--End of Booking card-->
+
+
 
 </v-layout>
 </v-app>

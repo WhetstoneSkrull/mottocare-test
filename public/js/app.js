@@ -95606,7 +95606,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -95617,6 +95617,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -96006,849 +96009,882 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-stepper",
-    {
-      model: {
-        value: _vm.e1,
-        callback: function($$v) {
-          _vm.e1 = $$v
-        },
-        expression: "e1"
-      }
-    },
+    "v-flex",
+    { attrs: { xs12: "" } },
     [
       _c(
-        "v-stepper-header",
-        [
-          _c("v-stepper-step", { attrs: { complete: _vm.e1 > 1, step: "1" } }, [
-            _vm._v("Personal Details")
-          ]),
-          _vm._v(" "),
-          _c("v-divider"),
-          _vm._v(" "),
-          _c("v-stepper-step", { attrs: { complete: _vm.e1 > 2, step: "2" } }, [
-            _vm._v("Manager details")
-          ]),
-          _vm._v(" "),
-          _c("v-divider"),
-          _vm._v(" "),
-          _c("v-stepper-step", { attrs: { complete: _vm.e1 > 3, step: "3" } }, [
-            _vm._v("Mechanic Details")
-          ]),
-          _vm._v(" "),
-          _c("v-divider"),
-          _vm._v(" "),
-          _c("v-stepper-step", { attrs: { complete: _vm.e1 > 4, step: "4" } }, [
-            _vm._v("Business Details")
-          ]),
-          _vm._v(" "),
-          _c("v-divider"),
-          _vm._v(" "),
-          _c("v-stepper-step", { attrs: { complete: _vm.e1 > 5, step: "5" } }, [
-            _vm._v("Preview")
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-stepper-items",
+        "v-stepper",
+        {
+          model: {
+            value: _vm.e1,
+            callback: function($$v) {
+              _vm.e1 = $$v
+            },
+            expression: "e1"
+          }
+        },
         [
           _c(
-            "v-stepper-content",
-            { attrs: { step: "1" } },
+            "v-stepper-header",
             [
               _c(
-                "v-form",
-                {
-                  ref: "form",
-                  attrs: { "lazy-validation": "" },
-                  model: {
-                    value: _vm.valid,
-                    callback: function($$v) {
-                      _vm.valid = $$v
-                    },
-                    expression: "valid"
-                  }
-                },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Business name",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.vendor_title,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "vendor_title", $$v)
-                      },
-                      expression: "vendor.vendor_title"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Vendor First Name",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.vendor_first_name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "vendor_first_name", $$v)
-                      },
-                      expression: "vendor.vendor_first_name"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Vendor Last Name",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.vendor_last_name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "vendor_last_name", $$v)
-                      },
-                      expression: "vendor.vendor_last_name"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.emailRules,
-                      label: "Business E-mail",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.vendor_email,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "vendor_email", $$v)
-                      },
-                      expression: "vendor.vendor_email"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Mobile No.",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.mobile_no,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "mobile_no", $$v)
-                      },
-                      expression: "vendor.mobile_no"
-                    }
-                  })
-                ],
-                1
+                "v-stepper-step",
+                { attrs: { complete: _vm.e1 > 1, step: "1" } },
+                [_vm._v("Personal Details")]
               ),
               _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
               _c(
-                "v-btn",
-                {
-                  attrs: { color: "blue", disabled: !_vm.valid },
-                  on: {
-                    click: function($event) {
-                      _vm.e1 = 2
-                    }
-                  }
-                },
-                [_vm._v("\n        Continue\n      ")]
+                "v-stepper-step",
+                { attrs: { complete: _vm.e1 > 2, step: "2" } },
+                [_vm._v("Manager details")]
+              ),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c(
+                "v-stepper-step",
+                { attrs: { complete: _vm.e1 > 3, step: "3" } },
+                [_vm._v("Mechanic Details")]
+              ),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c(
+                "v-stepper-step",
+                { attrs: { complete: _vm.e1 > 4, step: "4" } },
+                [_vm._v("Business Details")]
+              ),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c(
+                "v-stepper-step",
+                { attrs: { complete: _vm.e1 > 5, step: "5" } },
+                [_vm._v("Preview")]
               )
             ],
             1
           ),
           _vm._v(" "),
           _c(
-            "v-stepper-content",
-            { attrs: { step: "2" } },
+            "v-stepper-items",
             [
               _c(
-                "v-form",
-                {
-                  ref: "form",
-                  attrs: { "lazy-validation": "" },
-                  model: {
-                    value: _vm.valid,
-                    callback: function($$v) {
-                      _vm.valid = $$v
-                    },
-                    expression: "valid"
-                  }
-                },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Manager/Owner First Name",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.manager_first_name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "manager_first_name", $$v)
-                      },
-                      expression: "vendor.manager_first_name"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Manager/Owner Last Name",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.manager_last_name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "manager_last_name", $$v)
-                      },
-                      expression: "vendor.manager_last_name"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.emailRules,
-                      label: "Manager/Owner E-mail",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.manager_email,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "manager_email", $$v)
-                      },
-                      expression: "vendor.manager_email"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { color: "blue" },
-                  on: {
-                    click: function($event) {
-                      _vm.e1 = 3
-                    }
-                  }
-                },
-                [_vm._v("\n        Continue\n      ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { flat: "" },
-                  on: {
-                    click: function($event) {
-                      _vm.e1 = 1
-                    }
-                  }
-                },
-                [_vm._v("Back")]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-stepper-content",
-            { attrs: { step: "3" } },
-            [
-              _c(
-                "v-form",
-                {
-                  ref: "form",
-                  attrs: { "lazy-validation": "" },
-                  model: {
-                    value: _vm.valid,
-                    callback: function($$v) {
-                      _vm.valid = $$v
-                    },
-                    expression: "valid"
-                  }
-                },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Mechanic First Name",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.mechanic_first_name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "mechanic_first_name", $$v)
-                      },
-                      expression: "vendor.mechanic_first_name"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Mechanic Last Name",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.mechanic_last_name,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "mechanic_last_name", $$v)
-                      },
-                      expression: "vendor.mechanic_last_name"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.emailRules,
-                      label: "Mechanic E-mail",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.mechanic_email,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "mechanic_email", $$v)
-                      },
-                      expression: "vendor.mechanic_email"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Mechanic Date of Birth",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.mechanic_dob,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "mechanic_dob", $$v)
-                      },
-                      expression: "vendor.mechanic_dob"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Mechanic Contact no.",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.Mechanic_contact_no,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "Mechanic_contact_no", $$v)
-                      },
-                      expression: "vendor.Mechanic_contact_no"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Mechanic Nationality",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.mechanic_nationality,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "mechanic_nationality", $$v)
-                      },
-                      expression: "vendor.mechanic_nationality"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { color: "blue" },
-                  on: {
-                    click: function($event) {
-                      _vm.e1 = 4
-                    }
-                  }
-                },
-                [_vm._v("\n        Continue\n      ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { flat: "" },
-                  on: {
-                    click: function($event) {
-                      _vm.e1 = 2
-                    }
-                  }
-                },
-                [_vm._v("Back")]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-stepper-content",
-            { attrs: { step: "4" } },
-            [
-              _c(
-                "v-form",
-                {
-                  ref: "form",
-                  attrs: { "lazy-validation": "" },
-                  model: {
-                    value: _vm.valid,
-                    callback: function($$v) {
-                      _vm.valid = $$v
-                    },
-                    expression: "valid"
-                  }
-                },
-                [
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Business Address",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.address,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "address", $$v)
-                      },
-                      expression: "vendor.address"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "State of business",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.state,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "state", $$v)
-                      },
-                      expression: "vendor.state"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "City",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.city,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "city", $$v)
-                      },
-                      expression: "vendor.city"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Local Government Area",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.lga,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "lga", $$v)
-                      },
-                      expression: "vendor.lga"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Business capacity/manpower",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.capacity,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "capacity", $$v)
-                      },
-                      expression: "vendor.capacity"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Business Opening time",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.opening_time,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "opening_time", $$v)
-                      },
-                      expression: "vendor.opening_time"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Business Closing time",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.closing_time,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "closing_time", $$v)
-                      },
-                      expression: "vendor.closing_time"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("v-text-field", {
-                    attrs: {
-                      rules: _vm.nameRules,
-                      counter: 10,
-                      label: "Off days",
-                      required: ""
-                    },
-                    model: {
-                      value: _vm.vendor.off_day,
-                      callback: function($$v) {
-                        _vm.$set(_vm.vendor, "off_day", $$v)
-                      },
-                      expression: "vendor.off_day"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { color: "blue" },
-                  on: {
-                    click: function($event) {
-                      _vm.e1 = 5
-                    }
-                  }
-                },
-                [_vm._v("\n        Continue\n      ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { flat: "" },
-                  on: {
-                    click: function($event) {
-                      _vm.e1 = 3
-                    }
-                  }
-                },
-                [_vm._v("Back")]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-stepper-content",
-            { attrs: { step: "5" } },
-            [
-              _c(
-                "v-layout",
+                "v-stepper-content",
+                { attrs: { step: "1" } },
                 [
                   _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm6: "", "offset-sm3": "" } },
+                    "v-form",
+                    {
+                      ref: "form",
+                      attrs: { "lazy-validation": "" },
+                      model: {
+                        value: _vm.valid,
+                        callback: function($$v) {
+                          _vm.valid = $$v
+                        },
+                        expression: "valid"
+                      }
+                    },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Business name",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.vendor_title,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "vendor_title", $$v)
+                          },
+                          expression: "vendor.vendor_title"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Vendor First Name",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.vendor_first_name,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "vendor_first_name", $$v)
+                          },
+                          expression: "vendor.vendor_first_name"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Vendor Last Name",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.vendor_last_name,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "vendor_last_name", $$v)
+                          },
+                          expression: "vendor.vendor_last_name"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.emailRules,
+                          label: "Business E-mail",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.vendor_email,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "vendor_email", $$v)
+                          },
+                          expression: "vendor.vendor_email"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Mobile No.",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.mobile_no,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "mobile_no", $$v)
+                          },
+                          expression: "vendor.mobile_no"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "blue", disabled: !_vm.valid },
+                      on: {
+                        click: function($event) {
+                          _vm.e1 = 2
+                        }
+                      }
+                    },
+                    [_vm._v("\n          Continue\n        ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "2" } },
+                [
+                  _c(
+                    "v-form",
+                    {
+                      ref: "form",
+                      attrs: { "lazy-validation": "" },
+                      model: {
+                        value: _vm.valid,
+                        callback: function($$v) {
+                          _vm.valid = $$v
+                        },
+                        expression: "valid"
+                      }
+                    },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Manager/Owner First Name",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.manager_first_name,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "manager_first_name", $$v)
+                          },
+                          expression: "vendor.manager_first_name"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Manager/Owner Last Name",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.manager_last_name,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "manager_last_name", $$v)
+                          },
+                          expression: "vendor.manager_last_name"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.emailRules,
+                          label: "Manager/Owner E-mail",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.manager_email,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "manager_email", $$v)
+                          },
+                          expression: "vendor.manager_email"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "blue" },
+                      on: {
+                        click: function($event) {
+                          _vm.e1 = 3
+                        }
+                      }
+                    },
+                    [_vm._v("\n          Continue\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { flat: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.e1 = 1
+                        }
+                      }
+                    },
+                    [_vm._v("Back")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "3" } },
+                [
+                  _c(
+                    "v-form",
+                    {
+                      ref: "form",
+                      attrs: { "lazy-validation": "" },
+                      model: {
+                        value: _vm.valid,
+                        callback: function($$v) {
+                          _vm.valid = $$v
+                        },
+                        expression: "valid"
+                      }
+                    },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Mechanic First Name",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.mechanic_first_name,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "mechanic_first_name", $$v)
+                          },
+                          expression: "vendor.mechanic_first_name"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Mechanic Last Name",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.mechanic_last_name,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "mechanic_last_name", $$v)
+                          },
+                          expression: "vendor.mechanic_last_name"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.emailRules,
+                          label: "Mechanic E-mail",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.mechanic_email,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "mechanic_email", $$v)
+                          },
+                          expression: "vendor.mechanic_email"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Mechanic Date of Birth",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.mechanic_dob,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "mechanic_dob", $$v)
+                          },
+                          expression: "vendor.mechanic_dob"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Mechanic Contact no.",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.Mechanic_contact_no,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "Mechanic_contact_no", $$v)
+                          },
+                          expression: "vendor.Mechanic_contact_no"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Mechanic Nationality",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.mechanic_nationality,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "mechanic_nationality", $$v)
+                          },
+                          expression: "vendor.mechanic_nationality"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "blue" },
+                      on: {
+                        click: function($event) {
+                          _vm.e1 = 4
+                        }
+                      }
+                    },
+                    [_vm._v("\n          Continue\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { flat: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.e1 = 2
+                        }
+                      }
+                    },
+                    [_vm._v("Back")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "4" } },
+                [
+                  _c(
+                    "v-form",
+                    {
+                      ref: "form",
+                      attrs: { "lazy-validation": "" },
+                      model: {
+                        value: _vm.valid,
+                        callback: function($$v) {
+                          _vm.valid = $$v
+                        },
+                        expression: "valid"
+                      }
+                    },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Business Address",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.address,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "address", $$v)
+                          },
+                          expression: "vendor.address"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "State of business",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.state,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "state", $$v)
+                          },
+                          expression: "vendor.state"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "City",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.city,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "city", $$v)
+                          },
+                          expression: "vendor.city"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Local Government Area",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.lga,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "lga", $$v)
+                          },
+                          expression: "vendor.lga"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Business capacity/manpower",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.capacity,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "capacity", $$v)
+                          },
+                          expression: "vendor.capacity"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Business Opening time",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.opening_time,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "opening_time", $$v)
+                          },
+                          expression: "vendor.opening_time"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Business Closing time",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.closing_time,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "closing_time", $$v)
+                          },
+                          expression: "vendor.closing_time"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          rules: _vm.nameRules,
+                          counter: 10,
+                          label: "Off days",
+                          required: ""
+                        },
+                        model: {
+                          value: _vm.vendor.off_day,
+                          callback: function($$v) {
+                            _vm.$set(_vm.vendor, "off_day", $$v)
+                          },
+                          expression: "vendor.off_day"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "blue" },
+                      on: {
+                        click: function($event) {
+                          _vm.e1 = 5
+                        }
+                      }
+                    },
+                    [_vm._v("\n          Continue\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { flat: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.e1 = 3
+                        }
+                      }
+                    },
+                    [_vm._v("Back")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "5" } },
+                [
+                  _c(
+                    "v-layout",
                     [
                       _c(
-                        "v-card",
+                        "v-flex",
+                        { attrs: { xs12: "", sm6: "", "offset-sm3": "" } },
                         [
                           _c(
-                            "v-card-title",
-                            { attrs: { "primary-title": "" } },
-                            [
-                              _c("div", [
-                                _c("h3", { staticClass: "headline mb-0" }, [
-                                  _vm._v("Manager Details")
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "text-center" }, [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Vendor First Name: " +
-                                        _vm._s(_vm.vendor.vendor_first_name)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Vendor Last Name: " +
-                                        _vm._s(_vm.vendor.vendor_last_name)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Vendor Mobile No.: " +
-                                        _vm._s(_vm.vendor.mobile_no)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Manager First Name: " +
-                                        _vm._s(_vm.vendor.manager_first_name)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Manager Last name: " +
-                                        _vm._s(_vm.vendor.manager_last_name)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Manager Email: " +
-                                        _vm._s(_vm.vendor.manager_email)
-                                    )
-                                  ])
-                                ])
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-actions",
+                            "v-card",
                             [
                               _c(
-                                "v-btn",
-                                {
-                                  attrs: { flat: "", color: "orange" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.e1 = 1
-                                    }
-                                  }
-                                },
-                                [_vm._v("Edit")]
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-divider"),
-                      _vm._v(" "),
-                      _c(
-                        "v-card",
-                        [
-                          _c(
-                            "v-card-title",
-                            { attrs: { "primary-title": "" } },
-                            [
-                              _c("div", [
-                                _c("h3", { staticClass: "headline mb-0" }, [
-                                  _vm._v("Mechanic Details")
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "text-center" }, [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Mechanic First name: " +
-                                        _vm._s(_vm.vendor.mechanic_first_name)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Mechanic Last Name: " +
-                                        _vm._s(_vm.vendor.mechanic_last_name)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Mechanic Nationality: " +
-                                        _vm._s(_vm.vendor.mechanic_nationality)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Mechanic D-o-B: " +
-                                        _vm._s(_vm.vendor.mechanic_dob)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Mechanic  Contact no: " +
-                                        _vm._s(_vm.vendor.mechanic_contact_no)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Mechanic Email: " +
-                                        _vm._s(_vm.vendor.mechanic_email)
-                                    )
+                                "v-card-title",
+                                { attrs: { "primary-title": "" } },
+                                [
+                                  _c("div", [
+                                    _c("h3", { staticClass: "headline mb-0" }, [
+                                      _vm._v("Manager Details")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "text-center" }, [
+                                      _c("p", [
+                                        _vm._v(
+                                          "Vendor First Name: " +
+                                            _vm._s(_vm.vendor.vendor_first_name)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Vendor Last Name: " +
+                                            _vm._s(_vm.vendor.vendor_last_name)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Vendor Mobile No.: " +
+                                            _vm._s(_vm.vendor.mobile_no)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Manager First Name: " +
+                                            _vm._s(
+                                              _vm.vendor.manager_first_name
+                                            )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Manager Last name: " +
+                                            _vm._s(_vm.vendor.manager_last_name)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Manager Email: " +
+                                            _vm._s(_vm.vendor.manager_email)
+                                        )
+                                      ])
+                                    ])
                                   ])
-                                ])
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-actions",
-                            [
-                              _c(
-                                "v-btn",
-                                {
-                                  attrs: { flat: "", color: "orange" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.e1 = 2
-                                    }
-                                  }
-                                },
-                                [_vm._v("Edit")]
+                                ]
                               ),
                               _vm._v(" "),
                               _c(
-                                "v-btn",
-                                { attrs: { flat: "", color: "orange" } },
-                                [_vm._v("Explore")]
+                                "v-card-actions",
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: { flat: "", color: "orange" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.e1 = 1
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Edit")]
+                                  )
+                                ],
+                                1
                               )
                             ],
                             1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("v-divider"),
-                      _vm._v(" "),
-                      _c(
-                        "v-card",
-                        [
-                          _c(
-                            "v-card-title",
-                            { attrs: { "primary-title": "" } },
-                            [
-                              _c("div", [
-                                _c("h3", { staticClass: "headline mb-0" }, [
-                                  _vm._v("Mechanic Details")
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "text-center" }, [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Busines Address: " +
-                                        _vm._s(_vm.vendor.address)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v("State: " + _vm._s(_vm.vendor.state))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v("City: " + _vm._s(_vm.vendor.city))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v("LGA: " + _vm._s(_vm.vendor.lga))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Capacity: " + _vm._s(_vm.vendor.capacity)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Opening time: " +
-                                        _vm._s(_vm.vendor.opening_time)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Closing time: " +
-                                        _vm._s(_vm.vendor.closing_time)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v(
-                                      "Off-day: " + _vm._s(_vm.vendor.off_day)
-                                    )
-                                  ])
-                                ])
-                              ])
-                            ]
                           ),
                           _vm._v(" "),
+                          _c("v-divider"),
+                          _vm._v(" "),
                           _c(
-                            "v-card-actions",
+                            "v-card",
                             [
                               _c(
-                                "v-btn",
-                                {
-                                  attrs: { flat: "", color: "orange" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.e1 = 3
-                                    }
-                                  }
-                                },
-                                [_vm._v("Edit")]
+                                "v-card-title",
+                                { attrs: { "primary-title": "" } },
+                                [
+                                  _c("div", [
+                                    _c("h3", { staticClass: "headline mb-0" }, [
+                                      _vm._v("Mechanic Details")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "text-center" }, [
+                                      _c("p", [
+                                        _vm._v(
+                                          "Mechanic First name: " +
+                                            _vm._s(
+                                              _vm.vendor.mechanic_first_name
+                                            )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Mechanic Last Name: " +
+                                            _vm._s(
+                                              _vm.vendor.mechanic_last_name
+                                            )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Mechanic Nationality: " +
+                                            _vm._s(
+                                              _vm.vendor.mechanic_nationality
+                                            )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Mechanic D-o-B: " +
+                                            _vm._s(_vm.vendor.mechanic_dob)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Mechanic  Contact no: " +
+                                            _vm._s(
+                                              _vm.vendor.mechanic_contact_no
+                                            )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Mechanic Email: " +
+                                            _vm._s(_vm.vendor.mechanic_email)
+                                        )
+                                      ])
+                                    ])
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-actions",
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: { flat: "", color: "orange" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.e1 = 2
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Edit")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    { attrs: { flat: "", color: "orange" } },
+                                    [_vm._v("Explore")]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider"),
+                          _vm._v(" "),
+                          _c(
+                            "v-card",
+                            [
+                              _c(
+                                "v-card-title",
+                                { attrs: { "primary-title": "" } },
+                                [
+                                  _c("div", [
+                                    _c("h3", { staticClass: "headline mb-0" }, [
+                                      _vm._v("Mechanic Details")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "text-center" }, [
+                                      _c("p", [
+                                        _vm._v(
+                                          "Busines Address: " +
+                                            _vm._s(_vm.vendor.address)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "State: " + _vm._s(_vm.vendor.state)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "City: " + _vm._s(_vm.vendor.city)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v("LGA: " + _vm._s(_vm.vendor.lga))
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Capacity: " +
+                                            _vm._s(_vm.vendor.capacity)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Opening time: " +
+                                            _vm._s(_vm.vendor.opening_time)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Closing time: " +
+                                            _vm._s(_vm.vendor.closing_time)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("p", [
+                                        _vm._v(
+                                          "Off-day: " +
+                                            _vm._s(_vm.vendor.off_day)
+                                        )
+                                      ])
+                                    ])
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-actions",
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: { flat: "", color: "orange" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.e1 = 3
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Edit")]
+                                  )
+                                ],
+                                1
                               )
                             ],
                             1
@@ -96858,28 +96894,35 @@ var render = function() {
                       )
                     ],
                     1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "blue" },
+                      on: { click: _vm.registerVendor }
+                    },
+                    [
+                      _vm._v(
+                        "\n          Submit Vendor Application Form\n        "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { flat: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.e1 = 5
+                        }
+                      }
+                    },
+                    [_vm._v("Back")]
                   )
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                { attrs: { color: "blue" }, on: { click: _vm.registerVendor } },
-                [_vm._v("\n        Submit Vendor Application Form\n      ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { flat: "" },
-                  on: {
-                    click: function($event) {
-                      _vm.e1 = 5
-                    }
-                  }
-                },
-                [_vm._v("Back")]
               )
             ],
             1
@@ -98140,11 +98183,7 @@ var render = function() {
                           "v-btn",
                           {
                             staticClass: "blue lighten-2 mt-5",
-                            attrs: {
-                              dark: "",
-                              large: "",
-                              href: "/pre-made-themes"
-                            }
+                            attrs: { dark: "", large: "", href: "/select" }
                           },
                           [_vm._v("\n        Get Started\n      ")]
                         )
@@ -104365,11 +104404,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     if (_this.$route.params.nextUrl != null) {
                         _this.$router.push(_this.$route.params.nextUrl);
                     } else {
-                        _this.$router.push('/login');
+                        _this.$router.push('/select');
                     }
                 }
                 console.log(response);
-                _this.$router.push('/login');
+                _this.$router.push('/select');
                 _this.$toasted.global.signup().goAway(1500);
             }).catch(function (error) {
                 console.log(error.response);
@@ -105148,7 +105187,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -105177,7 +105215,7 @@ var render = function() {
             [
               _c(
                 "v-card",
-                { attrs: { hover: "true", flat: "true" } },
+                { attrs: { flat: "true" } },
                 [
                   _c("v-card-title", { attrs: { "primary-title": "" } }, [
                     _c("div", [
@@ -105204,22 +105242,10 @@ var render = function() {
                           attrs: {
                             flat: "",
                             color: "blue",
-                            to: { path: "make-booking" }
-                          }
-                        },
-                        [_vm._v("Book Now")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            flat: "",
-                            color: "blue",
                             to: { path: "bookings" }
                           }
                         },
-                        [_vm._v("Explore")]
+                        [_vm._v("Go to Customer")]
                       )
                     ],
                     1
@@ -105241,17 +105267,9 @@ var render = function() {
                 [
                   _c("v-card-title", { attrs: { "primary-title": "" } }, [
                     _c("div", [
-                      _c(
-                        "h3",
-                        { staticClass: "headline mb-0" },
-                        [
-                          _vm._v("Become a Vendor"),
-                          _c("v-icon", { attrs: { large: "true" } }, [
-                            _vm._v("book")
-                          ])
-                        ],
-                        1
-                      )
+                      _c("h3", { staticClass: "headline mb-0" }, [
+                        _vm._v("Become a Vendor")
+                      ])
                     ])
                   ]),
                   _vm._v(" "),
@@ -105264,22 +105282,10 @@ var render = function() {
                           attrs: {
                             flat: "",
                             color: "blue",
-                            to: { path: "make-booking" }
+                            to: { path: "vendor-register" }
                           }
                         },
-                        [_vm._v("Book Now")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            flat: "",
-                            color: "blue",
-                            to: { path: "bookings" }
-                          }
-                        },
-                        [_vm._v("Explore")]
+                        [_vm._v("Sign up Now")]
                       )
                     ],
                     1
@@ -105318,29 +105324,21 @@ var render = function() {
                   _c(
                     "v-card-actions",
                     [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            flat: "",
-                            color: "blue",
-                            to: { path: "make-booking" }
-                          }
-                        },
-                        [_vm._v("Book Now")]
-                      ),
+                      _c("v-btn", {
+                        attrs: {
+                          flat: "",
+                          color: "blue",
+                          to: { path: "make-booking" }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: {
-                            flat: "",
-                            color: "blue",
-                            to: { path: "bookings" }
-                          }
-                        },
-                        [_vm._v("Explore")]
-                      )
+                      _c("v-btn", {
+                        attrs: {
+                          flat: "",
+                          color: "blue",
+                          to: { path: "bookings" }
+                        }
+                      })
                     ],
                     1
                   )
@@ -106687,7 +106685,7 @@ var render = function() {
                     { attrs: { "two-line": "", subheader: "" } },
                     [
                       _c("v-subheader", { attrs: { inset: "" } }, [
-                        _vm._v("Top Services")
+                        _vm._v("Pending Bookings")
                       ]),
                       _vm._v(" "),
                       _vm._l(_vm.items2, function(item) {

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Booking;
 use Auth;
-//use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Notifications\PayBooking;
+
 
 use App\User;
 use App\Http\Resources\Booking as BookingResource;
@@ -67,6 +69,10 @@ class BookingController extends Controller
 //        $booking->vendor_id = $request->input('vendor_id');
 
         if($booking->save()){
+
+          $user = User::where('email', Auth::user()->email)->first();
+
+          $user->notify(new RegisterVendor($user));
           return new BookingResource($booking);
         }
     }

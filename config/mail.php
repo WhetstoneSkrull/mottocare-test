@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'faisalnas7@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'mottocareforyou@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Mottocare'),
     ],
 
@@ -85,10 +85,12 @@ return [
     */
 
     //'username' => env('MAIL_USERNAME'),
-    'username' => 'postmaster@sandboxe948f578dcd942c99d6aa3191dd81a61.mailgun.org',
+  //test  'username' => 'postmaster@sandboxe948f578dcd942c99d6aa3191dd81a61.mailgun.org',
+   'username' => 'postmaster@sandboxcd3bb69d507f4f83acf44b0cc49a2138.mailgun.org',
 
   //  'password' => env('MAIL_PASSWORD'),
-    'password' => '85708c002ecb70f384710b9b29c1c543-060550c6-821e42d1',
+//test    'password' => '85708c002ecb70f384710b9b29c1c543-060550c6-821e42d1',
+    'password' => '4ba439e6cfc3d3801224ddaa37589b15-8889127d-9f606a71',
 
     /*
     |--------------------------------------------------------------------------

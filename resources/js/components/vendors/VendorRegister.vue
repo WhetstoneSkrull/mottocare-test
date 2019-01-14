@@ -1,4 +1,5 @@
 <template>
+  <v-flex xs12>
   <v-stepper v-model="e1">
     <v-stepper-header>
       <v-stepper-step :complete="e1 > 1" step="1">Personal Details</v-stepper-step>
@@ -307,6 +308,8 @@
       </v-stepper-content>
     </v-stepper-items>
   </v-stepper>
+</v-flex>
+
 </template>
 
 <script>

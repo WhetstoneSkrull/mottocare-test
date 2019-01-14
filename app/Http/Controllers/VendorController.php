@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Vendor;
 use Auth;
+use App\User;
+use App\Notifications\RegisterVendor;
 use App\Http\Resources\Vendor as VendorResource;
 
 
@@ -94,6 +96,11 @@ class VendorController extends Controller
       $vendor->status = $request->input('status');
 
       if($vendor->save()){
+
+        $user = User::where('email', $vendor->vendor_email)->first();
+
+        $user->notify(new RegisterVendor($user));
+
         return new VendorResource($vendor);
       }
   }

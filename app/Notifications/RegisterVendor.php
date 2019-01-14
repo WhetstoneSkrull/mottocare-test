@@ -40,11 +40,13 @@ class RegisterVendor extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
-    }
+      $url = url('/vendor-dashboard');
+      return (new MailMessage)
+          ->subject('Vendor Registration')
+          ->line('your vendor registration has been submitted. check your dashboard to see your status')
+          ->action('Go to Vendor Dashboard', url($url))
+          ->line('Thank you for using our application!');
+        }
 
     /**
      * Get the array representation of the notification.

@@ -40,7 +40,7 @@ class PayBooking extends Notification
      */
     public function toMail($notifiable)
     {
-      $url = url('/bookings'.$notifiable->activation_token);
+      $url = url('/bookings');
       return (new MailMessage)
           ->subject('Make Payment')
           ->line('Booking Successful. to complete booking, you must make payment')

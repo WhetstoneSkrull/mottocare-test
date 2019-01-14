@@ -110,11 +110,11 @@ export default {
                                 this.$router.push(this.$route.params.nextUrl)
                             }
                             else{
-                                this.$router.push('/login')
+                                this.$router.push('/select')
                             }
                         }
                 console.log(response);
-                this.$router.push('/login');
+                this.$router.push('/select');
                 this.$toasted.global.signup().goAway(1500);
 
             })

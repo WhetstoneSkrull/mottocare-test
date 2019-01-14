@@ -90,7 +90,7 @@ hover="true"
     <v-flex xs12 sm6>
       <v-card>
         <v-list two-line subheader>
-          <v-subheader inset>Top Services</v-subheader>
+          <v-subheader inset>Pending Bookings</v-subheader>
 
           <v-list-tile v-for="item in items2" :key="item.title" @click="">
             <v-list-tile-avatar>
