@@ -8,8 +8,6 @@ use Auth;
 use App\User;
 use App\Notifications\PayBooking;
 
-
-use App\User;
 use App\Http\Resources\Booking as BookingResource;
 
 
@@ -65,14 +63,14 @@ class BookingController extends Controller
         $booking->booking_no = $add;
         $booking->service_date = $request->input('service_date');
         $booking->service_time = $request->input('service_time');
-      //  $booking->vendor_id = $request->input('vendor_id');
-//        $booking->vendor_id = $request->input('vendor_id');
+        $booking->vendor_id = $request->input('vendor_id');
+        $booking->slot_id = $request->input('slot_id');
 
         if($booking->save()){
 
           $user = User::where('email', Auth::user()->email)->first();
 
-          $user->notify(new RegisterVendor($user));
+          $user->notify(new PayBooking($user));
           return new BookingResource($booking);
         }
     }

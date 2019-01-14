@@ -92,14 +92,14 @@ hover="true"
         <v-list two-line subheader>
           <v-subheader inset>Pending Bookings</v-subheader>
 
-          <v-list-tile v-for="item in items2" :key="item.title" @click="">
+          <v-list-tile v-for="booking in bookings" :key="booking.id" @click="">
             <v-list-tile-avatar>
-              <v-icon :class="[item.iconClass]">{{ item.icon }}</v-icon>
+              <v-icon></v-icon>
             </v-list-tile-avatar>
             <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}
+              <v-list-tile-title>{{booking.vendor.vendor_title}}
                 </v-list-tile-title>
-              <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
+              <v-list-tile-sub-title>{{moment(booking.service_date).startOf('hour').fromNow()}}</v-list-tile-sub-title>
 
             </v-list-tile-content>
             <v-list-tile-action>
@@ -145,6 +145,7 @@ import moment from 'moment'
         first_name   : null,
         last_name    : null,
         email        : null,
+        bookings:[],
           user_type   : 0,
           isLoggedIn  : localStorage.getItem('jwt') != null,
              user: null,
@@ -158,11 +159,18 @@ import moment from 'moment'
       }
     },
     beforeMount(){
-              this.user = JSON.parse(localStorage.getItem('user'))
-              axios.defaults.headers.common['Content-Type'] = 'application/json'
-              axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
+        this.user = JSON.parse(localStorage.getItem('user'))
+        axios.defaults.headers.common['Content-Type'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
 
-          },
+        axios.get(`api/auth/user/${this.user.id}/bookings`)
+        .then(response => {
+            this.bookings = response.data
+        })
+        .catch(error => {
+            console.error(error);
+        })
+    },
 /*          mounted(){
 
               this.setDefaults()

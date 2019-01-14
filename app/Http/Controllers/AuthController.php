@@ -91,6 +91,7 @@ public function index(){
 
               }
 
+
       //returns the details of a user
   public function showUser(User $user)
         {
@@ -142,7 +143,7 @@ public function index(){
           'activation_token' => str_random(60)
 
       ]);
-//      $user->save();
+      $user->save();
       $user->notify(new SignupActivate($user));
 
       return response()->json([
