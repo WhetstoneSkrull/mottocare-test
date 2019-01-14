@@ -133,6 +133,7 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
     import Bookings from './components/customers/Bookings'
     import Drivers from './components/customers/Drivers'
     import Vehicles from './components/customers/Vehicles'
+    import Pay from './components/customers/Pay'
 
     //vendor pages
     import VendorPage from './components/vendors/VendorPage'
@@ -219,6 +220,15 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 path: '/bookings',
                 name: 'Bookings',
                 component: Bookings,
+                meta: {
+              //  requiresAuth: true
+              //  is_user : true
+              }
+            },
+            {
+                path: '/pay-for-booking',
+                name: 'Pay',
+                component: Pay,
                 meta: {
               //  requiresAuth: true
               //  is_user : true

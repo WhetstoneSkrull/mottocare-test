@@ -53,15 +53,14 @@ class BookingController extends Controller
 
         //Generate booking_id
         $first = ('MCB');
-        $last = ('000');
-       $bid = $booking->vehicle_id;
-        $add = $first.$last.$bid;
+        $last = ('00');
+        $add = $first.$last;
 
         $booking->id = $request->input('booking_id');
         $booking->user_id =  Auth::user()->id;
         $booking->service_render_id = $request->input('service_render_id');
         $booking->vehicle_id = $request->input('vehicle_id');
-    //    $booking->booking_no = $add;
+        $booking->booking_no = $add;
         $booking->service_date = $request->input('service_date');
         $booking->service_time = $request->input('service_time');
       //  $booking->vendor_id = $request->input('vendor_id');

@@ -36,11 +36,6 @@
              </div>
              </div>
 
-             <p>i am a service</p>
-             <div class="" v-for="service in services" v-bind="service.id">
-               <p>{{service.price}}</p>
-             </div>
-
              <v-btn
                color="primary"
                @click="e1 = 2"
@@ -93,11 +88,11 @@
 
                        <v-flex sm5 md3>
                          <strong >{{service.service.service_name}}</strong>
-                         <span
+                      <!--   <span
                            class="grey--text"
                          >
                            &nbsp;({{service.vendor.city}})
-                         </span>
+                         </span> -->
                        </v-flex>
 
                      </v-layout>
@@ -137,32 +132,18 @@
                        </v-flex>
                    </v-flex>
 
-                   <v-flex xs12 md12>
-                     <v-flex>
-                     <v-text-field
-                          v-model="booking.service_render_id"
-                          hint="(YYY-MM-DD)"
-                          label="service ID"
-                          value="service.id"
-                        ></v-text-field>
-                      </v-flex>
-                  </v-flex>
 
                    <v-flex xs12 md12>
                      <v-flex>
-                     <v-text-field
-                          v-model="booking.service_time"
-                          hint="(HH:MM)"
-                          label="service time"
-                          clearable
-                        ></v-text-field>
+                       <v-select
+                      :items="items"
+                      label="Pick a slot"
+                    ></v-select>
                       </v-flex>
                   </v-flex>
-
-
 
                         <v-flex xs12 md12>
-                        <v-btn color="info" @click="makeBooking">Book</v-btn>
+                        <v-btn color="info" @click="makeBooking">Proced to payment</v-btn>
                       </v-flex>
 
 
@@ -364,6 +345,8 @@ export default {
       user : null,
       vehicles : [],
       services : [],
+      items: ['(08:00-08:30)AM', '(08:31-09:00)AM', '(09:00-09:30)AM', '(10:00-10:30)AM', '(10:31-11:00)AM'],
+
       time: null,
       dialog: false,
     //  menu2: false,
@@ -372,7 +355,7 @@ export default {
         id:"",
         user_id:"",
         vehicle_id:"",
-        service_render_id:"",
+        service_render_id:1,
         service_date:new Date().toISOString().substr(0, 10),
         service_time:"",
         is_completed:false
@@ -381,8 +364,7 @@ export default {
         id: "",
         price:"",
         description:""
-      }
-
+        }
       }
     },
     beforeMount(){
@@ -403,7 +385,7 @@ export default {
         axios.post('/api/booking',this.booking)
         .then(response=>{
             console.log(response);
-            //this.$router.push('/dashboard');
+            this.$router.push('/bookings');
             this.$toasted.global.bookingAdded().goAway(1500);
 
         })

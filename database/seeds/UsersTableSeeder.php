@@ -24,6 +24,7 @@ class UsersTableSeeder extends Seeder
                 'email'          => 'admin@admin.com',
                 'password'       => bcrypt('password'),
                 'remember_token' => str_random(60),
+                'activation_token' => str_random(60),
                 'role_id'        => $role->id,
             ]);
         }
