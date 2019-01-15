@@ -144,7 +144,7 @@ public function index(){
 
       ]);
       $user->save();
-      $user->notify(new SignupActivate($user));
+//      $user->notify(new SignupActivate($user));
 
       return response()->json([
           'message' => 'Successfully created user!'
