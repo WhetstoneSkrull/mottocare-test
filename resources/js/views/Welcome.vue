@@ -17,7 +17,7 @@
         class="blue lighten-2 mt-5"
         dark
         large
-        href="/select"
+        href="/signup"
       >
         Get Started
       </v-btn>

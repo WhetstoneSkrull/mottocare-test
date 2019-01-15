@@ -98183,7 +98183,7 @@ var render = function() {
                           "v-btn",
                           {
                             staticClass: "blue lighten-2 mt-5",
-                            attrs: { dark: "", large: "", href: "/select" }
+                            attrs: { dark: "", large: "", href: "/signup" }
                           },
                           [_vm._v("\n        Get Started\n      ")]
                         )
@@ -107361,7 +107361,7 @@ var render = function() {
                           staticClass: "font-weight-light",
                           attrs: { color: "success", round: "" }
                         },
-                        [_vm._v("Follow")]
+                        [_vm._v("Update profile")]
                       )
                     ],
                     1
