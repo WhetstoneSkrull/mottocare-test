@@ -1,5 +1,5 @@
 <template>
-    <v-app id="inspire">
+    <v-app id="inspire" class="body">
         <v-content>
           <v-container fluid fill-height>
             <v-layout align-center justify-center>
@@ -19,11 +19,11 @@
                   <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn color="primary" @click.prevent="logIn">Login</v-btn>
-                    
+
                   </v-card-actions>
 
                 </v-card>
-                <p ></p>
+                <p>Already have an <router-link :to="{ name: 'register', params: {} }">account? </router-link> </p>
                   <v-btn color="primary" flat :to="{path: 'reset-password'}" blue>Forgot password?</v-btn>
               </v-flex>
             </v-layout>
@@ -80,41 +80,12 @@ methods:{
       }
     }
 </script>
-<style media="screen" scoped>
-.custom-loader {
-  animation: loader 1s infinite;
-  display: flex;
-}
-@-moz-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-o-keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+<style lang="css" scoped>
+.body {
+  background-image: url("/images/sign.jpg");
+  background-size: cover;
+	background-repeat: no-repeat;
+  color: white;
 }
 </style>

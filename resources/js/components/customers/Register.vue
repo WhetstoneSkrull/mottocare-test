@@ -1,19 +1,19 @@
 <template>
+  <v-layout row wrap class="body" align-center justify-center>
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
+                    <div class="panel-heading">Register With Us!</div>
                     <div class="panel-body">
-
-
 
                         <form v-loading="'submitting...'"   @submit.prevent='registerUser'>
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Name</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-md-offset-3">
                                     <input id="name" type="text" class="form-control" v-model="register.first_name"  required autofocus>
 
                                 </div>
@@ -62,15 +62,15 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Register
+                                        Next
                                     </button>
-                                    <p>
+
                                       <a href="/login/google">
                                       <v-btn color="error">
                                         <span class="fa fa-google">  Sign with Google</span>
                                       </v-btn>  </a>
+                                      <p>Or <router-link :to="{ name: 'login', params: {} }"> <strong>Log In</strong></router-link> if you have an account already.</p>
 
-                                    </p>
                                 </div>
                             </div>
                         </form>
@@ -79,6 +79,7 @@
             </div>
         </div>
     </div>
+  </v-layout>
 </template>
 
 
@@ -110,11 +111,11 @@ export default {
                                 this.$router.push(this.$route.params.nextUrl)
                             }
                             else{
-                                this.$router.push('/select')
+                                this.$router.push('/')
                             }
                         }
                 console.log(response);
-                this.$router.push('/select');
+                this.$router.push('/');
                 this.$toasted.global.signup().goAway(1500);
 
             })
@@ -125,3 +126,12 @@ export default {
     }
 }
 </script>
+
+<style lang="css" scoped>
+.body {
+  background-image: url("/images/sign.jpg");
+  background-size: cover;
+	background-repeat: no-repeat;
+  color: white;
+}
+</style>

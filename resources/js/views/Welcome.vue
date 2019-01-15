@@ -17,7 +17,7 @@
         class="blue lighten-2 mt-5"
         dark
         large
-        href="/signup"
+        @click="GotoLogin"
       >
         Get Started
       </v-btn>
@@ -179,6 +179,11 @@
               return{
                 //
               }
+            },
+            methods:{
+              GotoLogin(){
+                      this.$router.push('/login')
+                  }
             }
         }
     </script>
