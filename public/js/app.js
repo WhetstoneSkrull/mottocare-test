@@ -105138,7 +105138,7 @@ var render = function() {
                       _c(
                         "p",
                         [
-                          _vm._v("Already have an "),
+                          _vm._v("Don't have an "),
                           _c(
                             "router-link",
                             { attrs: { to: { name: "register", params: {} } } },

@@ -23,7 +23,7 @@
                   </v-card-actions>
 
                 </v-card>
-                <p>Already have an <router-link :to="{ name: 'register', params: {} }">account? </router-link> </p>
+                <p>Don't have an <router-link :to="{ name: 'register', params: {} }">account? </router-link> </p>
                   <v-btn color="primary" flat :to="{path: 'reset-password'}" blue>Forgot password?</v-btn>
               </v-flex>
             </v-layout>
