@@ -25,6 +25,7 @@ Route::group([
 
     Route::get('user/{user}/all-user-data','AuthController@allUserData');
     Route::get('user/{user}/bookings','AuthController@showbookings');
+    Route::get('user/{user}/service/renders','AuthController@showUserServices');
     Route::get('user/{user}/bookings/services','AuthController@showBookingsServices');
     Route::get('user/{user}/vehicles','AuthController@showVehicles');
     Route::get('user/{user}/drivers','AuthController@showDrivers');
@@ -33,6 +34,8 @@ Route::group([
     Route::get('user/{user}/vendor/bookings','AuthController@showVendorBookings');
 
     Route::get('user/{user}','AuthController@showUser');
+    Route::put('user/update','AuthController@updateAccount');
+    Route::put('user/upload-photo','AuthController@uploadFile');
 
     Route::group([
       'middleware' => 'auth:api'

@@ -39,8 +39,6 @@ class CreateUsersTable extends Migration
             $table->string('driver_license')->nullable();
             $table->string('DoB')->nullable();
             $table->string('address')->nullable();
-            $table->string('driver_first_name')->nullable();
-            $table->string('driver_last_name')->nullable();
             $table->string('license_no')->nullable();
             $table->string('lga')->nullable();
             $table->string('city')->nullable();

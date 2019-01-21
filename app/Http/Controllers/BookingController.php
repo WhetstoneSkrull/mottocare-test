@@ -70,7 +70,7 @@ class BookingController extends Controller
 
           $user = User::where('email', Auth::user()->email)->first();
 
-          $user->notify(new PayBooking($user));
+        //  $user->notify(new PayBooking($user));
           return new BookingResource($booking);
         }
     }

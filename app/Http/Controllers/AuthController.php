@@ -8,12 +8,20 @@ use Carbon\Carbon;
 use App\User;
 use App\Booking;
 use App\Vendor;
+use DB;
+
 use App\Notifications\SignupActivate;
 
 use App\Http\Resources\User as UserResource;
 
 class AuthController extends Controller
 {
+  public function __construct()
+    {
+      $this->middleware('auth:api');
+      //  $this->middleware('isAdmin');
+    }
+
   /**
    * Create user
    *
@@ -57,7 +65,7 @@ public function index(){
       //returns a user and their bookings
       public function showBookings(User $user)
           {
-              return response()->json($user->bookings()->with(['servicerenders','vendor'])->get(),200);
+              return response()->json($user->bookings()->with(['servicerenders','vendor','vehicle'])->get(),200);
           }
 
       //returns a user and their vehicles
@@ -73,8 +81,8 @@ public function index(){
       }
 
 
-      //returns a user and their services rendered
-      public function showVendorServices(User $user)
+      //returns a vendor and their services rendered
+      public function showVendorServices(Vendor $user)
           {
               return response()->json($user->servicerenders()->with(['service','servicecategory'])->get(),200);
           }
@@ -90,6 +98,12 @@ public function index(){
                   return response()->json($user->bookings()->with(['servicerenders','user'])->get(),200);
 
               }
+
+              //returns a user's services details
+              public function showUserServices(User $user){
+              return response()->json($user->servicerenders()->with(['service','servicecategory'])->get(),200);
+
+                }
 
 
       //returns the details of a user
@@ -236,4 +250,34 @@ public function index(){
       {
           return response()->json($request->user());
       }
+
+      public function updateAccount(Request $request){
+
+             $user_id = Auth::user()->id;
+        DB::table('users')->where('id', $user_id)->update($request->except('_token'));
+
+
+        return response()->json([
+            'response' => 'user updated Successfully',
+            'user' => Auth::user()
+        ]);
+
+
+
+    }
+
+    public function uploadFile(Request $request)
+  {
+    if ($request->hasFile('account_pic')) {
+             $image = $request->file('account_pic');
+             $filename = time() . '.' . $image->getClientOriginalExtension();
+             $location = public_path('images/' . $filename);
+             Image::make($image)->resize(400, 200)->save($location);
+           }
+     else{
+         $filename= 'noimage.jpg';
+     }
+
+  }
+
 }

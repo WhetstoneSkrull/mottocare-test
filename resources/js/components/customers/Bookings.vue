@@ -6,9 +6,8 @@
       <thead class="thead-info">
       <tr>
         <th scope="col">Booking No.</th>
-        <th scope="col">status</th>
-        <th scope="col">Service name</th>
         <th scope="col">Vehicle</th>
+        <th scope="col">Date of Service</th>
         <th scope="col"></th>
         <th scope="col">make payment</th>
       </tr>
@@ -16,19 +15,11 @@
       <tbody>
       <tr  v-for="(booking,index) in bookings" @key="index">
         <td>{{booking.booking_no}}{{booking.id}}</td>
-        <td>
-          <p  v-if="booking.is_completed == true"><v-btn color="green" dark>completed
-             <v-icon dark right>verified_user</v-icon></v-btn> </p>
 
-             <p v-if="booking.is_completed == false"><v-btn color="yellow" dark>not completed
-                <v-icon dark right>report</v-icon></v-btn> </p>
-        </td>
-        <td>{{booking.vehicle_id}}</td>
+        <td>{{booking.vehicle.vehicle_make}}</td>
         <td>{{booking.service_date}}</td>
-        <td> <v-btn color="warning">mark as completed</v-btn> </td>
         <td>
-          <button type="button" class="fa fa-pencil fa-2x" @click=""> </button>
-          <button type="button" class="fa fa-trash fa-2x" @click=""> </button>
+          <v-btn color="warning">mark as completed</v-btn>
         </td>
         <td>
           <paystack
