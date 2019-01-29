@@ -17,7 +17,7 @@ class ServiceCategory extends JsonResource
      {
        return[
        'id' => $this->id,
-       'name' => $this->name
+       'service_category_name' => $this->service_category_name
      ];
      }
 }

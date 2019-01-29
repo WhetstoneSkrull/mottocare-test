@@ -21,7 +21,10 @@
 
         <link href=" {{ ('css/font-awesome.css') }}" rel="stylesheet">
         <link href=" {{ ('css/simple-line-icons.css') }}" rel="stylesheet">
-    </head>
+
+        <link rel="stylesheet" type="text/css" href="{{('css/select2.css')}}">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+          </head>
     <body>
 
     <style type="text/css">
@@ -48,9 +51,14 @@
         <script src="{{ ('js/bootstrap.js') }}"></script>
         <script src="{{ ('js/app.js') }}"></script>
         <script src="{{ ('js/jquery.min.js') }}"></script>
+
+
         <script src="{{ ('js/dashboard.js') }}"></script>
         <script src="{{ ('js/maps.js') }}"></script>
         <script src="{{ ('js/misc.js') }}"></script>
         <script src="{{ ('js/off-canvas.js') }}"></script>
+
     </body>
+
+
     </html>

@@ -263,9 +263,9 @@ hover="true"
     computed: {
      pending: function() {
        return this.bookings.filter(function(u) {
-         return u.is_completed
+         return u.is_completed==false
      })
-   } // contains only Alex and James
+   } 
  },
    created(){
     this.fetchServices();

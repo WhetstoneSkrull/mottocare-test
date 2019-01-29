@@ -17,10 +17,11 @@ class ServiceController extends Controller
      */
     public function index()
     {
-    //  $categories = ServiceCategory::all();
-      $services = Service::orderBy('created_at','desc')->paginate(15);
-        return ServiceResource::collection($services);
-      //  return response()->json(Service::with(['category'])->get(), 200);
+
+      // $categories = ServiceCategory::all();
+      //$services = Service::orderBy('created_at','desc')->paginate(15);
+      //return ServiceResource::collection($services);
+       return response()->json(Service::with(['category','servicecars'])->get(), 200);
 
     }
 
@@ -42,17 +43,22 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-      $categories =ServiceCategory::all();
+    //  $categories =ServiceCategory::all();
       $service = $request->isMethod('put') ? Service::findOrfail
         ($request->service_id) : new service;
 
         $service->id = $request->input('service_id');
-        $service->name = $request->input('name');
+        $service->service_name = $request->input('service_name');
         $service->service_category_id = $request->service_category_id;
 
-        if($service->save()){
-          return new ServiceResource($service);
-        }
+        $service->save();
+        $service->servicecars()->sync($request->service_cars, false);
+
+        return response()->json([
+                    'status' => (bool) $service,
+                    'data'   => $service,
+                    'message' => $service ? 'Service Created!' : 'Error Creating Service'
+                ]);
     }
 
     /**

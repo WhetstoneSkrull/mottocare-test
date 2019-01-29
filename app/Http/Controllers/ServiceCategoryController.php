@@ -11,8 +11,10 @@ class ServiceCategoryController extends Controller
 {
   public function index()
   {
-    $services = ServiceCategory::orderBy('created_at','desc')->paginate(15);
-      return ServiceResource::collection($services);
+  //  $services = ServiceCategory::orderBy('created_at','desc')->paginate(15);
+    //  return ServiceResource::collection($services);
+    return response()->json(ServiceCategory::with(['services'])->get(),200);
+
   }
 
   public function store(Request $request)
@@ -21,7 +23,7 @@ class ServiceCategoryController extends Controller
       ($request->service_category_id) : new serviceCategory;
 
       $service->id = $request->input('service_category_id');
-      $service->name = $request->input('name');
+      $service->service_category_name = $request->input('service_category_name');
 
       if($service->save()){
         return new ServiceResource($service);

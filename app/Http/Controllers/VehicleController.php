@@ -51,8 +51,8 @@ class VehicleController extends Controller
 
         $vehicle->id = $request->input('vehicle_id');
         $vehicle->user_id = Auth::user()->id;
-      //  $vehicle->vehicle_category_id = $request->input('vehicle_category_id');
-        $vehicle->vehicle_make = $request->input('vehicle_make');
+        $vehicle->automobile_id = $request->input('automobile_id');
+        $vehicle->car_id = $request->input('car_id');
         $vehicle->year = $request->input('year');
         $vehicle->model = $request->input('model');
         $vehicle->pic = $request->input('pic');

@@ -58,7 +58,6 @@ class BookingController extends Controller
 
         $booking->id = $request->input('booking_id');
         $booking->user_id =  Auth::user()->id;
-        $booking->service_render_id = $request->input('service_render_id');
         $booking->vehicle_id = $request->input('vehicle_id');
         $booking->booking_no = $add;
         $booking->service_date = $request->input('service_date');
@@ -66,13 +65,18 @@ class BookingController extends Controller
         $booking->vendor_id = $request->input('vendor_id');
         $booking->slot_id = $request->input('slot_id');
 
-        if($booking->save()){
+        $booking->save();
+        $booking->servicerenders()->sync($request->service_renders, false);
 
-          $user = User::where('email', Auth::user()->email)->first();
+        /* $user = User::where('email', Auth::user()->email)->first();
+          $user->notify(new PayBooking($user));
+          return new BookingResource($booking);  */
+        return response()->json([
+                    'status' => (bool) $booking,
+                    'data'   => $booking,
+                    'message' => $booking ? 'Booking Created!' : 'Error Creating Booking'
+                ]);
 
-        //  $user->notify(new PayBooking($user));
-          return new BookingResource($booking);
-        }
     }
 
     /**

@@ -11,10 +11,12 @@
 
     <v-stepper-step  :complete="e1 > 3" step="3">Add Drivers   <small>(optional)</small></v-stepper-step>
 
-
     <v-divider></v-divider>
 
     <v-stepper-step  :complete="e1 > 4" step="4">Make First Booking</v-stepper-step>
+    <v-divider></v-divider>
+
+    <v-stepper-step  :complete="e1 > 5" step="5">Payment</v-stepper-step>
 
   </v-stepper-header>
 
@@ -26,7 +28,7 @@
         fluid
         grid-list-xl>
         <v-layout
-          justify-center
+          justify
           wrap
         >
           <v-flex
@@ -87,6 +89,7 @@
                       <v-text-field
                         label="D o B"
                         v-model="profile.DoB"
+                        hint="dd-mm-yyyy"
                         class="purple-input"/>
                     </v-flex>
                     <v-flex
@@ -101,28 +104,27 @@
                     <v-flex
                       xs12
                       md4>
-                      <v-text-field
-                        label="City"
-                        v-model="profile.city"
-                        class="purple-input"/>
+                      <v-select
+                        :items="states"
+                        v-model="profile.state"
+                        label="State"
+                      ></v-select>
+
                     </v-flex>
                     <v-flex
                       xs12
                       md4>
-                      <v-text-field
-                        label="LGA"
-                        v-model="profile.lga"
-                        class="purple-input"/>
+                        <v-select
+                          :items="lgas"
+                          v-model="profile.lga"
+                          label="LGA"
+                        ></v-select>
                     </v-flex>
-                    <v-flex
-                      xs12
-                      md4>
-                      <v-text-field
-                        class="purple-input"
-                        v-model="profile.license_no"
-                        label="License No"
-                        />
-                    </v-flex>
+                    <v-text-field
+                      name="name"
+                      label="City"
+                      v-model="profile.city"
+                    ></v-text-field>
 
                     <v-flex
                       xs12
@@ -178,51 +180,56 @@
         </v-layout>
       </v-container>
 
-
       <v-btn
         color="primary"
         @click="e1 = 2"
       >
-        Continue
+        Next
       </v-btn>
 
-      <v-btn flat>Cancel</v-btn>
+  <!--    <v-btn flat >Cancel</v-btn> -->
     </v-stepper-content>
 
     <v-stepper-content step="2">
       <v-container  grid-list-md text-xs-center>
         <v-layout row wrap>
-          <v-flex xs12 sm12>
+          <v-flex xs12 sm6 >
+            <h4>Vehicle Details</h4>
+
             <v-form ref="form" v-model="valid" lazy-validation>
 
-                <v-text-field
-                  v-model="vehicle.vehicle_make"
-                  label="Vehicle Make"
-                  :rules="nameRules"
-                  hint="e.g Honda, Toyota etc"
-                  required
-                ></v-text-field>
+                <v-select
+                  :items="automobiles"
+                  v-model="vehicle.automobile_id"
+                  item-text="name"
+                  item-value="id"
+                  label="Select Automobile"
+                ></v-select>
+
+                <v-select
+                  :items="cars"
+                  v-model="vehicle.car_id"
+                  item-text="car_manufacturer"
+                  item-value="id"
+                  label="Select Vehicle Make"
+                ></v-select>
 
                 <v-text-field
                   v-model="vehicle.model"
                   label="Model"
-                  :rules="nameRules"
                   hint="e.g Toyota has models such as Camry, Carina etc"
                   required
                 ></v-text-field>
 
-                <v-text-field
+                <v-select
+                  :items="years"
                   v-model="vehicle.year"
                   label="Year"
-                  :rules="nameRules"
-                  hint="your vehicle manufactured date"
-                  required
-                ></v-text-field>
+                ></v-select>
 
                 <v-text-field
                   v-model="vehicle.vehicle_reg_no"
                   label="Vehicle Registration number"
-                  :rules="nameRules"
                   hint="your vehicle number"
                   required
                 ></v-text-field>
@@ -231,24 +238,29 @@
                   :disabled="!valid"
                   @click="addVehicle"
                 >
-                  submit
+                  add
                 </v-btn>
-                <v-btn @click="clearIt">clear</v-btn>
+
+                <v-btn
+                  color="primary"
+                  @click="e1 = 3"
+                >
+                  Next
+                </v-btn>
+
+                <v-btn flat @click="e1 = 1">Back</v-btn>
+
               </v-form>
 
             <v-divider></v-divider
 
           </v-flex>
           </v-flex>
-
-          <v-flex xs12 sm12>
-            <h3>My cars {{vehicles.length}}</h3>
-          </v-flex>
-
-          <v-flex xs12 sm4  v-for="vehicle in vehicles" v-bind:key="vehicle.id">
-            <v-card color="blue-grey darken-2" class="white--text" hover="true">
+          <!--{{vehicles.length}} -->
+          <v-flex xs12 sm4>
+            <v-card color="grey" class="white--text" v-for="vehicle in vehicles" v-bind:key="vehicle.id">
               <v-card-title primary-title>
-                <v-flex xs12 sm4>
+                <v-flex xs12 sm6>
                   <v-img
                     src="/images/stock.jpg"
                     height="125px"
@@ -257,9 +269,9 @@
                 </v-flex>
                 <div>
                   <div class="headline">{{vehicle.vehicle_make}}</div>
-                  <span>Model: {{vehicle.model}}</span>
-                  <span>Year: {{vehicle.year}}</span>
-                  <span>Vehicle Registration Number: {{vehicle.vehicle_reg_no}}</span>
+                  <p>Model: {{vehicle.model}}</p>
+                  <p>Year: {{vehicle.year}}</p>
+                  <p>Vehicle Registration Number: {{vehicle.vehicle_reg_no}}</p>
                 </div>
               </v-card-title>
               <v-card-actions>
@@ -270,28 +282,23 @@
                     <v-icon @click="deleteVehicle(vehicle.id)">delete</v-icon>
                 </v-btn>
               </v-card-actions>
+              <v-divider> </v-divider>
+
             </v-card>
-            <v-divider> </v-divider>
           </v-flex>
 
         </v-layout>
 
       </v-container>
 
-      <v-btn
-        color="primary"
-        @click="e1 = 3"
-      >
-        Continue
-      </v-btn>
-
-      <v-btn flat>Cancel</v-btn>
     </v-stepper-content>
 
     <v-stepper-content step="3">
-      <v-container  grid-list-md text-xs-center>
+      <v-container  grid-list-md text-xs-left>
         <v-layout row wrap>
-          <v-flex xs12 sm12>
+          <v-flex xs12 sm6>
+            <h3>Driver details</h3>
+
             <v-form ref="form" v-model="valid" lazy-validation>
                 <v-text-field
                   v-model="driver.driver_first_name"
@@ -317,21 +324,21 @@
                 <v-text-field
                   v-model="driver.driver_dob"
                   label="Date of Birth"
-                  hint="(yyyy-mm-dd)"
+                  hint="format:(dd-mm-yyyy)"
                   required
                 ></v-text-field>
 
                 <v-text-field
                   v-model="driver.driving_license_no"
                   label="Driver License No."
-                  hint="(yyyy-mm-dd)"
+                  hint="license number"
                   required
                 ></v-text-field>
 
                 <v-text-field
                   v-model="driver.driving_license_expiry_date"
                   label="Expiry date"
-                  hint="driver's license expiry date"
+                  hint="format:(dd-mm-yyyy)"
                   required
                 ></v-text-field>
 
@@ -346,120 +353,109 @@
                   :disabled="!valid"
                   @click="addDriver"
                 >
-                  submit
+                  add
                 </v-btn>
-                <v-btn @click="clearIt">clear</v-btn>
+
               </v-form>
 
+              <v-btn
+                color="primary"
+                @click="e1 = 4"
+              >
+                Next
+              </v-btn>
+
+              <v-btn flat @click="e1 = 2">Back</v-btn>
             <v-divider></v-divider
 
           </v-flex>
           </v-flex>
 
-          <v-flex xs12 sm12>
-            <h3>My Drivers</h3>
-          </v-flex>
-
-          <div class="table-responsive">
-
-          <table class="table">
-        <thead class="thead-info">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Date of Birth</th>
-            <th scope="col">License No.</th>
-            <th scope="col">Mobile No.</th>
-            <th scope="col">Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="driver in drivers"v-bind:key="driver.id">
-            <th scope="row">1</th>
-            <td>{{driver.driver_first_name}}</td>
-            <td>{{driver.driver_last_name}}</td>
-            <td>{{driver.driver_dob}}</td>
-            <td>{{driver.driving_license_no}}</td>
-            <td>{{driver.driving_license_expiry_date}}</td>
-            <td>{{driver.contact_no}}</td>
-            <td>{{driver.email}}</td>
-            <td>
-              <button type="button" class="fa fa-pencil fa-2x" @click="editDriver(driver)"> </button>
-              <button type="button" class="fa fa-trash fa-2x" @click="deleteDriver(driver.id)"> </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-
+    <v-flex xs12 sm6>
+      <v-card v-for="driver in drivers"v-bind:key="driver.id">
+        <v-card-title primary-title>
+          <div>
+            <div class="headline">{{driver.driver_first_name}} {{driver.driver_last_name}}</div>
+            <span class="grey--text">{{driver.email}}</span>
+          </div>
+        </v-card-title>
+        <v-card-text>
+          <p>Dirver's date of birth: {{driver.driver_dob}}</p>
+          <p>License no: {{driver.driving_license_no}}</p>
+          <p>License expiry date: {{driver.driving_license_expiry_date}}</p>
+          <p>contact no: {{driver.contact_no}}</p>
+        </v-card-text>
+        <v-spacer></v-spacer>
+      <v-divider></v-divider>
+      </v-card>
+    </v-flex>
 
         </v-layout>
 
       </v-container>
-
-      <v-btn
-        color="primary"
-        @click="e1 = 4"
-      >
-        Continue
-      </v-btn>
-
-      <v-btn flat>Cancel</v-btn>
     </v-stepper-content>
-    <v-stepper-content step="4">
 
-      <div class="col-xs-12 col-md-8 spacer">
-       <div class="input-group">
+    <v-stepper-content step="4">
+      <v-layout row wrap>
+        <v-flex xs12 sm6>
+          <v-container grid-list-xs,sm,md,lg,xl>
+
+       <div class="input-group spacer">
+         <div class="input-group-append">
+           <label class="input-group-text" for="inputGroupSelect02">Select Vendor</label>
+         </div>
          <select class="custom-select" id="inputGroupSelect02" v-model="selectedDrink" @change="selectDrink">
            <option selected>Choose...</option>
              <option  v-for="(vendor,index) in vendors" :value="index">
                {{vendor.label}}
              </option>
            </select>
-       <div class="input-group-append">
-         <label class="input-group-text" for="inputGroupSelect02">Select Vendor</label>
-       </div>
-      </div>
       </div>
 
-      <div class="col-xs-12 col-md-8 spacer">
+  <!--    <div class="col-xs-12 col-md-4 spacer">
        <div class="input-group">
+         <div class="input-group-append">
+           <label class="input-group-text" for="inputGroupSelect02">Select Service</label>
+         </div>
          <select class="custom-select" id="inputGroupSelect02" v-model="selectedOption" v-if="options.length">
            <option selected>Choose...</option>
              <option  v-for="option in options">
-               {{option}}
+               {{option.name}} {{option.price}}
              </option>
            </select>
-       <div class="input-group-append">
-         <label class="input-group-text" for="inputGroupSelect02">Select Service</label>
-       </div>
       </div>
+    </div>  -->
+
+      <div v-if="options.length">
+        <label class="typo__label">Select Service</label>
+        <multiselect v-model="selectedOption" :options="options"  :multiple="true"></multiselect>
       </div>
 
-
-      <div class="col-xs-12 col-md-8 spacer">
-       <div class="input-group">
+       <div class="input-group spacer">
+         <div class="input-group-append">
+           <label class="input-group-text" for="inputGroupSelect02">Select Vehicle</label>
+         </div>
          <select class="custom-select" id="inputGroupSelect02" v-model="booking.vehicle_id">
            <option selected>Choose...</option>
              <option :value="vehicle.id" v-for="vehicle in vehicles">
-               {{vehicle.vehicle_make}}  ({{vehicle.model}})
+               {{vehicle.car.car_manufacturer}}  ({{vehicle.model}})
              </option>
            </select>
-       <div class="input-group-append">
-         <label class="input-group-text" for="inputGroupSelect02">Select Vehicle</label>
-       </div>
-      </div>
       </div>
 
-        <v-flex xs12 md12>
+        <v-text-field
+          name="name"
+          v-model="booking.service_date"
+          label="Service Date"
+          id="select the date you want your vehicle to be serviced format:(dd-mm-yyyy)"
+        ></v-text-field>
+
           <v-flex>
             <v-select
            :items="items"
            label="Pick a slot"
          ></v-select>
            </v-flex>
-       </v-flex>
 
        <v-btn
          color="blue"
@@ -468,43 +464,172 @@
          Book
        </v-btn>
 
+       </v-container>
+     </v-flex>
 
-    <!--  <v-btn
+      <v-flex xs12 sm6>
+        <v-card >
+          <v-card-title primary-title>
+            <div>
+              <div class="headline">Booking Invoice</div>
+              <span class="grey--text">{{booking.booking_no}}{{booking.id}}</span>
+            </div>
+          </v-card-title>
+          <v-card-text>
+            <p>Total Amount Payable: &#8358;{{totalMarks | numeral('0,0')}} </p>
+            <p> marks are: {{ totalMarks }}</p>
+            <p>Vendor: {{selectedDrinkLabel }}</p>
+            <p> <strong> Service items:</strong> {{selectedOption}}</p>
+            <p> <strong> Service items test:</strong></p>
+            <div class=""v-for="test in selectedOption">
+              <p>{{test.price}}</p>
+            </div>
+
+          <!--  <p>vehicle: {{booking.vehicle.vehicle_make}}</p> -->
+            <p>service date: {{booking.service_date}}</p>
+          </v-card-text>
+          <v-card-actions>
+            <paystack
+                :amount="totalMarks"
+                :email="user.email"
+                :paystackkey="paystackkey"
+                :reference="reference"
+                :callback="callback"
+                :close="close"
+                :embed="false"
+            >
+               <v-btn color="primary"> Make Payment</v-btn>
+               <v-divider></v-divider>
+            </paystack>
+
+          </v-card-actions>
+          <v-spacer></v-spacer>
+        <v-divider></v-divider>
+        </v-card>
+      </v-flex>
+
+      <v-btn
         color="primary"
-        @click="e1 = 1"
+        @click="e1 = 5"
       >
-        Continue
-      </v-btn>  -->
+        Next
+      </v-btn>
 
-      <v-btn flat>Cancel</v-btn>
+      <v-btn flat @click="e1 = 3">Back</v-btn>
+    </v-layout>
+    </v-stepper-content>
+    <v-stepper-content step="5">
+      <v-container >
+
+        <v-card xs12 sm6>
+          <v-card-title primary-title>
+            <div>
+              <div class="headline">Booking Invoice</div>
+              <span class="grey--text">{{booking.booking_no}}{{booking.id}}</span>
+            </div>
+          </v-card-title>
+          <v-card-text>
+            <p>Amount Payable: &#8358;{{amount | numeral('0,0')}} </p>
+            <p>Vendor: {{selectedDrinkLabel }}</p>
+            <p> <strong> Service items:</strong> {{selectedOption}}</p>
+
+          <!--  <p>vehicle: {{booking.vehicle.vehicle_make}}</p> -->
+            <p>service date: {{booking.service_date}}</p>
+          </v-card-text>
+          <v-card-actions>
+            <paystack
+                :amount="amount"
+                :email="email"
+                :paystackkey="paystackkey"
+                :reference="reference"
+                :callback="callback"
+                :close="close"
+                :embed="false"
+            >
+               <v-btn color="primary"> Make Payment</v-btn>
+               <v-divider></v-divider>
+
+            </paystack>
+
+          </v-card-actions>
+          <v-spacer></v-spacer>
+        <v-divider></v-divider>
+        </v-card>
+        <v-btn
+          color="primary"
+          @click="e1 = 4"
+        >
+          Back
+        </v-btn>
+
+      </v-container>
+
     </v-stepper-content>
   </v-stepper-items>
 </v-stepper>
 </template>
 
 <script>
+
+import paystack from 'vue-paystack';
+import Multiselect from 'vue-multiselect'
+
+
 export default {
+  components: {
+      paystack, Multiselect
+  },
   data () {
       return {
+        paystackkey: "pk_test_f05cdb293d594a7ce616748054fd99dc8267a832", //paystack public key
+        email: "foobar@example.com", // Customer email
+        amount: 1000000, //
+        show: false,
         e1: 0,
         vehicles: [],
+        states: ['Abuja(FCT)','Lagos','Kaduna'],
+        lgas: [],
+        automobiles: [],
+        cars: [],
+        categories: ['Bike', '3 Wheeler', 'Car', 'Commercial Bus','Luxury Car'],
+        years: ['1990', '1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005',
+                  '2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019'],
+        manufacturers:[	'Acura',	'Aston Martin', 'Audi', 	'Bajaj', 'Bentley', 'BMW', 	'Bugatti', 'Buick',
+                  	'Cadillac', 	'Chevrolet', 'Chevron', 'Citroën', 'Chrysler', 	'Corvette', 'Daihatsu', 'Dodge',
+                  	 'Ferrari', 'Fiat', 	'Ford', 'Genesis', 'GMC', 'Honda', 'Hyundai', 'Isuzu', 'Jaguar', 	'Jeep', 'Kia',
+                  	'Lamborghini', 'Land Rover', 	'Lincoln', 	'Maruti', 'Suzuki', 	'Maserati', 	'Mazda', 'McLaren', 'Mercedes-Benz',
+                   'Mitsubishi', 	'Nissan', 'Opel', 	'Peugeot', 'Porsche',	'Renault', 'Rolls-Royce',	'Rover',	'Samsung',
+                    'Suzuki', 'Tata', 'Tesla', 	'Toyota', 'Trekka', 	'Ultima', 	'Vauxhall Motors', 	'Volkswagen', 'Volvo',	'Yamaha'],
         drivers: [],
         valid: true,
         user : null,
-        items: ['(08:00-08:30)AM', '(08:31-09:00)AM', '(09:00-09:30)AM', '(10:00-10:30)AM', '(10:31-11:00)AM','(11:01-11:30)AM'],
+        items: ['slot 1: (08:00-08:30)AM', 'slot 2: (08:31-09:00)AM', 'slot 3: (09:00-09:30)AM', 'slot 4: (10:00-10:30)AM',
+                'slot 5: (10:31-11:00)AM','slot 6: (11:01-11:30)AM'],
         auth_user: {},
         vendors:[
       {
         label:"Oando Shop",
-        options:["Alternator Change","Wiring","Washing"]
+        options:[
+                  {name:'Alternator Change', price:2300},
+                  {name:'Wiring', price:90220},
+                  {name:'Washing', price:2010}
+                ]
       },
       {
-        label:"Home Depot Mechanic",
-        options:["Full servicing","Panel Beating","Change Oil"]
+        label:"Total Mechanic",
+        options:[
+                  {name:'Full servicing', price:2300},
+                  {name:'Panel Beating', price:95000},
+                  {name:'Change Oil', price:23000}
+                ]
       },
       {
-        label:"Aliyu Helper Mech Boys",
-        options:["Painting","Body Spray","Tyres and Wheel Alignment"]
+        label:"Mobil Auto shop",
+        options:[
+                  {name:'Painting', price:1300},
+                  {name:'Body Spray', price:54000},
+                  {name:'Tyres and Wheel Alignment', price:23000}
+                ]
       }
     ],
     selectedDrink:-1,
@@ -514,7 +639,8 @@ export default {
         vehicle:{
           id:"",
           user_id:"",
-          vehicle_make:"",
+          car_id:"",
+          automobile_id:"",
           year:"",
           pic:"",
           vehicle_reg_no:""
@@ -564,9 +690,9 @@ export default {
         axios.defaults.headers.common['Content-Type'] = 'application/json'
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
 
-        axios.get(`api/auth/user/${this.user.id}/drivers`)
+        axios.get(`api/cars`)
         .then(response => {
-            this.drivers = response.data
+            this.cars = response.data
         })
         .catch(error => {
             console.error(error);
@@ -587,7 +713,9 @@ export default {
       axios.post('/api/booking',this.booking)
       .then(response=>{
           console.log(response);
-          this.$router.push('/bookings');
+        //  this.$router.push('/bookings');
+        localStorage.setItem('booker',JSON.stringify(this.booking))
+
           this.$toasted.global.bookingAdded().goAway(1500);
 
       })
@@ -609,6 +737,47 @@ export default {
             console.error(error);
         })
       },
+      fetchVendors(){
+        this.user = JSON.parse(localStorage.getItem('user'))
+        axios.defaults.headers.common['Content-Type'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
+
+        axios.get(`api/all/vendors`)
+        .then(response => {
+            this.vendors = response.data
+        })
+        .catch(error => {
+            console.error(error);
+        })
+      },
+
+      fetchAutomobiles() {
+        this.user = JSON.parse(localStorage.getItem('user'))
+        axios.defaults.headers.common['Content-Type'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
+
+      axios.get(`api/automobiles`)
+      .then(response => {
+          this.automobiles = response.data
+      })
+      .catch(error => {
+          console.error(error);
+      })
+    },
+    fetchCar() {
+      this.user = JSON.parse(localStorage.getItem('user'))
+      axios.defaults.headers.common['Content-Type'] = 'application/json'
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
+
+    axios.get(`api/cars`)
+    .then(response => {
+        this.cars = response.data
+    })
+    .catch(error => {
+        console.error(error);
+    })
+  },
+
       updateProfile(){
         axios.put('/api/auth/user/update',this.profile)
 
@@ -741,21 +910,37 @@ export default {
       this.vehicle.vehicle_reg_no = vehicle.vehicle_reg_no;
     }
   },
+  computed: {
+  totalMarks: function() {
+    let total = 0;
+    for(let i = 0; i < this.selectedOption.length; i++){
+      total += parseInt(this.selectedOption[i].price);
+    }
+    return total;
+  }
+},
 
   created(){
     this.fetchVehicles();
+    this.fetchAutomobiles();
     this.fetchDrivers();
     this.fetchUser();
     this.editUser();
+    this.fetchCar();
+    this.fetchVendors();
 
   }
 
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .spacer{
   margin-top:20px;
   margin-bottom:20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
+
 </style>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>

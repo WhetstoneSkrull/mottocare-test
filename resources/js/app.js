@@ -5,6 +5,8 @@ import Toasted from 'vue-toasted';
 //import VueProgressBar from 'vue-progressbar'
 import FormLoading from 'vue2-form-loading'
 import Vuetify from 'vuetify'
+import vueNumeralFilterInstaller from 'vue-numeral-filter';
+
 //import moment from 'moment'
 
 //import VueDisqus from 'vue-disqus'
@@ -15,6 +17,8 @@ import Vuetify from 'vuetify'
 //    Vue.use(VueProgressBar, options)
     Vue.use(FormLoading)
     Vue.use(Vuetify)
+    Vue.use(vueNumeralFilterInstaller);
+
   //  Vue.use(VueDisqus)
 
 //Vue.config.devtools= false;
@@ -151,6 +155,11 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
     import Admin from './components/admins/Admin'
     import AdminLogin from './components/admins/AdminLogin'
     import UserManager from './components/admins/UserManager'
+    import Automobiles from './components/admins/Automobiles'
+    import Cars from './components/admins/Cars'
+    import AdminServices from './components/admins/AdminServices'
+    import ServiceCategory from './components/admins/ServiceCategory'
+
 
     //Vendor pages
 
@@ -262,6 +271,11 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
 
             //Admin Pages
             {
+                path: '/admin-login',
+                name: 'adminLogin',
+                component: AdminLogin
+            },
+            {
                 path: '/admin-dashboard',
                 name: 'admin',
                 component: Admin,
@@ -275,10 +289,27 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 component: UserManager
             },
             {
-                path: '/admin-login',
-                name: 'adminLogin',
-                component: AdminLogin
+                path: '/admin-automobiles',
+                name: 'Automobiles',
+                component: Automobiles
             },
+            {
+                path: '/admin-cars',
+                name: 'Cars',
+                component: Cars
+            },
+            {
+                path: '/admin-services',
+                name: 'AdminServices',
+                component: AdminServices
+            },
+
+            {
+                path: '/admin-service-categories',
+                name: 'ServiceCategory',
+                component: ServiceCategory
+            },
+
 
             //vendor pages
             {

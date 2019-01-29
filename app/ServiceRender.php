@@ -18,11 +18,15 @@ return $this->belongsTo('App\User', 'user_id');
     return $this->belongsTo('App\ServiceCategory', 'service_category_id');
   }
 
-  public function bookings(){
+/*  public function bookings(){
         return $this->hasMany(Booking::class);
-    }
+    } */
 
-    public function vendor(){
+    public function bookings(){
+           return $this->belongsToMany(Booking::class, 'bookings_service_renders');
+       }
+
+       public function vendor(){
           return $this->belongsTo(Vendor::class,'vendor_id');
       }
 }

@@ -17,5 +17,5 @@ class Vendor extends Model
     public function servicerenders(){
       	return $this->hasMany('App\ServiceRender');
       }
-      
+
 }

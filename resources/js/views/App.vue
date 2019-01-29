@@ -152,8 +152,9 @@
                 </v-list-tile>
                 <!--end of wallet category -->
               </v-list-group>
-              <!--End of Group -->
             </v-list>
+            <!--End of Group -->
+
 
           <v-list>
                     <!--Service Group -->
@@ -186,6 +187,63 @@
                         </v-list>
 
         <v-divider></v-divider>
+
+        <v-list>
+      <!--Payment Group -->
+            <v-list-group
+            prepend-icon="business"
+              no-action
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-title>Admin Panel</v-list-tile-title>
+              </v-list-tile>
+              <!--Wallet category -->
+              <v-list-tile :to="{path: 'admin-services'}">
+                <v-list-tile-title>services</v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon>credit_card</v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+              <!--end of wallet category -->
+
+              <!--stateent category -->
+              <v-list-tile :to="{path: 'admin-bookings'}">
+                <v-list-tile-title>bookings</v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon>account_balance_wallet</v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+              <!--end of wallet category -->
+              <!--Wallet category -->
+              <v-list-tile :to="{path: 'admin-payments'}">
+                <v-list-tile-title>payments</v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon>payment</v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+              <!--end of wallet category -->
+
+              <!--statement category -->
+              <v-list-tile :to="{path: 'admin-automobiles'}">
+                <v-list-tile-title>automobiles</v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon>history</v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+              <!--end of wallet category -->
+
+              <!--statement category -->
+              <v-list-tile :to="{path: 'admin-cars'}">
+                <v-list-tile-title>vehicle manufacturers</v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon>history</v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+              <!--end of wallet category -->
+            </v-list-group>
+    </v-list>
+    <!--End of Group -->
+    <v-divider></v-divider>
 
         <v-list class="pt-0" dense  v-if="isLoggedIn">
           <v-list-tile  @click="logout">

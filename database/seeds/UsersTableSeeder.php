@@ -17,15 +17,15 @@ class UsersTableSeeder extends Seeder
             $role = Role::where('name', 'admin')->firstOrFail();
 
             User::create([
-                'name'           => 'Admin',
-                'first_name'           => 'Motto',
+                'name'                => 'Mottocare Super Admin',
+                'first_name'          => 'Motto',
                 'last_name'           => 'Care',
-                'customer_id'           => 'AAADDD',
-                'email'          => 'admin@admin.com',
-                'password'       => bcrypt('password'),
-                'remember_token' => str_random(60),
-                'activation_token' => str_random(60),
-                'role_id'        => $role->id,
+                'customer_id'         => 'Mottocare',
+                'email'               => 'admin@admin.com',
+                'password'            => bcrypt('password'),
+                'remember_token'      => str_random(60),
+                'activation_token'    => str_random(60),
+                'role_id'             => $role->id,
             ]);
         }
     }

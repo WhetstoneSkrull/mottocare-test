@@ -14,7 +14,7 @@ class VendorController extends Controller
 {
   public function __construct()
     {
-      $this->middleware('auth:api');
+    //  $this->middleware('auth:api');
       //  $this->middleware('isAdmin');
     }
   /**
@@ -25,7 +25,7 @@ class VendorController extends Controller
 
    public function showVendors(Vendor $user)
        {
-           return response()->json($user->with(['servicerenders'])->get(),200);
+           return response()->json($user->with(['servicerenders.bookings'])->get(),200);
           // return response()->json($user->servicerenders()->with(['service','servicecategory'])->get(),200);
        }
 

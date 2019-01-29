@@ -18,7 +18,7 @@ class AuthController extends Controller
 {
   public function __construct()
     {
-      $this->middleware('auth:api');
+        //$this->middleware('auth:api');
       //  $this->middleware('isAdmin');
     }
 
@@ -71,7 +71,7 @@ public function index(){
       //returns a user and their vehicles
       public function showVehicles(User $user)
           {
-              return response()->json($user->vehicles()->with(['user'])->get(),200);
+              return response()->json($user->vehicles()->with(['car'])->get(),200);
           }
 
   //returns a user and their vehicles
@@ -256,28 +256,26 @@ public function index(){
              $user_id = Auth::user()->id;
         DB::table('users')->where('id', $user_id)->update($request->except('_token'));
 
-
         return response()->json([
             'response' => 'user updated Successfully',
             'user' => Auth::user()
         ]);
 
-
-
     }
 
-    public function uploadFile(Request $request)
-  {
-    if ($request->hasFile('account_pic')) {
-             $image = $request->file('account_pic');
-             $filename = time() . '.' . $image->getClientOriginalExtension();
-             $location = public_path('images/' . $filename);
-             Image::make($image)->resize(400, 200)->save($location);
-           }
-     else{
-         $filename= 'noimage.jpg';
-     }
+    public function uploadFile(Request $request){
 
-  }
+          $file = $request->file('account_pic');
+          $filename = time() . '.' . $file->getClientOriginalName();
+          $path = ('image/accountpic');
+
+          $file->move($path, $filename);
+          $user_id = Auth::user()->id;
+
+          DB::table('users')->where('id', $user_id)->update(['account_pic' => $filename]);
+
+         // return redirect('/account')->with('Success', 'Image Uploaded');
+                  return back();
+      }
 
 }

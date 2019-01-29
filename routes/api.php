@@ -127,8 +127,17 @@ Route::post('service/render', 'ServiceRenderController@store');
 Route::put('service/render', 'ServiceRenderController@store');
 Route::delete('service/render/{id}', 'ServiceRenderController@destroy');
 
+
+//Cars API
+Route::get('cars', 'Carscontroller@index');
+Route::get('car/{id}', 'Carscontroller@show');
+Route::post('car', 'Carscontroller@store');
+Route::put('car', 'Carscontroller@store');
+Route::delete('car/{id}', 'Carscontroller@destroy');
+
+
 //Services Category API
-Route::get('services/category', 'ServiceCategoryController@index');
+Route::get('all/service/categories', 'ServiceCategoryController@index');
 Route::get('service/category/{id}', 'ServiceCategoryController@show');
 Route::post('service/category', 'ServiceCategoryController@store');
 Route::put('service/category', 'ServiceCategoryController@store');
