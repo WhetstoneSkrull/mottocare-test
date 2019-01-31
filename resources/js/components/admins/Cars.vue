@@ -112,7 +112,7 @@ export default {
   },
   deleteCar(id) {
     if (confirm('Are You Sure?')) {
-      fetch(`api/vehicle/${id}`, {
+      fetch(`api/car/${id}`, {
         method: 'delete'
       })
         .then(res => res.json())

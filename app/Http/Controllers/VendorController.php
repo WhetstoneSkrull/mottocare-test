@@ -120,10 +120,12 @@ class VendorController extends Controller
    * @return \Illuminate\Http\Response
    */
 
-  public function show($id)
+  public function show(Vendor $vendor)
   {
-    $vendor = Vendor::findOrfail($id);
-    return new  VendorResource($vendor);
+  //  $vendor = Vendor::findOrfail($id);
+    //return new  VendorResource($vendor);
+    return response()->json($vendor,200); 
+
   }
 
 

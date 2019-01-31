@@ -2,6 +2,15 @@
   <v-container grid-list-md text-xs-center>
    <v-layout row wrap>
      <!--Header section 12 row-->
+
+     <div class="" v-for="user in users" v-bind:key="user.id">
+       <p>{{user.first_name}} {{user.last_name}}</p>
+       <p>{{user.vendor.vendor_title}}</p>
+       <p>{{user.servicerenders.length}}</p>
+       <p>{{user.vehicles.length}}</p>
+       <p>{{user.drivers.length}}</p>
+     </div>
+
      <v-flex sm12>
        <material-card class="v-card-profile">
          <v-avatar
@@ -146,6 +155,7 @@ import moment from 'moment'
         last_name    : null,
         email        : null,
         bookings:[],
+        users:[],
           user_type   : 0,
           isLoggedIn  : localStorage.getItem('jwt') != null,
              user: null,
@@ -163,9 +173,9 @@ import moment from 'moment'
         axios.defaults.headers.common['Content-Type'] = 'application/json'
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
 
-        axios.get(`api/auth/user/${this.user.id}/bookings`)
+        axios.get(`api/auth/user/${this.user.id}`)
         .then(response => {
-            this.bookings = response.data
+            this.users = response.data
         })
         .catch(error => {
             console.error(error);
@@ -186,6 +196,16 @@ import moment from 'moment'
         this.user_type  = user.is_admin
       }
     },
+    fetchUser() {
+    axios.get(`api/auth/user/${this.user.id}`)
+
+    .then(response => {
+        this.users = response.data
+    })
+    .catch(error => {
+        console.error(error);
+    })
+  },
     moment: function () {
     return moment();
     }
@@ -198,6 +218,7 @@ import moment from 'moment'
 
     created(){
       this.setDefaults()
+      this.fetchUser()
     }
   }
 </script>

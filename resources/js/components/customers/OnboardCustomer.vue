@@ -400,6 +400,23 @@
         <v-flex xs12 sm6>
           <v-container grid-list-xs,sm,md,lg,xl>
 
+            <v-card>
+              <v-card-title primary-title>Test Booking</v-card-title>
+
+              <div class="" v-for="dealer in dealers" v-bind:key="dealer.id">
+                    <p>check: {{dealer.vendor_title}}</p>
+              </div>
+
+              <v-select
+                :items="dealers"
+                v-model="booking.service_date"
+                label="Select Vendor"
+                item-text="vendor_title"
+                item-value=""
+              ></v-select>
+
+            </v-card>
+
        <div class="input-group spacer">
          <div class="input-group-append">
            <label class="input-group-text" for="inputGroupSelect02">Select Vendor</label>
@@ -412,19 +429,6 @@
            </select>
       </div>
 
-  <!--    <div class="col-xs-12 col-md-4 spacer">
-       <div class="input-group">
-         <div class="input-group-append">
-           <label class="input-group-text" for="inputGroupSelect02">Select Service</label>
-         </div>
-         <select class="custom-select" id="inputGroupSelect02" v-model="selectedOption" v-if="options.length">
-           <option selected>Choose...</option>
-             <option  v-for="option in options">
-               {{option.name}} {{option.price}}
-             </option>
-           </select>
-      </div>
-    </div>  -->
 
       <div v-if="options.length">
         <label class="typo__label">Select Service</label>
@@ -582,7 +586,7 @@ export default {
   data () {
       return {
         paystackkey: "pk_test_f05cdb293d594a7ce616748054fd99dc8267a832", //paystack public key
-        email: "foobar@example.com", // Customer email
+        email: "fooFbar@example.com", // Customer email
         amount: 1000000, //
         show: false,
         e1: 0,
@@ -591,6 +595,7 @@ export default {
         lgas: [],
         automobiles: [],
         cars: [],
+        dealers: [],
         categories: ['Bike', '3 Wheeler', 'Car', 'Commercial Bus','Luxury Car'],
         years: ['1990', '1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005',
                   '2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019'],
@@ -738,13 +743,10 @@ export default {
         })
       },
       fetchVendors(){
-        this.user = JSON.parse(localStorage.getItem('user'))
-        axios.defaults.headers.common['Content-Type'] = 'application/json'
-        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
 
         axios.get(`api/all/vendors`)
         .then(response => {
-            this.vendors = response.data
+            this.dealers = response.data
         })
         .catch(error => {
             console.error(error);
@@ -908,7 +910,13 @@ export default {
       this.vehicle.year = vehicle.year;
       this.vehicle.model = vehicle.model;
       this.vehicle.vehicle_reg_no = vehicle.vehicle_reg_no;
-    }
+    },
+    callback: function(response){
+        console.log(response)
+      },
+      close: function(){
+          console.log("Payment closed")
+      }
   },
   computed: {
   totalMarks: function() {

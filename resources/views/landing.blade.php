@@ -48,17 +48,9 @@
         <div id="app">
             <app></app>
         </div>
+        
         <script src="{{ ('js/bootstrap.js') }}"></script>
         <script src="{{ ('js/app.js') }}"></script>
         <script src="{{ ('js/jquery.min.js') }}"></script>
-
-
-        <script src="{{ ('js/dashboard.js') }}"></script>
-        <script src="{{ ('js/maps.js') }}"></script>
-        <script src="{{ ('js/misc.js') }}"></script>
-        <script src="{{ ('js/off-canvas.js') }}"></script>
-
     </body>
-
-
-    </html>
+  </html>

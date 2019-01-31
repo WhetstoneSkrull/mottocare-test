@@ -265,7 +265,7 @@ hover="true"
        return this.bookings.filter(function(u) {
          return u.is_completed==false
      })
-   } 
+   }
  },
    created(){
     this.fetchServices();

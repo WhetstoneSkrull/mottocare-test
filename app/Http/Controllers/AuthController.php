@@ -109,7 +109,7 @@ public function index(){
       //returns the details of a user
   public function showUser(User $user)
         {
-            return response()->json($user,200);
+            return response()->json($user->with(['bookings','vendor.bookings','servicerenders','vehicles','drivers'])->get(),200);
         }
 
   public function signup(Request $request)

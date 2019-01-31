@@ -160,7 +160,7 @@ Route::delete('role/{id}', 'RoleController@destroy');
 //Vendor API
 Route::get('all/vendors', 'VendorController@showVendors');
 Route::get('vendors', 'VendorController@index');
-Route::get('vendor/{id}', 'VendorController@show');
+Route::get('vendor/{vendor}', 'VendorController@show');
 Route::post('vendor', 'VendorController@store');
 Route::put('vendor', 'VendorController@store');
 Route::delete('vendor/{id}', 'VendorController@destroy');

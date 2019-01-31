@@ -142,6 +142,9 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
 
     //vendor pages
     import VendorPage from './components/vendors/VendorPage'
+    import SingleVendor from './components/vendors/SingleVendor'
+    import Vendors from './components/vendors/Vendors'
+
     import VendorRegister from './components/vendors/VendorRegister'
     import Services from './components/vendors/Services'
 
@@ -321,6 +324,16 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 path: '/vendor-dashboard',
                 name: 'vendorPage',
                 component: VendorPage
+            },
+            {
+                path: '/vendor/:id',
+                name: 'SingleVendor',
+                component: SingleVendor
+            },
+            {
+                path: '/vendors',
+                name: 'Vendors',
+                component: Vendors
             },
             {
                 path: '/services',

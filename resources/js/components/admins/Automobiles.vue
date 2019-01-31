@@ -5,6 +5,35 @@
     <v-flex xs12 sm6>
       <v-form ref="form">
 
+        <v-card>
+          <v-card-title primary-title>Test Booking</v-card-title>
+
+          <div class="" v-for="vendor in vendors" v-bind:key="vendor.id">
+                <p>check: {{vendor.vendor_title}}</p>
+                <p v-for="x in vendor.servicerenders" v-bind:key="x.id">
+                  service: {{x.price}}
+                </p>
+          </div>
+
+
+          <v-select
+            :items="vendors"
+             v-model="selectedDrink"
+             v-on:change="selectDrink"
+            label="Select Vendor"
+            item-text="vendor_title"
+            item-value=""
+          ></v-select>
+
+          <v-select
+            :items="servicerenders"
+            item-text="price"
+            v-model="selectedOption"
+            label="Select Service"
+          ></v-select>
+
+        </v-card>
+
           <v-text-field
             v-model="automobile.name"
             label="Automobile"
@@ -35,6 +64,18 @@ export default {
   data (){
     return{
       automobiles:[],
+      selectedDrink:-1,
+      selectedOption:'',
+      servicerenders:[],
+      selectedDrinkLabel:'',
+      firstOption:'',
+      secondOption:'',
+      vendors:[
+        {
+          //servicerenders:[]
+        }
+      ],
+      oo:"",
       automobile:{
         name:""
       },
@@ -57,6 +98,23 @@ export default {
       })
   },
   methods:{
+
+    selectDrink:function() {
+    this.selectedOption = '';
+    this.servicerenders = this.vendors[this.selectedDrink].servicerenders;
+    this.selectedDrinkLabel = this.vendors[this.selectedDrink].vendor_title;
+    },
+
+    fetchVendors() {
+
+    axios.get(`api/all/vendors`)
+    .then(response => {
+        this.vendors = response.data
+    })
+    .catch(error => {
+        console.error(error);
+    })
+  },
     fetchCar() {
 
     axios.get(`api/automobiles`)
@@ -130,6 +188,7 @@ export default {
   },
   created(){
     this.fetchCar();
+    this.fetchVendors();
   }
 }
 </script>
