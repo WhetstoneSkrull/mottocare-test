@@ -129,7 +129,7 @@
                   <v-list-tile-title>My Payment</v-list-tile-title>
                 </v-list-tile>
                 <!--Wallet category -->
-                <v-list-tile :to="{path: 'dashboard/credit'}">
+                <v-list-tile :to="{path: 'fund-wallet'}">
                   <v-list-tile-title>Wallet</v-list-tile-title>
                   <v-list-tile-action>
                     <v-icon>credit_card</v-icon>
@@ -146,7 +146,7 @@
                 </v-list-tile>
                 <!--end of wallet category -->
                 <!--Wallet category -->
-                <v-list-tile :to="{path: 'dashboard/withdrawals'}">
+                <v-list-tile :to="{path: '/withdrawal'}">
                   <v-list-tile-title>Withdrawal</v-list-tile-title>
                   <v-list-tile-action>
                     <v-icon>payment</v-icon>

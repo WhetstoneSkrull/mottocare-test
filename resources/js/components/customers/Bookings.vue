@@ -24,7 +24,7 @@
         <td>
           <paystack
               :amount="amount"
-              :email="email"
+              :email="user.email"
               :paystackkey="paystackkey"
               :reference="reference"
               :callback="callback"
@@ -55,7 +55,7 @@ export default {
   data(){
             return {
               paystackkey: "pk_test_f05cdb293d594a7ce616748054fd99dc8267a832", //paystack public key
-              email: "foobar@example.com", // Customer email
+              email: "", // Customer email
               amount: 1000000, // in kobo,
                 user : null,
                 bookings : [],

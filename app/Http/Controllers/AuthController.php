@@ -105,6 +105,12 @@ public function index(){
 
                 }
 
+                //returns a user's transactions
+                public function transactions(User $user){
+                return response()->json($user->transactions()->get(),200);
+
+                  }
+
 
       //returns the details of a user
   public function showUser(User $user)

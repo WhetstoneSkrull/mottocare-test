@@ -6,6 +6,7 @@ import Toasted from 'vue-toasted';
 import FormLoading from 'vue2-form-loading'
 import Vuetify from 'vuetify'
 import vueNumeralFilterInstaller from 'vue-numeral-filter';
+import VueResource from 'vue-resource';
 
 //import moment from 'moment'
 
@@ -18,6 +19,7 @@ import vueNumeralFilterInstaller from 'vue-numeral-filter';
     Vue.use(FormLoading)
     Vue.use(Vuetify)
     Vue.use(vueNumeralFilterInstaller);
+    Vue.use(VueResource);
 
   //  Vue.use(VueDisqus)
 
@@ -102,6 +104,11 @@ import vueNumeralFilterInstaller from 'vue-numeral-filter';
     icon : 'done'
     });
 
+    Vue.toasted.register('madeWithdrawal', 'Transfer has been queued!', {
+    type : 'success',
+    icon : 'done'
+    });
+
 //*******End of Toasted Service *********//
 var numeral = require('numeral');
 
@@ -113,12 +120,17 @@ Vue.filter("formatNumber", function (value) {
 Vue.component('app-footer', require('./views/Footer.vue')); //component name should be in camel-case
 Vue.component('app-header', require('./views/Header.vue'));
 Vue.component('vendor-register', require('./components/vendors/VendorRegister.vue'));
+Vue.component('onboard-booking', require('./components/onboarding/OnboardBooking.vue'));
 
+
+Vue.http.headers.common['Authorization'] = 'Bearer sk_test_962dee2862de19c8516142ae81271d1b0cc90888';
+//Vue.http.headers.common['Content Type'] = 'application/json';
 
 //static pages
     import App from './views/App'
     import Welcome from './views/Welcome'
     import Footer from './views/Footer'
+    import OnboardBooking from './components/onboarding/OnboardBooking'
 
     import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
     import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
@@ -139,11 +151,13 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
     import Drivers from './components/customers/Drivers'
     import Vehicles from './components/customers/Vehicles'
     import Pay from './components/customers/Pay'
+    import FundWallet from './components/wallets/FundWallet'
+    import Withdrawal from './components/wallets/Withdrawal'
 
     //vendor pages
     import VendorPage from './components/vendors/VendorPage'
-    import SingleVendor from './components/vendors/SingleVendor'
-    import Vendors from './components/vendors/Vendors'
+    import SingleVendor from './components/onboarding/SingleVendor'
+    import Vendors from './components/onboarding/Vendors'
 
     import VendorRegister from './components/vendors/VendorRegister'
     import Services from './components/vendors/Services'
@@ -175,6 +189,11 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
                 path: '/',
                 name: 'home',
                 component: Welcome
+            },
+            {
+                path: '/on-booking',
+                name: 'OnboardBooking',
+                component: OnboardBooking
             },
             {
                 path: '/select',
@@ -270,7 +289,24 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
               //  is_user : true
               }
             },
-
+            {
+                path: '/fund-wallet',
+                name: 'FundWallet',
+                component: FundWallet,
+                meta: {
+              //  requiresAuth: true
+              //  is_user : true
+              }
+            },
+            {
+                path: '/withdrawal',
+                name: 'Withdrawal',
+                component: Withdrawal,
+                meta: {
+              //  requiresAuth: true
+              //  is_user : true
+              }
+            },
 
             //Admin Pages
             {
@@ -349,7 +385,7 @@ Vue.component('vendor-register', require('./components/vendors/VendorRegister.vu
             },
             {
                 path: '/agent-dashboard',
-                name: 'vendorPage',
+                name: 'AgentPage',
                 component: AgentPage
             },
             {

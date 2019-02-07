@@ -22,9 +22,6 @@ return [
         'allow_origins' => [
             '*',
             'http://localhost:8080/',
-            'http://178.62.29.214/'
-//            'http://178.62.29.214/'
-
         ],
 
         'allow_methods' => [

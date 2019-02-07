@@ -29,6 +29,7 @@ Route::group([
     Route::get('user/{user}/bookings/services','AuthController@showBookingsServices');
     Route::get('user/{user}/vehicles','AuthController@showVehicles');
     Route::get('user/{user}/drivers','AuthController@showDrivers');
+    Route::get('user/{user}/transactions','AuthController@transactions');
     Route::get('user/{user}/services','AuthController@showVendorServices');
     Route::get('user/{user}/vendor','AuthController@showVendor');
     Route::get('user/{user}/vendor/bookings','AuthController@showVendorBookings');
@@ -160,7 +161,7 @@ Route::delete('role/{id}', 'RoleController@destroy');
 //Vendor API
 Route::get('all/vendors', 'VendorController@showVendors');
 Route::get('vendors', 'VendorController@index');
-Route::get('vendor/{vendor}', 'VendorController@show');
+Route::get('vendor/{id}', 'VendorController@show');
 Route::post('vendor', 'VendorController@store');
 Route::put('vendor', 'VendorController@store');
 Route::delete('vendor/{id}', 'VendorController@destroy');
@@ -172,6 +173,14 @@ Route::get('driver/{id}', 'DriverController@show');
 Route::post('driver', 'DriverController@store');
 Route::put('driver', 'DriverController@store');
 Route::delete('driver/{id}', 'DriverController@destroy');
+
+
+//Transaction API
+Route::get('transactions', 'TransactionController@index');
+Route::get('transaction/{id}', 'TransactionController@show');
+Route::post('transaction', 'TransactionController@store');
+Route::put('transaction', 'TransactionController@store');
+Route::delete('transaction/{id}', 'TransactionController@destroy');
 
 
 //Slot API

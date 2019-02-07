@@ -294,7 +294,6 @@
                 </v-card-actions>
               </v-card>
 
-
             </v-flex>
           </v-layout>
         <v-btn
@@ -333,7 +332,7 @@ export default {
                 vendor_first_name:"",
                 vendor_last_name:"",
             //    vendor_logo:'business',
-                user_id:1,
+                user_id:"",
                 vendor_email:"",
                 vendor_logo:"",
                 mobile_no:"",
@@ -362,10 +361,12 @@ export default {
     },
     methods:{
       registerVendor(){
+        this.user = JSON.parse(localStorage.getItem('user'))
+        axios.defaults.headers.common['Content-Type'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
         axios.post('/api/vendor',this.vendor)
         .then(response=>{
-          //localStorage.setItem('user',JSON.stringify(response.data.user))
-          //localStorage.setItem('access_token',response.data.token)
+
             console.log(response);
             this.$router.push('/');
             this.$toasted.global.signup().goAway(1500);

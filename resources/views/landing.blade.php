@@ -7,8 +7,23 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <script>window.Laravel = { csrfToken: '{{ csrf_token() }}' }</script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <script>
+          if ('serviceWorker' in navigator ) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+        </script>
         <title>Mottocare | Your car is in safe hands</title>
         <link href=" {{ ('css/app.css') }}" rel="stylesheet">
+        <link href=" {{ asset('css/app.css') }}" rel="stylesheet">
+
     <!--    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet"> -->
 
         <!--Admin login css-->
@@ -21,9 +36,6 @@
 
         <link href=" {{ ('css/font-awesome.css') }}" rel="stylesheet">
         <link href=" {{ ('css/simple-line-icons.css') }}" rel="stylesheet">
-
-        <link rel="stylesheet" type="text/css" href="{{('css/select2.css')}}">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
           </head>
     <body>
 
@@ -48,9 +60,10 @@
         <div id="app">
             <app></app>
         </div>
-        
-        <script src="{{ ('js/bootstrap.js') }}"></script>
-        <script src="{{ ('js/app.js') }}"></script>
-        <script src="{{ ('js/jquery.min.js') }}"></script>
+
+
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
+<!--        <script src="{{ ('js/jquery.min.js') }}"></script> -->
     </body>
   </html>

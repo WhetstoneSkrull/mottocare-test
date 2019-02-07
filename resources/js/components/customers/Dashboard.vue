@@ -3,13 +3,13 @@
    <v-layout row wrap>
      <!--Header section 12 row-->
 
-     <div class="" v-for="user in users" v-bind:key="user.id">
+  <!--   <div class="" v-for="user in users" v-bind:key="user.id">
        <p>{{user.first_name}} {{user.last_name}}</p>
        <p>{{user.vendor.vendor_title}}</p>
        <p>{{user.servicerenders.length}}</p>
        <p>{{user.vehicles.length}}</p>
        <p>{{user.drivers.length}}</p>
-     </div>
+     </div>  -->
 
      <v-flex sm12>
        <material-card class="v-card-profile">
@@ -40,7 +40,7 @@
      <!--Booking card-->
      <v-flex xs12 sm4>
     <v-card
-    hover="true"
+    hover
     >
       <v-card-title primary-title>
         <div>
@@ -59,7 +59,7 @@
   <!--Car card-->
 <v-flex xs12 sm4>
 <v-card
-hover="true"
+hover
 >
 <v-card-title primary-title>
 <div>
@@ -78,7 +78,7 @@ hover="true"
 <!--Driver card-->
 <v-flex xs12 sm4>
 <v-card
-hover="true"
+hover
 >
 <v-card-title primary-title>
 <div>

@@ -14,7 +14,7 @@ class VendorController extends Controller
 {
   public function __construct()
     {
-    //  $this->middleware('auth:api');
+      $this->middleware('auth:api');
       //  $this->middleware('isAdmin');
     }
   /**
@@ -99,7 +99,7 @@ class VendorController extends Controller
 
         $user = User::where('email', $vendor->vendor_email)->first();
 
-        $user->notify(new RegisterVendor($user));
+      //  $user->notify(new RegisterVendor($user));
 
         return new VendorResource($vendor);
       }
@@ -120,11 +120,11 @@ class VendorController extends Controller
    * @return \Illuminate\Http\Response
    */
 
-  public function show(Vendor $vendor)
+  public function show($id)
   {
-  //  $vendor = Vendor::findOrfail($id);
-    //return new  VendorResource($vendor);
-    return response()->json($vendor,200); 
+    $vendor = Vendor::findOrfail($id);
+    return new  VendorResource($vendor);
+//    return response()->json($vendor->with('servicerenders')->get(),200);
 
   }
 

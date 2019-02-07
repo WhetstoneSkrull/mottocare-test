@@ -257,23 +257,25 @@
           </v-flex>
           </v-flex>
           <!--{{vehicles.length}} -->
-          <v-flex xs12 sm4>
-            <v-card color="grey" class="white--text" v-for="vehicle in vehicles" v-bind:key="vehicle.id">
+          <v-flex xs12 sm2>
+            <v-card class="white--text" v-for="vehicle in vehicles" v-bind:key="vehicle.id">
               <v-card-title primary-title>
                 <v-flex xs12 sm6>
                   <v-img
                     src="/images/stock.jpg"
-                    height="125px"
+                    height="50px"
                     contain
                   ></v-img>
                 </v-flex>
+              </v-card-title>
+              <v-card-text>
                 <div>
-                  <div class="headline">{{vehicle.vehicle_make}}</div>
+                  <div class="headline">{{vehicle.car.car_manufacturer}}</div>
                   <p>Model: {{vehicle.model}}</p>
                   <p>Year: {{vehicle.year}}</p>
                   <p>Vehicle Registration Number: {{vehicle.vehicle_reg_no}}</p>
                 </div>
-              </v-card-title>
+              </v-card-text>
               <v-card-actions>
                 <v-btn flat dark>
                     <v-icon @click="editVehicle(vehicle)">edit</v-icon>
@@ -371,7 +373,7 @@
           </v-flex>
           </v-flex>
 
-    <v-flex xs12 sm6>
+    <v-flex xs12 sm3>
       <v-card v-for="driver in drivers"v-bind:key="driver.id">
         <v-card-title primary-title>
           <div>
@@ -925,6 +927,15 @@ export default {
       total += parseInt(this.selectedOption[i].price);
     }
     return total;
+  },
+  reference(){
+    let text = "";
+    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( let i=0; i < 10; i++ )
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
   }
 },
 

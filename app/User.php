@@ -24,7 +24,7 @@ class User extends \TCG\Voyager\Models\User
     protected $fillable = [
       //'user_role',
         'first_name','last_name','slug','account_pic','driver_license','customer_id','DoB','address', 'email', 'password', 'token',
-        'driver_first_name','driver_last_name','lga','city','state','active', 'activation_token'
+        'driver_first_name','driver_last_name','lga','city','state','active', 'activation_token','wallet_balance'
     ];
 
     /**
@@ -56,4 +56,12 @@ class User extends \TCG\Voyager\Models\User
         {
           return $this->hasMany('App\ServiceRender');
         }
+        public function wallet(){
+          return $this->hasOne('App\Wallet');
+        }
+        public function transactions(){
+          return $this->hasMany('App\Transaction');
+        }
+
+
 }
