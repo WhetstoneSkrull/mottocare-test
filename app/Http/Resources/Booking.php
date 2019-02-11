@@ -22,7 +22,11 @@ class Booking extends JsonResource
        'vehicle_id' => $this->vehicle_id,
        'booking_no' => $this->booking_no,
        'service_date' => $this->service_date,
-       'service_time' => $this->service_time
+       'service_time' => $this->service_time,
+       'servicerenders' => ServiceRender::collection($this->servicerenders),
+       'vehicle' => new Vehicle($this->vehicle)
+
+
      ];
      }
 }

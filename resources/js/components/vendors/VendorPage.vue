@@ -1,19 +1,19 @@
 <template lang="html">
   <v-container grid-list-md text-xs-center>
-    <div class="">
 
+<!--
     <v-chip color="indigo" text-color="white" >
          <v-avatar>
          </v-avatar>
          you have {{pending.length}} uncompleted bookings
        </v-chip>
-     </div>
+     </div>  -->
 
     <div class="" v-for="x in vendor" v-bind="x.id">
 
    <v-layout row wrap>
      <!--Header section 12 row-->
-     <v-flex sm12>
+     <v-flex xs12 sm12>
        <material-card class="v-card-profile">
          <v-avatar
            slot="offset"
@@ -45,8 +45,9 @@
      </v-flex>
      <!--End of Header section 12 row-->
 
+
      <!--Booking card-->
-     <v-flex xs12 sm4>
+     <v-flex xs12 sm4 v-if="x.status === 'active'">
     <v-card
     hover="true"
     >
@@ -63,129 +64,85 @@
   </v-flex>
   <!--End of Booking card-->
 
-<!--Driver card-->
-<v-flex xs12 sm4>
-<v-card
-hover="true"
->
-<v-card-title primary-title>
-<div>
- <h3 class="headline mb-0">My Bookings<v-icon large="true">person_pin</v-icon></h3>
-</div>
-</v-card-title>
+      <!--Driver card-->
+      <v-flex xs12 sm4 v-if="x.status === 'active'">
+      <v-card
+      hover="true"
+      >
+      <v-card-title primary-title>
+      <div>
+       <h3 class="headline mb-0">My Bookings<v-icon large="true">person_pin</v-icon></h3>
+      </div>
+      </v-card-title>
 
-<v-card-actions>
-<v-btn flat color="blue">Share</v-btn>
-<v-btn flat color="blue">Explore</v-btn>
-</v-card-actions>
-</v-card>
 
-</v-flex>
-<!--End of Driver card-->
+      <v-card-actions>
+      <v-btn flat color="blue">Explore</v-btn>
+      </v-card-actions>
+      </v-card>
 
-<!--Car card-->
-<v-flex xs12 sm4>
-<v-card
-hover="true"
->
-<v-card-title primary-title>
-<div>
-<h3 class="headline mb-0">My Wallet<v-icon large="true">local_car_wash</v-icon></h3>
-</div>
-</v-card-title>
+      </v-flex>
+      <!--End of Driver card-->
 
-<v-card-actions>
-<v-btn flat color="blue">Share</v-btn>
-<v-btn flat color="blue">Explore</v-btn>
-</v-card-actions>
-</v-card>
-</v-flex>
-<!--End of Car card-->
+      <!--Car card-->
+      <v-flex xs12 sm4 v-if="x.status === 'active'">
+      <v-card
+      hover="true"
+      >
+      <v-card-title primary-title>
+      <div>
+      <h3 class="headline mb-0">My Wallet<v-icon large="true">local_car_wash</v-icon></h3>
+      </div>
+      </v-card-title>
+
+      <v-card-actions>
+      <v-btn flat color="blue"></v-btn>
+      </v-card-actions>
+      </v-card>
+      </v-flex>
+      <!--End of Car card-->
 
 
 <!--Recent Bookings-->
 
    </v-flex>
-    <v-flex xs12 sm12>
-      <v-card>
-        <v-list two-line subheader>
-          <v-subheader inset> {{pending.length}} Pending Bookings</v-subheader>
 
-          <v-list-tile v-for="booking in pending" :key="booking.id" @click="">
+    <v-flex xs12 sm6 v-if="x.status === 'active'">
+      <p class="blue--text">you have {{pending.length}} uncompleted bookings</p>
 
-            <v-list-tile-avatar>
-              <v-icon>assignment</v-icon>
-            </v-list-tile-avatar>
-            <v-list-tile-content>
-              <v-list-tile-title></v-list-tile-title>
+      <div class="table-responsive">
 
-              <v-list-tile-sub-title>{{ booking.service_date }}</v-list-tile-sub-title>
-                <v-list-tile-sub-title>{{booking.service_time }}</v-list-tile-sub-title>
+      <table class="table">
+    <thead class="thead-info">
+      <tr>
+        <th scope="col">Booking no.</th>
+    <!--    <th scope="col">Service items</th> -->
+        <th scope="col">Date</th>
+        <th scope="col">Service time</th>
+        <th scope="col">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="booking in pending" :key="booking.id">
+        <td>{{booking.booking_no}}</td>
+      <!--  <td>  <button type="button" class="btn btn-dark" v-for="service in booking.servicerenders">
+                {{service.service.service_name}}
+              </button>
+         </td> -->
+        <td>{{booking.service_date}}</td>
+        <td>{{booking.service_time}}</td>
+        <td>
+          <router-link :to="{ path: '/vendor-booking/'+booking.id}">
+           view more
+           </router-link>
+          </td>
 
-            </v-list-tile-content>
-            <v-list-tile-action>
 
-                  <v-btn icon            >
-                    <v-icon color="grey lighten-1">info</v-icon>
-                  </v-btn>
-              </v-list-tile-action>
-          </v-list-tile>
-
-        </v-list>
-        <v-divider></v-divider>
-      </v-card>
-
-      <v-card>
-        <v-list two-line subheader>
-          <v-subheader inset>Top Services</v-subheader>
-
-          <v-list-tile v-for="service in services" :key="service.id" @click="">
-            <v-list-tile-avatar>
-              <v-icon>assignment</v-icon>
-            </v-list-tile-avatar>
-            <v-list-tile-content>
-              <v-list-tile-title>{{ service.price }}</v-list-tile-title>
-              <v-list-tile-sub-title>{{ service.description }}</v-list-tile-sub-title>
-
-            </v-list-tile-content>
-            <v-list-tile-action>
-
-                <v-btn icon            >
-                <v-icon color="grey lighten-1">info</v-icon>
-              </v-btn>
-
-            </v-list-tile-action>
-          </v-list-tile>
-        </v-list>
-        <v-divider></v-divider>
-      </v-card>
-
-      <v-card>
-        <v-list two-line subheader>
-          <v-subheader inset>Pending Bookings</v-subheader>
-
-          <v-list-tile v-for="item in items2" :key="item.title" @click="">
-            <v-list-tile-avatar>
-              <v-icon :class="[item.iconClass]">{{ item.icon }}</v-icon>
-            </v-list-tile-avatar>
-            <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
-            </v-list-tile-content>
-            <v-list-tile-action>
-
-                <v-btn icon            >
-                <v-icon color="grey lighten-1">info</v-icon>
-              </v-btn>
-
-            </v-list-tile-action>
-          </v-list-tile>
-        </v-list>
-        <v-divider></v-divider>
-      </v-card>
-
+      </tr>
+    </tbody>
+  </table>
+  </div>
     </v-flex>
-    <!--End of Recent Bookings-->
 
 
    </v-layout>

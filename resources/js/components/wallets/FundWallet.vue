@@ -8,15 +8,13 @@
         v-model="fund.amount"
       ></v-text-field>
 
-      <v-form v-model="fund.user_id" v-show="show">
+      <v-form  v-show="show">
       <v-text-field
         name="name"
         label="ID"
-        :value="user.id"
+        v-model="fund.user_id"
       ></v-text-field>
     </v-form>
-
-
 
       <paystack
           :amount="fund.amount*100"

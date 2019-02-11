@@ -16,7 +16,7 @@ class BookingController extends Controller
   public function __construct()
       {
         $this->middleware('auth:api');
-        //  $this->middleware('isAdmin');
+      //  $this->middleware('isAdmin');
       }
 
     /**
@@ -48,7 +48,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-      $booking = $request->isMethod('put') ? Booking::findOrfail
+        $booking = $request->isMethod('put') ? Booking::findOrfail
         ($request->booking_id) : new Booking;
 
         //Generate booking_id
@@ -76,8 +76,19 @@ class BookingController extends Controller
                     'data'   => $booking,
                     'message' => $booking ? 'Booking Created!' : 'Error Creating Booking'
                 ]);
-
     }
+
+      public function completeBooking(Booking $booking)
+        {
+            $booking->is_completed = true;
+            $status = $booking->save();
+
+            return response()->json([
+                'status'    => $status,
+                'data'      => $booking,
+                'message'   => $status ? 'Booking Completed' : 'Error'
+            ]);
+        }
 
     /**
      * Display the specified resource.

@@ -23,7 +23,7 @@ import VueResource from 'vue-resource';
 
   //  Vue.use(VueDisqus)
 
-//Vue.config.devtools= false;
+Vue.config.devtools= false;
 
     /*********************************
      *      Register GLobal Toasts   *
@@ -109,6 +109,11 @@ import VueResource from 'vue-resource';
     icon : 'done'
     });
 
+    Vue.toasted.register('doneSuccessfully', 'Successfully Completed!', {
+    type : 'success',
+    icon : 'done'
+    });
+
 //*******End of Toasted Service *********//
 var numeral = require('numeral');
 
@@ -156,8 +161,11 @@ Vue.http.headers.common['Authorization'] = 'Bearer sk_test_962dee2862de19c851614
 
     //vendor pages
     import VendorPage from './components/vendors/VendorPage'
+    import VendorSingleBooking from './components/vendors/VendorSingleBooking'
+
     import SingleVendor from './components/onboarding/SingleVendor'
     import Vendors from './components/onboarding/Vendors'
+    import ConfirmBooking from './components/onboarding/ConfirmBooking'
 
     import VendorRegister from './components/vendors/VendorRegister'
     import Services from './components/vendors/Services'
@@ -171,12 +179,14 @@ Vue.http.headers.common['Authorization'] = 'Bearer sk_test_962dee2862de19c851614
     //Admin pages
     import Admin from './components/admins/Admin'
     import AdminLogin from './components/admins/AdminLogin'
+    import AdminDashboard from './components/admins/AdminDashboard'
+    import AdminVendors from './components/admins/AdminVendors'
+    import AdminVendorPage from './components/admins/AdminVendorPage'
     import UserManager from './components/admins/UserManager'
     import Automobiles from './components/admins/Automobiles'
     import Cars from './components/admins/Cars'
     import AdminServices from './components/admins/AdminServices'
     import ServiceCategory from './components/admins/ServiceCategory'
-
 
     //Vendor pages
 
@@ -316,8 +326,24 @@ Vue.http.headers.common['Authorization'] = 'Bearer sk_test_962dee2862de19c851614
             },
             {
                 path: '/admin-dashboard',
-                name: 'admin',
-                component: Admin,
+                name: 'AdminDashboard',
+                component: AdminDashboard,
+                meta: {
+              //  requiresAuth: true
+              }
+            },
+            {
+                path: '/admin-vendors',
+                name: 'AdminVendors',
+                component: AdminVendors,
+                meta: {
+              //  requiresAuth: true
+              }
+            },
+            {
+                path: '/admin/vendor/:id',
+                name: 'AdminVendorPage',
+                component: AdminVendorPage,
                 meta: {
               //  requiresAuth: true
               }
@@ -366,8 +392,25 @@ Vue.http.headers.common['Authorization'] = 'Bearer sk_test_962dee2862de19c851614
                 name: 'SingleVendor',
                 component: SingleVendor
             },
+
+            {
+                path: '/vendor-booking/:id',
+                name: 'VendorSingleBooking',
+                component: VendorSingleBooking
+            },
+
             {
                 path: '/vendors',
+                name: 'Vendors',
+                component: Vendors
+            },
+                {
+              path: '/confirm-booking',
+              name: 'ConfirmBooking',
+              component: ConfirmBooking
+              },
+            {
+                path: '/vendor',
                 name: 'Vendors',
                 component: Vendors
             },

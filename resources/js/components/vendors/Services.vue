@@ -1,6 +1,9 @@
 <template lang="html">
-  <v-container  grid-list-md text-xs-center>
+  <v-container  grid-list-md>
     <v-layout row wrap>
+      <v-flex xs12 sm12>
+        <v-btn color="primary" :to="{path:'/slot-manager'}">slot manager</v-btn>
+      </v-flex>
       <v-flex xs12 sm6>
         <v-form ref="form" v-model="valid" lazy-validation>
           <h3>Add Service</h3>
@@ -18,6 +21,9 @@
         </div>
       </div>
     </div>
+
+
+
             <v-text-field
               v-model="service.price"
               label="Service Price"
@@ -49,76 +55,16 @@
       </v-flex>
 
       <!--Services -->
-      <v-flex xs12 sm6>
-
         <v-flex xs12 sm6>
-          <h4 v-show="renders.length === 1" >{{renders.length}} service created</h4>
-          <h4 v-show="renders.length > 1">{{renders.length}} services</h4>
-          <h4 v-show="renders.length < 1">you have no services</h4>
+          <v-card v-for="service in renders" v-bind:key="service.id">
+            <v-card-text>
+        <!--      <p class="title">{{service.service.category.id}}</p>  -->
+              {{service.service.service_name}}
+            </v-card-text>
+            <v-divider></v-divider>
+
+          </v-card>
         </v-flex>
-
-        <v-card>
-            <v-layout
-          column
-          justify-center
-        >
-          <v-subheader class="font-weight-medium"> <strong> My Services </strong></v-subheader>
-
-          <v-expansion-panel popout>
-            <v-expansion-panel-content
-              v-for="service in renders"
-              :key="service.id"
-              hide-actions
-            >
-              <v-layout
-                slot="header"
-                align-center
-                row
-                spacer
-              >
-                <v-flex xs6 sm6 md6>
-                  <v-avatar
-                    slot="activator"
-                  >
-                  <strong>{{service.service.service_name}}</strong>
-
-                  </v-avatar>
-                </v-flex>
-
-              </v-layout>
-
-              <v-card>
-                <v-divider></v-divider>
-                <v-card-text>
-
-
-                  <p class="font-weight-bold">Service Details</p>
-                <!--   <p> <v-icon>business</v-icon> <strong>service category</strong> <span class="font-weight-regular"> {{service.servicecategory.service_category_name}}</span></p> -->
-                   <p> <v-icon>business</v-icon> <strong>service title</strong> <span class="font-weight-regular"> {{service.service.service_name}}</span></p>
-                  <p> <v-icon>money</v-icon> <strong>price</strong> <span class="font-weight-regular">&#8358;{{service.price | formatNumber}}</span></p>
-                  <p> <v-icon>local_library</v-icon> <strong>description</strong> <span class="font-weight-regular"> {{service.description}}</span></p>
-                  <p> <v-icon>date_range</v-icon> <strong>created on</strong> <span class="font-weight-regular"> {{service.create_at}}</span></p>
-                  <p>
-                    <v-btn flat>
-                        <v-icon @click="editService(service)">edit</v-icon>
-                    </v-btn>
-                    <v-btn flat>
-                        <v-icon @click="deleteService(service.id)">delete</v-icon>
-                    </v-btn>
-                  </p>
-
-                </v-card-text>
-
-               </v-card>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-layout>
-      </v-card>
-    </v-flex>
-      <!--End of Services -->
-
-
-
 
 
     </v-layout>
@@ -170,6 +116,9 @@ export default {
     methods:{
 
       fetchServices() {
+        this.user = JSON.parse(localStorage.getItem('user'))
+        axios.defaults.headers.common['Content-Type'] = 'application/json'
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
 
       axios.get(`api/auth/user/${this.user.id}/services`)
       .then(response => {
@@ -179,16 +128,14 @@ export default {
           console.error(error);
       })
     },
-      fetchServiceName(page_url) {
-      let vm = this;
-      page_url = page_url || '/api/services';
-      fetch(page_url)
-        .then(res => res.json())
-        .then(res => {
-          this.services = res.data;
-          vm.makePagination(res.meta, res.links);
+      fetchServiceName() {
+        axios.get(`api/services`)
+        .then(response => {
+            this.services = response.data
         })
-        .catch(err => console.log(err));
+        .catch(error => {
+            console.error(error);
+        })
     },
       addService(){
 
@@ -200,6 +147,7 @@ export default {
             console.log(response);
             //this.$router.push('/dashboard');
             this.$toasted.global.serviceAdded().goAway(1500);
+            this.fetchServices();
             this.clearIt();
 
         })
@@ -254,8 +202,8 @@ export default {
 
     },
     created() {
-    this.fetchServiceName()
-    this.fetchServices()
+    this.fetchServiceName();
+    this.fetchServices();
   }
 }
 </script>

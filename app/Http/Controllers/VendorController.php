@@ -124,9 +124,33 @@ class VendorController extends Controller
   {
     $vendor = Vendor::findOrfail($id);
     return new  VendorResource($vendor);
-//    return response()->json($vendor->with('servicerenders')->get(),200);
+    //  return response()->json($vendor->with('servicerenders')->get(),200);
 
   }
+
+  public function approveRequest(Vendor $vendor)
+    {
+        $vendor->status = ('active');
+        $status = $vendor->save();
+
+        return response()->json([
+            'status'    => $status,
+            'data'      => $vendor,
+            'message'   => $status ? 'Approved!' : 'Error'
+        ]);
+    }
+
+    public function rejectRequest(Vendor $vendor)
+      {
+          $vendor->status = ('rejected');
+          $status = $vendor->save();
+
+          return response()->json([
+              'status'    => $status,
+              'data'      => $vendor,
+              'message'   => $status ? 'Approved!' : 'Error'
+          ]);
+      }
 
 
   /**

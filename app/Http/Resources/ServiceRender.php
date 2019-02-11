@@ -21,7 +21,9 @@ class ServiceRender extends JsonResource
        'service_category_id' => $this->service_category_id,
        'service_id' => $this->service_id,
        'price' => $this->price,
-       'description' => $this->description
+       'description' => $this->description,
+       'service' => new Service($this->service)
+
      ];
      }
 }

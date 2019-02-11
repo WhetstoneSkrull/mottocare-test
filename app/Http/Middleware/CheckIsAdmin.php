@@ -9,7 +9,7 @@ class CheckIsAdmin
 {
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->role === 2) {
+        if(Auth::user()->is_admin === true) {
             return $next($request);
         }
 

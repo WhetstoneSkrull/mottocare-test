@@ -43,7 +43,7 @@ class Vendor extends JsonResource
       'closing_time' => $this->closing_time,
       'off_day' => $this->off_day,
       'lumpsum' => $this->lumpsum,
-      'status' => $this->status_id,
+      'status' => $this->status,
       'servicerenders' => ServiceRender::collection($this->servicerenders),
 
 

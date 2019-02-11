@@ -82,7 +82,7 @@ public function index(){
 
 
       //returns a vendor and their services rendered
-      public function showVendorServices(Vendor $user)
+      public function showVendorServices(User $user)
           {
               return response()->json($user->servicerenders()->with(['service','servicecategory'])->get(),200);
           }
@@ -95,13 +95,13 @@ public function index(){
 
             //returns a user's vendor details
             public function showVendorBookings(Vendor $user){
-                  return response()->json($user->bookings()->with(['servicerenders','user'])->get(),200);
+                  return response()->json($user->bookings()->with(['servicerenders.service'])->get(),200);
 
               }
 
               //returns a user's services details
               public function showUserServices(User $user){
-              return response()->json($user->servicerenders()->with(['service','servicecategory'])->get(),200);
+              return response()->json($user->servicerenders()->with(['service.category'])->get(),200);
 
                 }
 
@@ -161,7 +161,6 @@ public function index(){
           'user_role' => $request->role,
           'password' => bcrypt($request->password),
           'activation_token' => str_random(60)
-
       ]);
       $user->save();
 //      $user->notify(new SignupActivate($user));

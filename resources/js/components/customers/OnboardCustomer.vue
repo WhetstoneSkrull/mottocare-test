@@ -401,67 +401,44 @@
       <v-layout row wrap>
         <v-flex xs12 sm6>
           <v-container grid-list-xs,sm,md,lg,xl>
-
             <v-card>
-              <v-card-title primary-title>Test Booking</v-card-title>
 
-              <div class="" v-for="dealer in dealers" v-bind:key="dealer.id">
-                    <p>check: {{dealer.vendor_title}}</p>
+              <div class="input-group spacer col-md-4">
+                <div class="input-group-append">
+                  <label class="input-group-text" for="inputGroupSelect02">Select Vehicle</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect02" v-model="booking.vehicle_id">
+                  <option selected>Choose...</option>
+                    <option :value="vehicle.id" v-for="vehicle in vehicles">
+                      {{vehicle.car.car_manufacturer}}
+                    </option>
+                  </select>
               </div>
 
               <v-select
-                :items="dealers"
-                v-model="booking.service_date"
-                label="Select Vendor"
+                :items="vendors"
+                v-model="selected"
                 item-text="vendor_title"
-                item-value=""
+                item-value="id"
+                label="Select Vendor"
+                v-on:change="onChange" >
               ></v-select>
 
+              <v-select
+                :items="vendor.servicerenders"
+                v-model="booking.service_renders"
+                label="Select Service"
+                item-text="price"
+              ></v-select>
+
+              <v-text-field
+                name="name"
+                label="Select Date"
+                v-model="booking.service_date"
+               hint="date format:(dd-mm-yyyy)"
+              ></v-text-field>
+
             </v-card>
-
-       <div class="input-group spacer">
-         <div class="input-group-append">
-           <label class="input-group-text" for="inputGroupSelect02">Select Vendor</label>
-         </div>
-         <select class="custom-select" id="inputGroupSelect02" v-model="selectedDrink" @change="selectDrink">
-           <option selected>Choose...</option>
-             <option  v-for="(vendor,index) in vendors" :value="index">
-               {{vendor.label}}
-             </option>
-           </select>
-      </div>
-
-
-      <div v-if="options.length">
-        <label class="typo__label">Select Service</label>
-        <multiselect v-model="selectedOption" :options="options"  :multiple="true"></multiselect>
-      </div>
-
-       <div class="input-group spacer">
-         <div class="input-group-append">
-           <label class="input-group-text" for="inputGroupSelect02">Select Vehicle</label>
-         </div>
-         <select class="custom-select" id="inputGroupSelect02" v-model="booking.vehicle_id">
-           <option selected>Choose...</option>
-             <option :value="vehicle.id" v-for="vehicle in vehicles">
-               {{vehicle.car.car_manufacturer}}  ({{vehicle.model}})
-             </option>
-           </select>
-      </div>
-
-        <v-text-field
-          name="name"
-          v-model="booking.service_date"
-          label="Service Date"
-          id="select the date you want your vehicle to be serviced format:(dd-mm-yyyy)"
-        ></v-text-field>
-
-          <v-flex>
-            <v-select
-           :items="items"
-           label="Pick a slot"
-         ></v-select>
-           </v-flex>
 
        <v-btn
          color="blue"
@@ -482,21 +459,11 @@
             </div>
           </v-card-title>
           <v-card-text>
-            <p>Total Amount Payable: &#8358;{{totalMarks | numeral('0,0')}} </p>
-            <p> marks are: {{ totalMarks }}</p>
-            <p>Vendor: {{selectedDrinkLabel }}</p>
-            <p> <strong> Service items:</strong> {{selectedOption}}</p>
-            <p> <strong> Service items test:</strong></p>
-            <div class=""v-for="test in selectedOption">
-              <p>{{test.price}}</p>
-            </div>
 
-          <!--  <p>vehicle: {{booking.vehicle.vehicle_make}}</p> -->
-            <p>service date: {{booking.service_date}}</p>
           </v-card-text>
           <v-card-actions>
             <paystack
-                :amount="totalMarks"
+                :amount="amount"
                 :email="user.email"
                 :paystackkey="paystackkey"
                 :reference="reference"
@@ -536,8 +503,8 @@
           </v-card-title>
           <v-card-text>
             <p>Amount Payable: &#8358;{{amount | numeral('0,0')}} </p>
-            <p>Vendor: {{selectedDrinkLabel }}</p>
-            <p> <strong> Service items:</strong> {{selectedOption}}</p>
+        <!--    <p>Vendor: {{selectedDrinkLabel }}</p> -->
+            <p> <strong> Service items:</strong> </p>
 
           <!--  <p>vehicle: {{booking.vehicle.vehicle_make}}</p> -->
             <p>service date: {{booking.service_date}}</p>
@@ -589,7 +556,7 @@ export default {
       return {
         paystackkey: "pk_test_f05cdb293d594a7ce616748054fd99dc8267a832", //paystack public key
         email: "fooFbar@example.com", // Customer email
-        amount: 1000000, //
+        amount: 10000, //
         show: false,
         e1: 0,
         vehicles: [],
@@ -610,39 +577,11 @@ export default {
         drivers: [],
         valid: true,
         user : null,
-        items: ['slot 1: (08:00-08:30)AM', 'slot 2: (08:31-09:00)AM', 'slot 3: (09:00-09:30)AM', 'slot 4: (10:00-10:30)AM',
-                'slot 5: (10:31-11:00)AM','slot 6: (11:01-11:30)AM'],
+        selected:"",
+        vendors:[],
+        vendor:[],
         auth_user: {},
-        vendors:[
-      {
-        label:"Oando Shop",
-        options:[
-                  {name:'Alternator Change', price:2300},
-                  {name:'Wiring', price:90220},
-                  {name:'Washing', price:2010}
-                ]
-      },
-      {
-        label:"Total Mechanic",
-        options:[
-                  {name:'Full servicing', price:2300},
-                  {name:'Panel Beating', price:95000},
-                  {name:'Change Oil', price:23000}
-                ]
-      },
-      {
-        label:"Mobil Auto shop",
-        options:[
-                  {name:'Painting', price:1300},
-                  {name:'Body Spray', price:54000},
-                  {name:'Tyres and Wheel Alignment', price:23000}
-                ]
-      }
-    ],
-    selectedDrink:-1,
-    selectedOption:'',
-    options:[],
-    selectedDrinkLabel:'',
+
         vehicle:{
           id:"",
           user_id:"",
@@ -710,11 +649,36 @@ export default {
       clearIt() {
         this.$refs.form.reset()
       },
-      selectDrink:function() {
-      this.selectedOption = '';
-      this.options = this.vendors[this.selectedDrink].options;
-      this.selectedDrinkLabel = this.vendors[this.selectedDrink].label;
+
+    fetchVendors(){
+
+      this.user = JSON.parse(localStorage.getItem('user'))
+      axios.defaults.headers.common['Content-Type'] = 'application/json'
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt')
+      axios.get(`api/all/vendors`)
+      .then(response => {
+          this.vendors = response.data
+      })
+      .catch(error => {
+          console.error(error);
+      })
     },
+
+    onChange: function (){
+      var self = this
+      console.log(self.vendor);
+       axios.get('/api/vendor/'+this.selected)
+        .then(function (response) {
+          console.log(response);
+          self.vendor = response.data.data;
+        //  console.log('before list');
+          //console.log(self.list);
+          console.log();
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+     },
 
     makeBooking(){
       axios.post('/api/booking',this.booking)
@@ -739,16 +703,6 @@ export default {
         axios.get(`api/auth/user`)
         .then(response => {
             this.auth_user = response.data
-        })
-        .catch(error => {
-            console.error(error);
-        })
-      },
-      fetchVendors(){
-
-        axios.get(`api/all/vendors`)
-        .then(response => {
-            this.dealers = response.data
         })
         .catch(error => {
             console.error(error);
@@ -921,13 +875,13 @@ export default {
       }
   },
   computed: {
-  totalMarks: function() {
+/*  totalMarks: function() {
     let total = 0;
-    for(let i = 0; i < this.selectedOption.length; i++){
-      total += parseInt(this.selectedOption[i].price);
+    for(let i = 0; i < this.vendor.servicerenders.length; i++){
+      total += parseInt(this.vendor.servicerenders[i].price);
     }
     return total;
-  },
+  }, */
   reference(){
     let text = "";
     let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

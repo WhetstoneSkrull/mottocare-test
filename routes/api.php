@@ -115,6 +115,8 @@ Route::get('booking/{id}', 'BookingController@show');
 Route::post('booking', 'BookingController@store');
 Route::put('booking', 'BookingController@store');
 Route::delete('booking/{id}', 'BookingController@destroy');
+Route::patch('booking/{booking}/completed','BookingController@completeBooking');
+
 
 //Services Rendered API
 Route::get('services/render', 'ServiceRenderController@index');
@@ -165,6 +167,9 @@ Route::get('vendor/{id}', 'VendorController@show');
 Route::post('vendor', 'VendorController@store');
 Route::put('vendor', 'VendorController@store');
 Route::delete('vendor/{id}', 'VendorController@destroy');
+Route::patch('vendor/{vendor}/approve','VendorController@approveRequest');
+Route::patch('vendor/{vendor}/reject','VendorController@rejectRequest');
+
 
 
 //Driver API

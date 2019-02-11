@@ -117,9 +117,7 @@
           </v-list-tile>
         </v-list>
 
-
-
-                <v-list>
+        <v-list>
         <!--Payment Group -->
               <v-list-group
               prepend-icon="business"
@@ -208,6 +206,16 @@
               <v-list-tile slot="activator">
                 <v-list-tile-title>Admin Panel</v-list-tile-title>
               </v-list-tile>
+
+              <!--Wallet category -->
+              <v-list-tile :to="{path: 'admin-dashboard'}">
+                <v-list-tile-title>Dashboard</v-list-tile-title>
+                <v-list-tile-action>
+                  <v-icon>dashboard</v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+              <!--end of wallet category -->
+
               <!--Wallet category -->
               <v-list-tile :to="{path: 'admin-services'}">
                 <v-list-tile-title>services</v-list-tile-title>

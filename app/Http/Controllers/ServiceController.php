@@ -21,7 +21,8 @@ class ServiceController extends Controller
       // $categories = ServiceCategory::all();
       //$services = Service::orderBy('created_at','desc')->paginate(15);
       //return ServiceResource::collection($services);
-       return response()->json(Service::with(['category','servicecars'])->get(), 200);
+      // return response()->json(Service::with(['category','servicecars'])->get(), 200);
+       return response()->json(Service::all(), 200);
 
     }
 
