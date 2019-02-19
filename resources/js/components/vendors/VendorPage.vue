@@ -40,11 +40,12 @@
                  <p v-if="x.status === 'suspended'"><v-btn color="yellow" dark>suspended
                     <v-icon dark right>block</v-icon></v-btn> </p>
 
+                    <p><v-btn color="primary" dark :to="{path:'/manage-slots'}">manage slots</v-btn> </p>
+
          </v-card-text>
        </material-card>
      </v-flex>
      <!--End of Header section 12 row-->
-
 
      <!--Booking card-->
      <v-flex xs12 sm4 v-if="x.status === 'active'">

@@ -42,8 +42,10 @@ class SlotController extends Controller
         ($request->slot_id) : new Slot;
 
         $slot->id = $request->input('slot_id');
-        //$auto->user_id = $request->input('user_id');
+        $slot->user_id = $request->input('user_id');
+        $slot->vendor_id = $request->input('vendor_id');
         $slot->slot_name = $request->input('slot_name');
+        $slot->slot_status = $request->input('slot_status');
 
 
         if($slot->save()){

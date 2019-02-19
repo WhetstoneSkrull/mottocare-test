@@ -100,9 +100,7 @@ import paystack from 'vue-paystack';
           service_date:'',
           service_time:'',
           is_completed:false
-
-        }
-
+                }
             }
       },
 

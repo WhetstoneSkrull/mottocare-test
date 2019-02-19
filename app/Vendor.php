@@ -14,6 +14,10 @@ class Vendor extends Model
     	return $this->hasMany('App\Booking');
     }
 
+    public function slots(){
+      	return $this->hasMany('App\Slot');
+      }
+
     public function servicerenders(){
       	return $this->hasMany('App\ServiceRender');
       }

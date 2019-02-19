@@ -162,6 +162,7 @@ Vue.http.headers.common['Authorization'] = 'Bearer sk_test_962dee2862de19c851614
     //vendor pages
     import VendorPage from './components/vendors/VendorPage'
     import VendorSingleBooking from './components/vendors/VendorSingleBooking'
+    import ManageSlots from './components/vendors/ManageSlots'
 
     import SingleVendor from './components/onboarding/SingleVendor'
     import Vendors from './components/onboarding/Vendors'
@@ -388,9 +389,14 @@ Vue.http.headers.common['Authorization'] = 'Bearer sk_test_962dee2862de19c851614
                 component: VendorPage
             },
             {
-                path: '/vendor/:id',
-                name: 'SingleVendor',
-                component: SingleVendor
+                path: '/vendor-dashboard',
+                name: 'vendorPage',
+                component: VendorPage
+            },
+            {
+                path: '/manage-slots',
+                name: 'ManageSlots',
+                component: ManageSlots
             },
 
             {

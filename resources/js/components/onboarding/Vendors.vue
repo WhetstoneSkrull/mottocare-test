@@ -30,8 +30,16 @@
           <v-select
             :items="vendor.servicerenders"
             v-model="booking.service_renders"
-            label="Vendor"
+            label="Services"
             item-text="service.service_name"
+            item-value="id"
+            multiple
+          ></v-select>
+
+          <v-select
+            :items="vendor.slots"
+            label="Slots"
+            item-text="slot_name"
             item-value="id"
             multiple
           ></v-select>

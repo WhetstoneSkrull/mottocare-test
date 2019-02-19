@@ -16,7 +16,10 @@ class Slot extends JsonResource
     {
       return[
       'id' => $this->id,
-      'slot_name' => $this->slot_name
+      'user_id' => $this->user_id,
+      'vendor_id' => $this->vendor_id,
+      'slot_name' => $this->slot_name,
+      'slot_status' => $this->slot_status
       ];
     }
 }

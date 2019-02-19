@@ -45,6 +45,7 @@ class Vendor extends JsonResource
       'lumpsum' => $this->lumpsum,
       'status' => $this->status,
       'servicerenders' => ServiceRender::collection($this->servicerenders),
+      'slots' => Slot::collection($this->slots),
 
 
     ];
